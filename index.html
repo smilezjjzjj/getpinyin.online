@@ -563,26 +563,6 @@
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let currentWord = '';
 
-    // API配置 - 多个免费API备用
-    const APIs = {
-      // 有道翻译API (需要注册获取免费额度)
-      youdao: {
-        url: 'https://openapi.youdao.com/api',
-        appKey: 'YOUR_APP_KEY', // 需要注册获取
-        secret: 'YOUR_SECRET'
-      },
-      // LibreTranslate (完全免费)
-      libreTranslate: 'https://libretranslate.com/translate',
-      // MyMemory (免费额度)
-      myMemory: 'https://api.mymemory.translated.net/get',
-      // 百度翻译API (免费额度)
-      baidu: {
-        url: 'https://fanyi-api.baidu.com/api/trans/vip/translate',
-        appid: 'YOUR_APP_ID', // 需要注册获取
-        secret: 'YOUR_SECRET'
-      }
-    };
-
     // Load dictionary from JSON file
     async function loadDictionary() {
       try {
@@ -710,163 +690,6 @@
       displayResult(word);
     }
 
-    // 将这个函数替换现有的translateOnline函数
-    async function translateOnline(word) {
-      const result = document.getElementById("result");
-      
-      // 显示加载状态
-      result.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-          <div style="border: 3px solid #f3f3f3; border-top: 3px solid #007aff; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
-          <p>Translating "${word}" online...</p>
-          <small style="color: #666;">Trying translation service...</small>
-        </div>
-      `;
-
-      try {
-        // 检查缓存
-        const cacheKey = `translation_${word.toLowerCase()}`;
-        const cached = localStorage.getItem(cacheKey);
-        if (cached) {
-          const cachedData = JSON.parse(cached);
-          if (Date.now() - cachedData.timestamp < 24 * 60 * 60 * 1000) {
-            const entry = cachedData.data;
-            displayOnlineResult(word, entry);
-            return;
-          }
-        }
-
-        // 使用MyMemory免费API
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=en|zh`;
-        const response = await fetch(url);
-        
-        if (!response.ok) {
-          throw new Error('Translation service unavailable');
-        }
-        
-        const data = await response.json();
-        const translation = data.responseData.translatedText;
-        
-        if (translation && translation !== word && !translation.includes('MYMEMORY WARNING')) {
-          // 简单的拼音生成
-          const pinyin = generateSimplePinyin(translation);
-          
-          const entry = {
-            hanzi: translation,
-            pinyin: pinyin,
-            defs: [`Online translation of "${word}"`],
-            source: 'MyMemory API'
-          };
-          
-          // 缓存结果
-          localStorage.setItem(cacheKey, JSON.stringify({
-            data: entry,
-            timestamp: Date.now()
-          }));
-          
-          // 添加到本地词典
-          dict[word] = entry;
-          
-          // 保存到自定义词典
-          try {
-            const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
-            customDict[word] = entry;
-            localStorage.setItem('customDict', JSON.stringify(customDict));
-          } catch (e) {
-            console.error('Failed to save custom dictionary:', e);
-          }
-          
-          displayOnlineResult(word, entry);
-        } else {
-          throw new Error('No valid translation found');
-        }
-        
-      } catch (error) {
-        console.error('Translation error:', error);
-        result.innerHTML = `
-          <div style="text-align: center; padding: 20px;">
-            <p style="color: #ff3b30; font-weight: 600;">❌ Online translation failed</p>
-            <p style="color: #666; margin: 8px 0;">Error: ${error.message}</p>
-            <p style="color: #666; font-size: 0.9rem;">Please check your internet connection or try again later.</p>
-            <button onclick="displayResult('${word}')" style="margin-top: 12px; padding: 8px 16px; background: #007aff; color: white; border: none; border-radius: 6px; cursor: pointer;">
-              Search Local Dictionary
-            </button>
-          </div>
-        `;
-      }
-    }
-
-    // 简单的拼音生成函数
-    function generateSimplePinyin(chinese) {
-      const pinyinMap = {
-        '你': 'nǐ', '好': 'hǎo', '是': 'shì', '的': 'de', '我': 'wǒ',
-        '在': 'zài', '有': 'yǒu', '他': 'tā', '她': 'tā', '它': 'tā',
-        '们': 'men', '这': 'zhè', '那': 'nà', '里': 'lǐ', '个': 'gè',
-        '人': 'rén', '时': 'shí', '会': 'huì', '可': 'kě', '以': 'yǐ',
-        '说': 'shuō', '来': 'lái', '去': 'qù', '看': 'kàn', '听': 'tīng',
-        '吃': 'chī', '喝': 'hē', '睡': 'shuì', '走': 'zǒu', '跑': 'pǎo',
-        '大': 'dà', '小': 'xiǎo', '多': 'duō', '少': 'shǎo', '新': 'xīn',
-        '老': 'lǎo', '年': 'nián', '轻': 'qīng', '美': 'měi', '丽': 'lì',
-        '爱': 'ài', '喜': 'xǐ', '欢': 'huān', '快': 'kuài', '乐': 'lè',
-        '工': 'gōng', '作': 'zuò', '学': 'xué', '习': 'xí', '生': 'shēng',
-        '活': 'huó', '家': 'jiā', '庭': 'tíng', '朋': 'péng', '友': 'yǒu',
-        '水': 'shuǐ', '火': 'huǒ', '山': 'shān', '树': 'shù', '花': 'huā',
-        '世': 'shì', '界': 'jiè', '国': 'guó', '中': 'zhōng', '文': 'wén',
-        '学': 'xué', '校': 'xiào', '老': 'lǎo', '师': 'shī', '同': 'tóng'
-      };
-
-      let result = '';
-      for (let char of chinese) {
-        if (pinyinMap[char]) {
-          result += pinyinMap[char] + ' ';
-        } else if (/[\u4e00-\u9fff]/.test(char)) {
-          result += '[?] ';
-        } else {
-          result += char + ' ';
-        }
-      }
-      
-      return result.trim() || 'Unknown';
-    }
-
-    // 显示在线翻译结果
-    function displayOnlineResult(word, entry) {
-      const result = document.getElementById("result");
-      const isFavorited = favorites.includes(word);
-      currentWord = word;
-      
-      result.innerHTML = `
-        <div class="result-header">
-          <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
-          <button class="favorite-btn" onclick="toggleFavorite()" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
-            ${isFavorited ? '❤️' : '🤍'}
-          </button>
-        </div>
-        <div class="result-item">
-          <span class="label">汉字:</span>
-          <span class="hanzi">${entry.hanzi}</span>
-          <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="点击播放发音">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-            </svg>
-          </button>
-        </div>
-        <div class="result-item">
-          <span class="label">拼音:</span>
-          <span class="pinyin">${entry.pinyin}</span>
-        </div>
-        <div class="result-item">
-          <span class="label">释义:</span>
-          <span class="defs">${entry.defs.join(", ")}</span>
-        </div>
-        <div style="margin-top: 12px; padding: 8px; background: #e8f4fd; border-radius: 8px; font-size: 0.9rem; color: #0066cc; border-left: 3px solid #007aff;">
-          <span>🌐 Source: ${entry.source || 'Online Translation'}</span>
-        </div>
-      `;
-      
-      result.classList.add('show');
-    }
-
     function displayResult(word) {
       console.log('DisplayResult called with word:', word);
       console.log('Word exists in dict:', !!dict[word]);
@@ -900,7 +723,7 @@
           </div>
           <div class="result-item">
             <span class="label">释义:</span>
-            <span class="defs">${entry.defs.join(", ")}</span>
+            <span class="defs">${(entry.defs && Array.isArray(entry.defs)) ? entry.defs.join(", ") : "No definition available"}</span>
           </div>
         `;
       } else {
@@ -910,31 +733,70 @@
         
         if (suggestions.length > 0) {
           result.innerHTML = `
-            <p class="error">Exact match not found. Did you mean:</p>
-            <div style="margin-top: 16px;">
-              ${suggestions.map(s => `
-                <div class="word-tag" onclick="searchWord('${s.word}')" style="margin: 4px;">
-                  ${s.word} (${s.data.hanzi})
-                </div>
-              `).join('')}
-            </div>
-            <div class="online-search">
-              <p>Can't find what you're looking for?</p>
-              <button onclick="translateOnline('${word}')">Try Online Translation</button>
+            <div style="text-align: center; padding: 20px;">
+              <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" not found in dictionary</p>
+              <p style="color: #666; margin-bottom: 20px;">Did you mean one of these words?</p>
+              <div style="margin-bottom: 20px;">
+                ${suggestions.map(s => `
+                  <div class="word-tag" onclick="searchWord('${s.word}')" style="display: inline-block; margin: 4px; padding: 8px 12px; background: #f0f8ff; border: 1px solid #007aff; border-radius: 6px; cursor: pointer; color: #007aff; font-weight: 500; transition: all 0.2s;">
+                    ${s.word} → ${s.data.hanzi}
+                  </div>
+                `).join('')}
+              </div>
+              <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; border-left: 4px solid #28a745;">
+                <p style="color: #155724; font-weight: 600; margin-bottom: 8px;">💡 Search Tips:</p>
+                <ul style="color: #155724; text-align: left; margin: 0; padding-left: 20px;">
+                  <li>Try typing just the first few letters</li>
+                  <li>Check your spelling</li>
+                  <li>Our dictionary contains <strong>${Object.keys(dict).length}+ common English words</strong></li>
+                </ul>
+              </div>
             </div>
           `;
         } else {
           result.innerHTML = `
-            <p class="error">No matches found in local dictionary.</p>
-            <div class="online-search">
-              <p>Would you like to try online translation?</p>
-              <button onclick="translateOnline('${word}')">Translate "${word}" Online</button>
+            <div style="text-align: center; padding: 20px;">
+              <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" not found</p>
+              <p style="color: #666; margin-bottom: 20px;">No similar words found in our dictionary.</p>
+              
+              <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                <p style="color: #0c5460; font-weight: 600; margin-bottom: 12px;">📚 Try searching for these popular words:</p>
+                <div style="margin-bottom: 16px;">
+                  ${getPopularWords(8).map(word => `
+                    <span class="word-tag" onclick="searchWord('${word}')" style="display: inline-block; margin: 4px; padding: 6px 10px; background: #e7f3ff; border: 1px solid #17a2b8; border-radius: 4px; cursor: pointer; color: #17a2b8; font-size: 0.9rem; transition: all 0.2s;">
+                      ${word}
+                    </span>
+                  `).join('')}
+                </div>
+                <p style="color: #0c5460; font-size: 0.9rem; margin: 0;">
+                  Our dictionary contains <strong>${Object.keys(dict).length}+ English words</strong> with Chinese translations and pinyin pronunciation.
+                </p>
+              </div>
             </div>
           `;
         }
       }
 
       result.classList.add('show');
+    }
+
+    // Helper function to get popular/common words from dictionary
+    function getPopularWords(count) {
+      const popularWords = ['hello', 'world', 'good', 'love', 'happy', 'computer', 'phone', 'work', 'study', 'money', 'food', 'water', 'time', 'family', 'friend', 'help', 'thank', 'please'];
+      const availableWords = popularWords.filter(word => dict[word]);
+      
+      // If we don't have enough popular words, add some random ones
+      if (availableWords.length < count) {
+        const allWords = Object.keys(dict);
+        while (availableWords.length < count && availableWords.length < allWords.length) {
+          const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
+          if (!availableWords.includes(randomWord)) {
+            availableWords.push(randomWord);
+          }
+        }
+      }
+      
+      return availableWords.slice(0, count);
     }
 
     function toggleFavorite() {
@@ -1143,4 +1005,3 @@
   </script>
 </body>
 </html>
-
