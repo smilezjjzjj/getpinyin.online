@@ -588,18 +588,14 @@
         const response = await fetch('dict.json');
         dict = await response.json();
         
-        // 加载扩展词典
-        Object.assign(dict, expandedDict);
-        
         console.log('Dictionary loaded:', Object.keys(dict).length, 'entries');
         document.getElementById("query").disabled = false;
         document.getElementById("query").placeholder = "Enter English word (fuzzy search supported)";
       } catch (error) {
         console.error('Failed to load dictionary:', error);
-        // 使用扩展词典作为备用
-        dict = expandedDict;
+        dict = {}; // 使用空对象作为备用
         document.getElementById("query").disabled = false;
-        document.getElementById("query").placeholder = "Using offline dictionary";
+        document.getElementById("query").placeholder = "Dictionary loading failed - limited functionality";
       }
     }
 
@@ -1137,4 +1133,3 @@
   </script>
 </body>
 </html>
-
