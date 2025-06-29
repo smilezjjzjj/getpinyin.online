@@ -586,44 +586,20 @@
     async function loadDictionary() {
       try {
         const response = await fetch('dict.json');
-        if (!response.ok) {
-          throw new Error('Failed to load dictionary');
-        }
         dict = await response.json();
+        
+        // 加载扩展词典
+        Object.assign(dict, expandedDict);
+        
+        console.log('Dictionary loaded:', Object.keys(dict).length, 'entries');
         document.getElementById("query").disabled = false;
         document.getElementById("query").placeholder = "Enter English word (fuzzy search supported)";
       } catch (error) {
-        console.error('Error loading dictionary:', error);
-        // Fallback to basic dictionary if JSON loading fails
-        dict = {
-          "hello": {
-            hanzi: "你好",
-            pinyin: "nǐ hǎo",
-            defs: ["hello", "hi"]
-          },
-          "thank": {
-            hanzi: "谢谢",
-            pinyin: "xiè xie",
-            defs: ["thank you", "thanks"]
-          },
-          "goodbye": {
-            hanzi: "再见",
-            pinyin: "zài jiàn",
-            defs: ["goodbye", "see you"]
-          },
-          "love": {
-            hanzi: "爱",
-            pinyin: "ài",
-            defs: ["love"]
-          },
-          "peace": {
-            hanzi: "和平",
-            pinyin: "hé píng",
-            defs: ["peace", "harmony"]
-          }
-        };
+        console.error('Failed to load dictionary:', error);
+        // 使用扩展词典作为备用
+        dict = expandedDict;
         document.getElementById("query").disabled = false;
-        document.getElementById("query").placeholder = "Enter English word (JSON load failed, using fallback)";
+        document.getElementById("query").placeholder = "Using offline dictionary";
       }
     }
 
@@ -1161,3 +1137,4 @@
   </script>
 </body>
 </html>
+
