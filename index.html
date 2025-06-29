@@ -3,7 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English to Pinyin Dictionary</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>English to Chinese Translator - Learn Chinese with Pinyin Pronunciation</title>
+  <meta name="description" content="Free English to Chinese translator with pinyin pronunciation. Learn Chinese characters, pinyin, and meanings for over 100 common English words. Perfect for Chinese language learners." />
+  <meta name="keywords" content="English to Chinese translator, pinyin dictionary, learn Chinese, Chinese pronunciation, English Chinese dictionary, pinyin translator, Chinese language learning" />
+  <meta name="author" content="GetPinyin.Online" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getpinyin.online/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://getpinyin.online/" />
+  <meta property="og:title" content="English to Chinese Translator - Learn Chinese with Pinyin" />
+  <meta property="og:description" content="Free English to Chinese translator with pinyin pronunciation. Perfect for learning Chinese characters and pronunciation." />
+  <meta property="og:image" content="https://getpinyin.online/og-image.jpg" />
+  <meta property="og:site_name" content="GetPinyin.Online" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://getpinyin.online/" />
+  <meta property="twitter:title" content="English to Chinese Translator - Learn Chinese with Pinyin" />
+  <meta property="twitter:description" content="Free English to Chinese translator with pinyin pronunciation. Perfect for learning Chinese characters and pronunciation." />
+  <meta property="twitter:image" content="https://getpinyin.online/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Language alternatives -->
+  <link rel="alternate" hreflang="en" href="https://getpinyin.online/" />
+  <link rel="alternate" hreflang="zh" href="https://getpinyin.online/zh/" />
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "English to Chinese Translator",
+    "description": "Free English to Chinese translator with pinyin pronunciation for learning Chinese",
+    "url": "https://getpinyin.online/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "GetPinyin.Online"
+    }
+  }
+  </script>
   <style>
     * {
       margin: 0;
@@ -16,8 +71,8 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
       padding-top: 40px;
     }
@@ -349,12 +404,74 @@
     }
 
 
+
+
+    /* Header Navigation */
+    .header {
+      background: white;
+      padding: 16px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-item {
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item:hover {
+      color: #007aff;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
   </style>
 </head>
 <body>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">GetPinyin</a>
+      <nav class="nav-menu">
+        <a href="about.html" class="nav-item">About</a>
+        <a href="#" onclick="showHelp()" class="nav-item">Help</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
-    <h1>English → 拼音</h1>
-    <p class="subtitle">English to Chinese Pinyin Dictionary</p>
+    <h1>English to Chinese Translator</h1>
+    <p class="subtitle">Learn Chinese with pinyin pronunciation</p>
 
     <div class="tabs">
       <div class="tab active" onclick="switchTab('search')">Search</div>
@@ -378,6 +495,28 @@
         <h3>Your Favorite Words</h3>
         <div id="favoritesList"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Footer Info Outside Container -->
+  <div style="text-align: center; padding: 32px 20px; margin-top: 32px;">
+    <p style="color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 0.9rem;">&copy; 2025 GetPinyin.Online. All rights reserved.</p>
+    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 16px;">Free English to Chinese translator for language learners worldwide.</p>
+    <div>
+      <a href="#" onclick="showTerms()" style="color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 12px; font-size: 0.9rem;">Terms of Service</a>
+      <a href="#" onclick="showPrivacy()" style="color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 12px; font-size: 0.9rem;">Privacy Policy</a>
+      <a href="#" onclick="showHelp()" style="color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 12px; font-size: 0.9rem;">Help</a>
+    </div>
+  </div>
+
+  <!-- Modal for Terms/Privacy -->
+  <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 16px; padding: 32px; max-width: 600px; max-height: 80vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h2 id="modalTitle" style="margin: 0; color: #1d1d1f;"></h2>
+        <button onclick="closeModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+      </div>
+      <div id="modalContent" style="color: #666; line-height: 1.6;"></div>
     </div>
   </div>
 
@@ -746,6 +885,130 @@
       // Focus on input after loading
       document.getElementById("query").focus();
     };
+
+    // Modal functions
+    function showModal(title, content) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function showTerms() {
+      const content = `
+        <h3>Terms of Service</h3>
+        <p><strong>Last Updated: January 2025</strong></p>
+        
+        <h4>1. Service Description</h4>
+        <p>GetPinyin.Online is a free English-Chinese translation tool designed to help users learn Chinese pinyin and characters. We provide accurate translations, pinyin notation, and audio playback features.</p>
+        
+        <h4>2. Terms of Use</h4>
+        <p>By using this website, you agree to comply with the following terms:</p>
+        <ul>
+          <li>Use this service only for legal learning and translation purposes</li>
+          <li>Do not abuse or interfere with the normal operation of the website</li>
+          <li>Respect intellectual property and the rights of others</li>
+        </ul>
+        
+        <h4>3. Disclaimer</h4>
+        <p>This service is provided "as is" and we do not guarantee complete accuracy of translations. Users should verify the accuracy of important translation content themselves.</p>
+        
+        <h4>4. Service Changes</h4>
+        <p>We reserve the right to modify or terminate the service at any time without notice.</p>
+        
+        <h4>5. Contact Us</h4>
+        <p>If you have any questions, please contact us through the website feedback function.</p>
+      `;
+      showModal('Terms of Service', content);
+    }
+
+    function showPrivacy() {
+      const content = `
+        <h3>Privacy Policy</h3>
+        <p><strong>Last Updated: January 2025</strong></p>
+        
+        <h4>1. Information Collection</h4>
+        <p>We collect the following types of information:</p>
+        <ul>
+          <li><strong>Usage Data:</strong> Your search queries and preferences are stored locally in your browser</li>
+          <li><strong>Technical Data:</strong> Basic technical information such as IP address, browser type, and access time</li>
+        </ul>
+        
+        <h4>2. Information Usage</h4>
+        <p>We use the collected information to:</p>
+        <ul>
+          <li>Provide and improve translation services</li>
+          <li>Save your favorites and preference settings</li>
+          <li>Analyze website usage to optimize user experience</li>
+        </ul>
+        
+        <h4>3. Information Protection</h4>
+        <p>We take reasonable security measures to protect your information:</p>
+        <ul>
+          <li>Local Storage: Your favorites and preferences are stored only in your browser</li>
+          <li>Data Encryption: All data transmission uses HTTPS encryption</li>
+          <li>Access Restrictions: We do not actively collect or store your personal sensitive information</li>
+        </ul>
+        
+        <h4>4. Cookie Usage</h4>
+        <p>We use cookies and local storage to save your usage preferences and favorites. You can manage this data through your browser settings.</p>
+        
+        <h4>5. Third-Party Services</h4>
+        <p>This website may contain third-party advertising or analytics services, which have their own privacy policies.</p>
+        
+        <h4>6. Policy Updates</h4>
+        <p>We may update this privacy policy from time to time. Major changes will be announced on the website.</p>
+        
+        <h4>7. Contact Us</h4>
+        <p>If you have questions about the privacy policy, please contact us through the website.</p>
+      `;
+      showModal('Privacy Policy', content);
+    }
+
+    function showHelp() {
+      const content = `
+        <h3>Help Center</h3>
+        
+        <h4>How to use the translator?</h4>
+        <p>1. Enter an English word in the search box<br>
+        2. The system will automatically display search suggestions<br>
+        3. Click on suggestions or press Enter to view translations<br>
+        4. Click the 🔊 button to hear Chinese pronunciation</p>
+        
+        <h4>How to add favorites?</h4>
+        <p>Click the ❤️ button in the translation results to add to favorites.</p>
+        
+        <h4>What features are supported?</h4>
+        <ul>
+          <li>Fuzzy Search: Find related words even with incomplete spelling</li>
+          <li>Voice Playback: Standard Chinese pronunciation</li>
+          <li>Favorites: Save commonly used words</li>
+          <li>Offline Use: Can be used offline after loading</li>
+        </ul>
+        
+        <h4>Common Questions</h4>
+        <p><strong>Q: Why can't I find some words?</strong><br>
+        A: Our vocabulary contains common words and will be continuously updated and expanded.</p>
+        
+        <p><strong>Q: What if pronunciation is inaccurate?</strong><br>
+        A: We use the browser's built-in speech synthesis, and the effect may vary by device.</p>
+        
+        <p><strong>Q: How to report problems?</strong><br>
+        A: Please provide feedback through the contact information at the bottom of the page.</p>
+      `;
+      showModal('Help Center', content);
+    }
+
+    // Close modal on outside click
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
