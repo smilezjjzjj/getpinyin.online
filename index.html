@@ -247,67 +247,54 @@
     }
 
     .speaker-btn {
-      background: #f0f0f0;
+      background: linear-gradient(135deg, #007aff, #0056cc);
       border: none;
-      border-radius: 12px;
-      width: 40px;
-      height: 40px;
-      margin-left: 12px;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      margin-left: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 18px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+      position: relative;
+      overflow: hidden;
     }
 
     .speaker-btn:hover {
-      background: #e0e0e0;
+      background: linear-gradient(135deg, #0056cc, #003d99);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
     }
 
-    .word-list {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid #f0f0f0;
+    .speaker-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
     }
 
-    .word-list h3 {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .word-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    .word-tag {
-      background: #f0f8ff;
-      color: #007aff;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 122, 255, 0.2);
-      position: relative;
-    }
-
-    .word-tag:hover {
-      background: #007aff;
-      color: white;
-    }
-
-    .word-tag.favorited::after {
-      content: '❤️';
+    .speaker-btn::before {
+      content: '';
       position: absolute;
-      top: -8px;
-      right: -8px;
-      font-size: 0.7rem;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
     }
+
+    .speaker-btn:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+
 
     .favorites-list {
       margin-top: 20px;
@@ -360,6 +347,8 @@
         font-size: 1.5rem;
       }
     }
+
+
   </style>
 </head>
 <body>
@@ -381,10 +370,7 @@
 
       <div id="result" class="result"></div>
 
-      <div class="word-list">
-        <h3>Available Words</h3>
-        <div class="word-tags" id="wordTags"></div>
-      </div>
+
     </div>
 
     <div id="favoritesTab" style="display: none;">
@@ -400,6 +386,7 @@
     let currentWord = '';
     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 
+
     // Load dictionary from JSON file
     async function loadDictionary() {
       try {
@@ -408,7 +395,6 @@
           throw new Error('Failed to load dictionary');
         }
         dict = await response.json();
-        updateWordTags();
         document.getElementById("query").disabled = false;
         document.getElementById("query").placeholder = "Enter English word (fuzzy search supported)";
       } catch (error) {
@@ -441,7 +427,6 @@
             defs: ["peace", "harmony"]
           }
         };
-        updateWordTags();
         document.getElementById("query").disabled = false;
         document.getElementById("query").placeholder = "Enter English word (JSON load failed, using fallback)";
       }
@@ -634,7 +619,11 @@
           <div class="result-item">
             <span class="label">汉字:</span>
             <span class="hanzi">${entry.hanzi}</span>
-            <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="Listen">🔊</button>
+            <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="点击播放发音">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </button>
           </div>
           <div class="result-item">
             <span class="label">拼音:</span>
@@ -645,7 +634,6 @@
             <span class="defs">${entry.defs.join(", ")}</span>
           </div>
         `;
-        speak(entry.hanzi);
       } else {
         const suggestions = fuzzySearch(word);
         if (suggestions.length > 0) {
@@ -689,7 +677,6 @@
 
       localStorage.setItem('favorites', JSON.stringify(favorites));
       displayResult(currentWord); // Refresh to update heart icon
-      updateWordTags();
     }
 
     function loadFavorites() {
@@ -711,13 +698,7 @@
       }).join('');
     }
 
-    function updateWordTags() {
-      const wordTags = document.getElementById('wordTags');
-      wordTags.innerHTML = Object.keys(dict).map(word => {
-        const isFavorited = favorites.includes(word);
-        return `<span class="word-tag ${isFavorited ? 'favorited' : ''}" onclick="searchWord('${word}')">${word}</span>`;
-      }).join('');
-    }
+
 
     function speak(text) {
       if ('speechSynthesis' in window) {
@@ -754,14 +735,13 @@
       // Load dictionary from JSON file
       await loadDictionary();
       
-      // Load any custom dictionary entries from localStorage
-      try {
-        const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
-        Object.assign(dict, customDict);
-        updateWordTags();
-      } catch (e) {
-        console.error('Failed to load custom dictionary:', e);
-      }
+              // Load any custom dictionary entries from localStorage
+        try {
+          const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+          Object.assign(dict, customDict);
+        } catch (e) {
+          console.error('Failed to load custom dictionary:', e);
+        }
 
       // Focus on input after loading
       document.getElementById("query").focus();
