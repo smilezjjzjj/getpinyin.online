@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://getpinyin.online/sitemap.xml
+
+# Disallow access to JSON data files for crawlers
+Disallow: /dict.json
+Disallow: /simplified.json 
