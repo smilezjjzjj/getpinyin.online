@@ -395,34 +395,65 @@
 
     function showHelp() {
       const content = `
-        <h3>Help Center</h3>
-        
-        <h4>How to use the translator?</h4>
-        <p>1. Enter an English word in the search box<br>
-        2. The system will automatically display search suggestions<br>
-        3. Click on suggestions or press Enter to view translations<br>
-        4. Click the 🔊 button to hear Chinese pronunciation</p>
-        
-        <h4>How to add favorites?</h4>
-        <p>Click the ❤️ button in the translation results to add to favorites.</p>
-        
-        <h4>What features are supported?</h4>
-        <ul>
-          <li>Fuzzy Search: Find related words even with incomplete spelling</li>
-          <li>Voice Playback: Standard Chinese pronunciation</li>
-          <li>Favorites: Save commonly used words</li>
-          <li>Offline Use: Can be used offline after loading</li>
-        </ul>
-        
-        <h4>Common Questions</h4>
-        <p><strong>Q: Why can't I find some words?</strong><br>
-        A: Our vocabulary contains common words and will be continuously updated and expanded.</p>
-        
-        <p><strong>Q: What if pronunciation is inaccurate?</strong><br>
-        A: We use the browser's built-in speech synthesis, and the effect may vary by device.</p>
-        
-        <p><strong>Q: How to report problems?</strong><br>
-        A: Please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff;">smilezjjzjj@126.com</a></p>
+        <div style="max-width: 100%; overflow-x: hidden;">
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">🚀 How to use the translator?</h4>
+            <div style="display: grid; gap: 8px;">
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>1.</strong> Enter an English word in the search box</p>
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>2.</strong> The system will automatically display search suggestions</p>
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>3.</strong> Click on suggestions or press Enter to view translations</p>
+              <p style="margin: 0; padding: 8px 0;"><strong>4.</strong> Click the 🔊 button to hear Chinese pronunciation</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 12px 0; font-size: 1.1rem;">❤️ How to add favorites?</h4>
+            <p style="margin: 0;">Click the ❤️ button in the translation results to add words to your favorites list for easy review.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 16px 0; font-size: 1.1rem;">✨ What features are supported?</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">🔍 Fuzzy Search</strong><br>
+                <small style="color: #666;">Find words with incomplete spelling</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">🔊 Voice Playback</strong><br>
+                <small style="color: #666;">Standard Chinese pronunciation</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">💾 Favorites</strong><br>
+                <small style="color: #666;">Save commonly used words</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">📱 Offline Use</strong><br>
+                <small style="color: #666;">Works without internet</small>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 16px 0; font-size: 1.1rem;">❓ Common Questions</h4>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: Why can't I find some words?</strong></p>
+              <p style="margin: 0; color: #666;">A: Our vocabulary contains common words and will be continuously updated and expanded.</p>
+            </div>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: What if pronunciation is inaccurate?</strong></p>
+              <p style="margin: 0; color: #666;">A: We use the browser's built-in speech synthesis, and the effect may vary by device.</p>
+            </div>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: How to report problems?</strong></p>
+              <p style="margin: 0; color: #666;">A: Please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+
+        </div>
       `;
       showModal('Help Center', content);
     }
