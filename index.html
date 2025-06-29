@@ -735,150 +735,95 @@
       displayResult(word);
     }
 
-    // 增强的在线翻译函数
+    // 将这个函数替换现有的translateOnline函数
     async function translateOnline(word) {
       const result = document.getElementById("result");
       
       // 显示加载状态
       result.innerHTML = `
         <div style="text-align: center; padding: 20px;">
-          <div class="loading-spinner"></div>
-          <p>正在使用在线服务翻译 "${word}"...</p>
-          <small style="color: #666;">正在尝试多个翻译源...</small>
+          <div style="border: 3px solid #f3f3f3; border-top: 3px solid #007aff; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+          <p>Translating "${word}" online...</p>
+          <small style="color: #666;">Trying translation service...</small>
         </div>
       `;
 
-      // 检查缓存
-      const cacheKey = `translation_${word.toLowerCase()}`;
-      const cached = localStorage.getItem(cacheKey);
-      if (cached) {
-        const cachedData = JSON.parse(cached);
-        if (Date.now() - cachedData.timestamp < 24 * 60 * 60 * 1000) { // 24小时缓存
-          displayTranslationResult(word, cachedData.data);
-          return;
+      try {
+        // 检查缓存
+        const cacheKey = `translation_${word.toLowerCase()}`;
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) {
+          const cachedData = JSON.parse(cached);
+          if (Date.now() - cachedData.timestamp < 24 * 60 * 60 * 1000) {
+            const entry = cachedData.data;
+            displayOnlineResult(word, entry);
+            return;
+          }
         }
-      }
 
-      // 尝试多个API
-      const translationResult = await tryMultipleAPIs(word);
-      
-      if (translationResult) {
-        // 缓存结果
-        localStorage.setItem(cacheKey, JSON.stringify({
-          data: translationResult,
-          timestamp: Date.now()
-        }));
+        // 使用MyMemory免费API
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=en|zh`;
+        const response = await fetch(url);
         
-        // 添加到本地词典
-        dict[word] = translationResult;
-        
-        // 保存到自定义词典
-        try {
-          const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
-          customDict[word] = translationResult;
-          localStorage.setItem('customDict', JSON.stringify(customDict));
-        } catch (e) {
-          console.error('保存自定义词典失败:', e);
+        if (!response.ok) {
+          throw new Error('Translation service unavailable');
         }
         
-        displayTranslationResult(word, translationResult);
-      } else {
+        const data = await response.json();
+        const translation = data.responseData.translatedText;
+        
+        if (translation && translation !== word && !translation.includes('MYMEMORY WARNING')) {
+          // 简单的拼音生成
+          const pinyin = generateSimplePinyin(translation);
+          
+          const entry = {
+            hanzi: translation,
+            pinyin: pinyin,
+            defs: [`Online translation of "${word}"`],
+            source: 'MyMemory API'
+          };
+          
+          // 缓存结果
+          localStorage.setItem(cacheKey, JSON.stringify({
+            data: entry,
+            timestamp: Date.now()
+          }));
+          
+          // 添加到本地词典
+          dict[word] = entry;
+          
+          // 保存到自定义词典
+          try {
+            const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+            customDict[word] = entry;
+            localStorage.setItem('customDict', JSON.stringify(customDict));
+          } catch (e) {
+            console.error('Failed to save custom dictionary:', e);
+          }
+          
+          displayOnlineResult(word, entry);
+        } else {
+          throw new Error('No valid translation found');
+        }
+        
+      } catch (error) {
+        console.error('Translation error:', error);
         result.innerHTML = `
           <div style="text-align: center; padding: 20px;">
-            <p class="error">❌ 在线翻译暂时不可用</p>
-            <p style="color: #666; margin-top: 8px;">请检查网络连接或稍后重试</p>
-            <button onclick="search()" style="margin-top: 12px;">重新搜索本地词典</button>
+            <p style="color: #ff3b30; font-weight: 600;">❌ Online translation failed</p>
+            <p style="color: #666; margin: 8px 0;">Error: ${error.message}</p>
+            <p style="color: #666; font-size: 0.9rem;">Please check your internet connection or try again later.</p>
+            <button onclick="displayResult('${word}')" style="margin-top: 12px; padding: 8px 16px; background: #007aff; color: white; border: none; border-radius: 6px; cursor: pointer;">
+              Search Local Dictionary
+            </button>
           </div>
         `;
       }
     }
 
-    // 尝试多个API的函数
-    async function tryMultipleAPIs(word) {
-      const apis = [
-        () => tryLibreTranslate(word),
-        () => tryMyMemory(word),
-        () => tryGoogleTranslate(word) // 如果可用
-      ];
-
-      for (const apiCall of apis) {
-        try {
-          const result = await apiCall();
-          if (result) {
-            console.log('翻译成功，使用API:', apiCall.name);
-            return result;
-          }
-        } catch (error) {
-          console.log('API调用失败:', error);
-          continue;
-        }
-      }
-      
-      return null;
-    }
-
-    // LibreTranslate API
-    async function tryLibreTranslate(word) {
-      try {
-        const response = await fetch(APIs.libreTranslate, {
-          method: 'POST',
-          body: JSON.stringify({
-            q: word,
-            source: 'en',
-            target: 'zh',
-            format: 'text'
-          }),
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          const translation = data.translatedText;
-          
-          if (translation && translation !== word) {
-            return {
-              hanzi: translation,
-              pinyin: await generatePinyin(translation),
-              defs: [`Online: ${word}`],
-              source: 'LibreTranslate'
-            };
-          }
-        }
-      } catch (error) {
-        console.error('LibreTranslate error:', error);
-      }
-      return null;
-    }
-
-    // MyMemory API
-    async function tryMyMemory(word) {
-      try {
-        const url = `${APIs.myMemory}?q=${encodeURIComponent(word)}&langpair=en|zh`;
-        const response = await fetch(url);
-        
-        if (response.ok) {
-          const data = await response.json();
-          const translation = data.responseData.translatedText;
-          
-          if (translation && translation !== word && !translation.includes('MYMEMORY WARNING')) {
-            return {
-              hanzi: translation,
-              pinyin: await generatePinyin(translation),
-              defs: [`Online: ${word}`],
-              source: 'MyMemory'
-            };
-          }
-        }
-      } catch (error) {
-        console.error('MyMemory error:', error);
-      }
-      return null;
-    }
-
-    // 简单的拼音生成（基于常见字符映射）
-    async function generatePinyin(chinese) {
+    // 简单的拼音生成函数
+    function generateSimplePinyin(chinese) {
       const pinyinMap = {
-        // 常见汉字拼音映射
         '你': 'nǐ', '好': 'hǎo', '是': 'shì', '的': 'de', '我': 'wǒ',
         '在': 'zài', '有': 'yǒu', '他': 'tā', '她': 'tā', '它': 'tā',
         '们': 'men', '这': 'zhè', '那': 'nà', '里': 'lǐ', '个': 'gè',
@@ -891,9 +836,8 @@
         '工': 'gōng', '作': 'zuò', '学': 'xué', '习': 'xí', '生': 'shēng',
         '活': 'huó', '家': 'jiā', '庭': 'tíng', '朋': 'péng', '友': 'yǒu',
         '水': 'shuǐ', '火': 'huǒ', '山': 'shān', '树': 'shù', '花': 'huā',
-        '鸟': 'niǎo', '鱼': 'yú', '猫': 'māo', '狗': 'gǒu', '马': 'mǎ',
-        '车': 'chē', '房': 'fáng', '门': 'mén', '窗': 'chuāng', '桌': 'zhuō',
-        '椅': 'yǐ', '床': 'chuáng', '书': 'shū', '笔': 'bǐ', '纸': 'zhǐ'
+        '世': 'shì', '界': 'jiè', '国': 'guó', '中': 'zhōng', '文': 'wén',
+        '学': 'xué', '校': 'xiào', '老': 'lǎo', '师': 'shī', '同': 'tóng'
       };
 
       let result = '';
@@ -901,19 +845,20 @@
         if (pinyinMap[char]) {
           result += pinyinMap[char] + ' ';
         } else if (/[\u4e00-\u9fff]/.test(char)) {
-          result += '[?] '; // 未知汉字
+          result += '[?] ';
         } else {
-          result += char + ' '; // 非汉字字符
+          result += char + ' ';
         }
       }
       
       return result.trim() || 'Unknown';
     }
 
-    // 显示翻译结果
-    function displayTranslationResult(word, entry) {
+    // 显示在线翻译结果
+    function displayOnlineResult(word, entry) {
       const result = document.getElementById("result");
       const isFavorited = favorites.includes(word);
+      currentWord = word;
       
       result.innerHTML = `
         <div class="result-header">
@@ -939,13 +884,12 @@
           <span class="label">释义:</span>
           <span class="defs">${entry.defs.join(", ")}</span>
         </div>
-        ${entry.source ? `<div class="source-info" style="margin-top: 12px; padding: 8px; background: #f0f9ff; border-radius: 8px; font-size: 0.9rem; color: #0066cc;">
-          <span>📡 来源: ${entry.source}</span>
-        </div>` : ''}
+        <div style="margin-top: 12px; padding: 8px; background: #e8f4fd; border-radius: 8px; font-size: 0.9rem; color: #0066cc; border-left: 3px solid #007aff;">
+          <span>🌐 Source: ${entry.source || 'Online Translation'}</span>
+        </div>
       `;
       
       result.classList.add('show');
-      currentWord = word;
     }
 
     function displayResult(word) {
