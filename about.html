@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>About Us - GetPinyin.Online English to Chinese Translator</title>
+  <meta name="description" content="Learn about GetPinyin.Online - Professional English to Chinese translation tool helping language learners master Chinese pinyin and character pronunciation." />
+  <meta name="keywords" content="about us, English Chinese translation, pinyin learning, Chinese learning tools" />
+  <meta name="author" content="GetPinyin.Online" />
+  <meta name="robots" content="index, follow" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    /* Header Navigation */
+    .header {
+      background: white;
+      padding: 16px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-item {
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item:hover {
+      color: #007aff;
+    }
+
+    .nav-item.active {
+      color: #007aff;
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 20px 40px;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 1.2rem;
+      margin-bottom: 48px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #007aff;
+      padding-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin: 24px 0 12px 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    .feature-item {
+      background: linear-gradient(135deg, #007aff, #0056cc);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+    }
+
+    .feature-item h4 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-item p {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tips-list li {
+      background: #f8f9fa;
+      margin: 12px 0;
+      padding: 16px;
+      border-radius: 12px;
+      border-left: 4px solid #007aff;
+    }
+
+    .tips-list li strong {
+      color: #007aff;
+    }
+
+    .faq-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-left: 4px solid #007aff;
+    }
+
+    .faq-item h4 {
+      color: #007aff;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      background: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer p {
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #007aff;
+      text-decoration: none;
+      margin: 0 16px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #0056cc;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 80px 16px 20px;
+      }
+
+      .content-card {
+        padding: 24px;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .nav-menu {
+        gap: 16px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">GetPinyin</a>
+      <nav class="nav-menu">
+        <a href="about.html" class="nav-item active">About</a>
+        <a href="index.html#help" class="nav-item">Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1 class="page-title">About GetPinyin.Online</h1>
+    <p class="page-subtitle">Professional English to Chinese translation tool for your Chinese learning journey</p>
+
+    <!-- About Section -->
+    <div class="content-card">
+      <h2 class="section-title">About Our Translation Tool</h2>
+      <p>GetPinyin.Online is a free English to Chinese translation tool specifically designed for language learners. We are committed to helping users master Chinese pronunciation and characters through accurate pinyin notation and voice playback features, providing a perfect learning experience for beginners and intermediate learners.</p>
+      
+      <h3 class="section-subtitle">Core Features</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>🎯 Accurate Pinyin</h4>
+          <p>Every Chinese character includes correct pinyin notation and tone marks to ensure accurate pronunciation</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>🔊 Audio Playback</h4>
+          <p>Click the speaker button to hear standard Chinese pronunciation and master correct tones</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>🔍 Fuzzy Search</h4>
+          <p>Find relevant vocabulary even with incomplete spelling through intelligent matching</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>❤️ Favorites System</h4>
+          <p>Save important vocabulary to your favorites for easy review and memory reinforcement</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>⚡ Instant Results</h4>
+          <p>Real-time translation suggestions as you type, dramatically improving learning efficiency</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>📱 Offline Usage</h4>
+          <p>Use offline after loading, enabling Chinese learning anytime, anywhere</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Guide -->
+    <div class="content-card">
+      <h2 class="section-title">How to Learn Chinese Effectively</h2>
+      <p>Learning Chinese can be challenging, but with the right methods and tools, you can make steady progress. Here are the best practices for using our translation tool:</p>
+      
+      <h3 class="section-subtitle">Chinese Learning Best Practices</h3>
+      <ul class="tips-list">
+        <li><strong>Start with common vocabulary:</strong> Prioritize learning everyday words like greetings, numbers, and family member titles</li>
+        <li><strong>Practice pronunciation:</strong> Use our audio features to perfect tones - this is crucial in Chinese</li>
+        <li><strong>Master the pinyin system:</strong> Understanding pinyin will help you read and pronounce any Chinese character</li>
+        <li><strong>Use the favorites feature:</strong> Save vocabulary you're learning and review regularly</li>
+        <li><strong>Focus on context:</strong> Try to learn words in sentences rather than in isolation</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-card">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <h4>What is Pinyin?</h4>
+        <p>Pinyin is the official romanization system for Standard Chinese. It uses the Latin alphabet to represent Chinese sounds, making it easier for beginners to learn pronunciation. Each syllable in pinyin includes tone marks that indicate how the sound should be pronounced.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How accurate are the translations?</h4>
+        <p>Our dictionary contains over 100 carefully curated English-Chinese word pairs with accurate translations and pinyin. All entries are verified for accuracy and include the most common meanings and usage.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can I use it offline?</h4>
+        <p>Yes! Once you load the page, all dictionary data is stored locally in your browser. You can use the translator without an internet connection.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is it suitable for beginners?</h4>
+        <p>Absolutely! This tool is designed specifically for beginners. The simple interface, audio pronunciation, and clear pinyin make it perfect for those just starting their Chinese learning journey.</p>
+      </div>
+    </div>
+
+    <!-- Learning Tips -->
+    <div class="content-card">
+      <h2 class="section-title">Chinese Learning Tips</h2>
+      <p>Mastering Chinese requires consistent practice and the right approach. Here are expert tips to accelerate your learning:</p>
+      
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4>Master the Four Tones</h4>
+          <p>Chinese has four main tones that completely change word meanings. Use our audio features to practice correct pronunciation.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>Learn Stroke Order</h4>
+          <p>Proper stroke order helps with character recognition and writing. Start with simple characters and gradually increase complexity.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>Use Spaced Repetition</h4>
+          <p>Review vocabulary at increasing intervals. Our favorites feature helps you track words that need more practice.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h4>Daily Practice</h4>
+          <p>Even 10-15 minutes of daily practice is more effective than longer but infrequent study sessions.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 GetPinyin.Online. All rights reserved.</p>
+    <p style="color: #888; font-size: 0.9rem; margin-bottom: 16px;">Free English to Chinese translator for language learners worldwide.</p>
+    <div class="footer-links">
+      <a href="index.html">Back to Home</a>
+      <a href="#" onclick="alert('Please check Terms of Service via homepage footer links')">Terms of Service</a>
+      <a href="#" onclick="alert('Please check Privacy Policy via homepage footer links')">Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html> 
