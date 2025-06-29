@@ -558,6 +558,7 @@
   </div>
 
   <script>
+    // Global variables
     let dict = {};
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let currentWord = '';
@@ -636,8 +637,8 @@
         else if (word.includes(query)) {
           score = 60;
         }
-        // Check if any definition contains the query
-        else if (data.defs.some(def => def.toLowerCase().includes(query))) {
+        // Check if any definition contains the query (safely check if defs exists)
+        else if (data.defs && Array.isArray(data.defs) && data.defs.some(def => def.toLowerCase().includes(query))) {
           score = 40;
         }
         // Fuzzy match (character by character)
@@ -1142,3 +1143,4 @@
   </script>
 </body>
 </html>
+
