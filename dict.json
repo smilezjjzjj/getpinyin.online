@@ -1470,5 +1470,381 @@
     ]
   },
   "cool": {
+    "hanzi": "凉爽",
+    "pinyin": "liáng shuǎng",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "world": {
+    "hanzi": "世界",
+    "pinyin": "shì jiè",
+    "defs": [
+      "world"
+    ]
+  },
+  "computer": {
+    "hanzi": "电脑",
+    "pinyin": "diàn nǎo",
+    "defs": [
+      "computer"
+    ]
+  },
+  "internet": {
+    "hanzi": "互联网",
+    "pinyin": "hù lián wǎng",
+    "defs": [
+      "internet"
+    ]
+  },
+  "phone": {
+    "hanzi": "电话",
+    "pinyin": "diàn huà",
+    "defs": [
+      "phone"
+    ]
+  },
+  "mobile": {
+    "hanzi": "手机",
+    "pinyin": "shǒu jī",
+    "defs": [
+      "mobile phone"
+    ]
+  },
+  "email": {
+    "hanzi": "邮件",
+    "pinyin": "yóu jiàn",
+    "defs": [
+      "email"
+    ]
+  },
+  "website": {
+    "hanzi": "网站",
+    "pinyin": "wǎng zhàn",
+    "defs": [
+      "website"
+    ]
+  },
+  "game": {
+    "hanzi": "游戏",
+    "pinyin": "yóu xì",
+    "defs": [
+      "game"
+    ]
+  },
+  "music": {
+    "hanzi": "音乐",
+    "pinyin": "yīn yuè",
+    "defs": [
+      "music"
+    ]
+  },
+  "movie": {
+    "hanzi": "电影",
+    "pinyin": "diàn yǐng",
+    "defs": [
+      "movie"
+    ]
+  },
+  "book": {
+    "hanzi": "书",
+    "pinyin": "shū",
+    "defs": [
+      "book"
+    ]
+  },
+  "study": {
+    "hanzi": "学习",
+    "pinyin": "xué xí",
+    "defs": [
+      "study"
+    ]
+  },
+  "work": {
+    "hanzi": "工作",
+    "pinyin": "gōng zuò",
+    "defs": [
+      "work"
+    ]
+  },
+  "job": {
+    "hanzi": "工作",
+    "pinyin": "gōng zuò",
+    "defs": [
+      "job"
+    ]
+  },
+  "money": {
+    "hanzi": "钱",
+    "pinyin": "qián",
+    "defs": [
+      "money"
+    ]
+  },
+  "buy": {
+    "hanzi": "买",
+    "pinyin": "mǎi",
+    "defs": [
+      "buy"
+    ]
+  },
+  "sell": {
+    "hanzi": "卖",
+    "pinyin": "mài",
+    "defs": [
+      "sell"
+    ]
+  },
+  "price": {
+    "hanzi": "价格",
+    "pinyin": "jià gé",
+    "defs": [
+      "price"
+    ]
+  },
+  "cheap": {
+    "hanzi": "便宜",
+    "pinyin": "pián yi",
+    "defs": [
+      "cheap"
+    ]
+  },
+  "expensive": {
+    "hanzi": "贵",
+    "pinyin": "guì",
+    "defs": [
+      "expensive"
+    ]
+  },
+  "free": {
+    "hanzi": "免费",
+    "pinyin": "miǎn fèi",
+    "defs": [
+      "free"
+    ]
+  },
+  "help": {
+    "hanzi": "帮助",
+    "pinyin": "bāng zhù",
+    "defs": [
+      "help"
+    ]
+  },
+  "question": {
+    "hanzi": "问题",
+    "pinyin": "wèn tí",
+    "defs": [
+      "question"
+    ]
+  },
+  "answer": {
+    "hanzi": "答案",
+    "pinyin": "dá àn",
+    "defs": [
+      "answer"
+    ]
+  },
+  "understand": {
+    "hanzi": "理解",
+    "pinyin": "lǐ jiě",
+    "defs": [
+      "understand"
+    ]
+  },
+  "know": {
+    "hanzi": "知道",
+    "pinyin": "zhī dào",
+    "defs": [
+      "know"
+    ]
+  },
+  "learn": {
+    "hanzi": "学",
+    "pinyin": "xué",
+    "defs": [
+      "learn"
+    ]
+  },
+  "teach": {
+    "hanzi": "教",
+    "pinyin": "jiāo",
+    "defs": [
+      "teach"
+    ]
+  },
+  "language": {
+    "hanzi": "语言",
+    "pinyin": "yǔ yán",
+    "defs": [
+      "language"
+    ]
+  },
+  "english": {
+    "hanzi": "英语",
+    "pinyin": "yīng yǔ",
+    "defs": [
+      "English"
+    ]
+  },
+  "chinese": {
+    "hanzi": "中文",
+    "pinyin": "zhōng wén",
+    "defs": [
+      "Chinese"
+    ]
+  },
+  "speak": {
+    "hanzi": "说话",
+    "pinyin": "shuō huà",
+    "defs": [
+      "speak"
+    ]
+  },
+  "talk": {
+    "hanzi": "谈话",
+    "pinyin": "tán huà",
+    "defs": [
+      "talk"
+    ]
+  },
+  "read": {
+    "hanzi": "读",
+    "pinyin": "dú",
+    "defs": [
+      "read"
+    ]
+  },
+  "write": {
+    "hanzi": "写",
+    "pinyin": "xiě",
+    "defs": [
+      "write"
+    ]
+  },
+  "important": {
+    "hanzi": "重要",
+    "pinyin": "zhòng yào",
+    "defs": [
+      "important"
+    ]
+  },
+  "easy": {
+    "hanzi": "容易",
+    "pinyin": "róng yì",
+    "defs": [
+      "easy"
+    ]
+  },
+  "difficult": {
+    "hanzi": "困难",
+    "pinyin": "kùn nán",
+    "defs": [
+      "difficult"
+    ]
+  },
+  "hard": {
+    "hanzi": "困难",
+    "pinyin": "kùn nán",
+    "defs": [
+      "hard"
+    ]
+  },
+  "simple": {
+    "hanzi": "简单",
+    "pinyin": "jiǎn dān",
+    "defs": [
+      "simple"
+    ]
+  },
+  "new": {
+    "hanzi": "新",
+    "pinyin": "xīn",
+    "defs": [
+      "new"
+    ]
+  },
+  "old": {
+    "hanzi": "老",
+    "pinyin": "lǎo",
+    "defs": [
+      "old"
+    ]
+  },
+  "young": {
+    "hanzi": "年轻",
+    "pinyin": "nián qīng",
+    "defs": [
+      "young"
+    ]
+  },
+  "beautiful": {
+    "hanzi": "美丽",
+    "pinyin": "měi lì",
+    "defs": [
+      "beautiful"
+    ]
+  },
+  "nice": {
+    "hanzi": "好",
+    "pinyin": "hǎo",
+    "defs": [
+      "nice"
+    ]
+  },
+  "happy": {
+    "hanzi": "快乐",
+    "pinyin": "kuài lè",
+    "defs": [
+      "happy"
+    ]
+  },
+  "sad": {
+    "hanzi": "悲伤",
+    "pinyin": "bēi shāng",
+    "defs": [
+      "sad"
+    ]
+  },
+  "angry": {
+    "hanzi": "生气",
+    "pinyin": "shēng qì",
+    "defs": [
+      "angry"
+    ]
+  },
+  "tired": {
+    "hanzi": "累",
+    "pinyin": "lèi",
+    "defs": [
+      "tired"
+    ]
+  },
+  "hungry": {
+    "hanzi": "饿",
+    "pinyin": "è",
+    "defs": [
+      "hungry"
+    ]
+  },
+  "thirsty": {
+    "hanzi": "渴",
+    "pinyin": "kě",
+    "defs": [
+      "thirsty"
+    ]
+  },
+  "busy": {
+    "hanzi": "忙",
+    "pinyin": "máng",
+    "defs": [
+      "busy"
+    ]
+  },
+  "free": {
+    "hanzi": "有空",
+    "pinyin": "yǒu kòng",
+    "defs": [
+      "free time"
+    ]
   }
 }
