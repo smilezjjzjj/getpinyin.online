@@ -376,8 +376,8 @@
     <p style="color: #888; font-size: 0.9rem; margin-bottom: 16px;">Free English to Chinese translator for language learners worldwide.</p>
     <div class="footer-links">
       <a href="index.html">Back to Home</a>
-      <a href="#" onclick="alert('Please visit the homepage to view Terms of Service')">Terms of Service</a>
-      <a href="#" onclick="alert('Please visit the homepage to view Privacy Policy')">Privacy Policy</a>
+      <a href="#" onclick="showTerms()">Terms of Service</a>
+      <a href="#" onclick="showPrivacy()">Privacy Policy</a>
     </div>
   </footer>
 
@@ -391,6 +391,145 @@
 
     function closeModal() {
       document.getElementById('modal').style.display = 'none';
+    }
+
+    function showTerms() {
+      const content = `
+        <div style="max-width: 100%; overflow-x: hidden;">
+          <div style="background: linear-gradient(135deg, #f0f8ff, #e6f3ff); padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: center; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 8px 0; font-size: 1.2rem;">📋 Terms of Service</h4>
+            <p style="margin: 0; color: #666; font-size: 0.9rem;"><strong>Last Updated: January 2025</strong></p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">🎯 1. Service Description</h4>
+            <p style="margin: 0; color: #333; line-height: 1.6;">GetPinyin.Online is a free English-Chinese translation tool designed to help users learn Chinese pinyin and characters. We provide accurate translations, pinyin notation, and audio playback features.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 16px 0; font-size: 1.1rem;">⚖️ 2. Terms of Use</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">By using this website, you agree to comply with the following terms:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Use this service only for legal learning and translation purposes</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Do not abuse or interfere with the normal operation of the website</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Respect intellectual property and the rights of others</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 12px 0; font-size: 1.1rem;">⚠️ 3. Disclaimer</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">This service is provided "as is" and we do not guarantee complete accuracy of translations. Users should verify the accuracy of important translation content themselves.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 12px 0; font-size: 1.1rem;">🔄 4. Service Changes</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We reserve the right to modify or terminate the service at any time without notice.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f5f0ff, #ede0ff); padding: 20px; border-radius: 12px; border-left: 4px solid #8e44ad;">
+            <h4 style="color: #8e44ad; margin: 0 0 12px 0; font-size: 1.1rem;">📧 5. Contact Us</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">If you have any questions, please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+      showModal('Terms of Service', content);
+    }
+
+    function showPrivacy() {
+      const content = `
+        <div style="max-width: 100%; overflow-x: hidden;">
+          <div style="background: linear-gradient(135deg, #f0f8ff, #e6f3ff); padding: 20px; border-radius: 12px; margin-bottom: 24px; text-align: center; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 8px 0; font-size: 1.2rem;">🔒 Privacy Policy</h4>
+            <p style="margin: 0; color: #666; font-size: 0.9rem;"><strong>Last Updated: January 2025</strong></p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 16px 0; font-size: 1.1rem;">📊 1. Information Collection</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We collect the following types of information:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #007aff;">💾 Usage Data:</strong> Your search queries and preferences are stored locally in your browser</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #007aff;">🔧 Technical Data:</strong> Basic technical information such as IP address, browser type, and access time</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 16px 0; font-size: 1.1rem;">🎯 2. Information Usage</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We use the collected information to:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Provide and improve translation services</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Save your favorites and preference settings</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Analyze website usage to optimize user experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 16px 0; font-size: 1.1rem;">🛡️ 3. Information Protection</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We take reasonable security measures to protect your information:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">💾 Local Storage:</strong> Your favorites and preferences are stored only in your browser</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">🔐 Data Encryption:</strong> All data transmission uses HTTPS encryption</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">🚫 Access Restrictions:</strong> We do not actively collect or store your personal sensitive information</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 12px 0; font-size: 1.1rem;">🍪 4. Cookie Usage</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We use cookies and local storage to save your usage preferences and favorites. You can manage this data through your browser settings.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f5f0ff, #ede0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #8e44ad;">
+            <h4 style="color: #8e44ad; margin: 0 0 12px 0; font-size: 1.1rem;">🔗 5. Third-Party Services</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">This website may contain third-party advertising or analytics services, which have their own privacy policies.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff5f0, #ffe6cc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #e67e22;">
+            <h4 style="color: #e67e22; margin: 0 0 12px 0; font-size: 1.1rem;">🔄 6. Policy Updates</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We may update this privacy policy from time to time. Major changes will be announced on the website.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0f8ff, #e6f3ff); padding: 20px; border-radius: 12px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">📧 7. Contact Us</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">If you have questions about the privacy policy, please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+      showModal('Privacy Policy', content);
     }
 
     function showHelp() {
