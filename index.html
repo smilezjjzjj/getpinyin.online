@@ -4,84 +4,362 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>English to Pinyin Dictionary</title>
-  <!-- TinyPinyin CDN: converts Chinese characters to pinyin in the browser -->
-  <script src="https://unpkg.com/tiny-pinyin/dist/tiny-pinyin.min.js"></script>
   <style>
-    /* ----------  Global & Layout  ---------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
-      background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      min-height: 100vh;
-      display: flex; justify-content: center; align-items: flex-start;
-      padding: 40px 20px 20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      padding-top: 40px;
+    }
+
     .container {
-      background: rgba(255,255,255,.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       border-radius: 24px;
       padding: 40px;
-      width: 100%; max-width: 520px;
-      box-shadow: 0 8px 32px rgba(0,0,0,.1),0 20px 60px rgba(0,0,0,.05);
-      border: 1px solid rgba(255,255,255,.2);
+      width: 100%;
+      max-width: 520px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    h1 { font-size: 2rem; font-weight: 700; color: #1d1d1f; text-align: center; margin-bottom: 8px; }
-    .subtitle { text-align: center; color:#6e6e73; font-size:1rem; margin-bottom:32px; }
 
-    /* ----------  Search  ---------- */
-    .search-container{position:relative;margin-bottom:24px}
-    input{width:100%;padding:16px 20px;font-size:1.1rem;border:2px solid #f0f0f0;border-radius:16px;background:#f9f9f9;transition:.3s;outline:none}
-    input:focus{border-color:#007aff;background:#fff;box-shadow:0 0 0 4px rgba(0,122,255,.1)}
-    input:disabled{background:#f0f0f0;color:#999;cursor:not-allowed}
-    .search-suggestions{position:absolute;top:100%;left:0;right:0;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-top:4px;max-height:200px;overflow-y:auto;z-index:1000;display:none}
-    .suggestion-item{padding:12px 16px;cursor:pointer;border-bottom:1px solid #f0f0f0;transition:.2s}
-    .suggestion-item:hover{background:#f8f8f8}
-    .suggestion-item:last-child{border-bottom:none}
-    .suggestion-word{font-weight:600;color:#007aff}
-    .suggestion-translation{font-size:.9rem;color:#666;margin-top:2px}
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      text-align: center;
+      margin-bottom: 8px;
+    }
 
-    /* ----------  Tabs  ---------- */
-    .tabs{display:flex;background:#f0f0f0;border-radius:12px;margin-bottom:24px;padding:4px}
-    .tab{flex:1;padding:12px;text-align:center;border-radius:8px;cursor:pointer;transition:.3s;font-weight:500}
-    .tab.active{background:#fff;color:#007aff;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+    .subtitle {
+      text-align: center;
+      color: #6e6e73;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
 
-    /* ----------  Buttons  ---------- */
-    button{width:100%;padding:16px;background:#007aff;color:#fff;border:none;border-radius:16px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:.3s;margin-top:12px}
-    button:hover{background:#0056cc;transform:translateY(-1px)}
-    button:active{transform:translateY(0)}
+    .search-container {
+      position: relative;
+      margin-bottom: 24px;
+    }
 
-    /* ----------  Result Card  ---------- */
-    .result{background:#fff;border-radius:20px;padding:24px;margin-top:24px;border:1px solid #f0f0f0;opacity:0;transform:translateY(20px);transition:.5s}
-    .result.show{opacity:1;transform:translateY(0)}
-    .result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-    .favorite-btn{background:none;border:none;font-size:1.5rem;cursor:pointer;padding:8px;border-radius:50%;transition:.3s;width:auto;margin:0}
-    .favorite-btn:hover{background:#f0f0f0;transform:scale(1.1)}
-    .label{font-weight:600;color:#666;min-width:60px;font-size:.9rem}
-    .hanzi{font-size:1.8rem;color:#1d1d1f;font-weight:500}
-    .pinyin{font-size:1.3rem;color:#007aff;font-weight:500}
-    .defs{font-size:1.1rem;color:#333}
-    .error{text-align:center;color:#ff3b30;font-size:1.1rem}
-    .speaker-btn{background:#f0f0f0;border:none;border-radius:12px;width:40px;height:40px;margin-left:12px;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center}
-    .speaker-btn:hover{background:#e0e0e0}
+    input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border: 2px solid #f0f0f0;
+      border-radius: 16px;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+      outline: none;
+    }
 
-    /* ----------  Tags & Lists  ---------- */
-    .word-list{margin-top:32px;padding-top:24px;border-top:1px solid #f0f0f0}
-    .word-list h3{text-align:center;font-size:1.1rem;color:#666;margin-bottom:12px}
-    .word-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-    .word-tag{background:#f0f8ff;color:#007aff;padding:6px 12px;border-radius:20px;font-size:.9rem;cursor:pointer;transition:.3s;border:1px solid rgba(0,122,255,.2);position:relative}
-    .word-tag:hover{background:#007aff;color:#fff}
-    .word-tag.favorited::after{content:'❤️';position:absolute;top:-8px;right:-8px;font-size:.7rem}
-    .favorites-list{margin-top:20px}
-    .no-favorites{text-align:center;color:#999;font-style:italic}
+    input:focus {
+      border-color: #007aff;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+    }
 
-    /* ----------  Online Search  ---------- */
-    .online-search{margin-top:16px;padding:12px;background:#f8f8ff;border:1px dashed #007aff;border-radius:12px;text-align:center}
-    .online-search button{margin-top:8px;padding:10px;font-size:.9rem}
-    .loading{display:inline-block;width:20px;height:20px;border:3px solid rgba(0,122,255,.3);border-radius:50%;border-top-color:#007aff;animation:spin 1s ease-in-out infinite;margin-right:8px;vertical-align:middle}
-    @keyframes spin{to{transform:rotate(360deg)}}
+    input:disabled {
+      background: #f0f0f0;
+      color: #999;
+      cursor: not-allowed;
+    }
 
-    /* ----------  Responsive  ---------- */
-    @media(max-width:480px){.container{margin:20px;padding:24px}h1{font-size:1.5rem}}
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+
+    .suggestion-item {
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.2s ease;
+    }
+
+    .suggestion-item:hover {
+      background: #f8f8f8;
+    }
+
+    .suggestion-item:last-child {
+      border-bottom: none;
+    }
+
+    .suggestion-word {
+      font-weight: 600;
+      color: #007aff;
+    }
+
+    .suggestion-translation {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .tabs {
+      display: flex;
+      background: #f0f0f0;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      padding: 4px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      background: white;
+      color: #007aff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 12px;
+    }
+
+    button:hover {
+      background: #0056cc;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .result {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      margin-top: 24px;
+      border: 1px solid #f0f0f0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .result.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .favorite-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      width: auto;
+      margin: 0;
+    }
+
+    .favorite-btn:hover {
+      background: #f0f0f0;
+      transform: scale(1.1);
+    }
+
+    .result-item {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .result-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #666;
+      min-width: 60px;
+      font-size: 0.9rem;
+    }
+
+    .hanzi {
+      font-size: 1.8rem;
+      color: #1d1d1f;
+      font-weight: 500;
+    }
+
+    .pinyin {
+      font-size: 1.3rem;
+      color: #007aff;
+      font-weight: 500;
+    }
+
+    .defs {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .error {
+      text-align: center;
+      color: #ff3b30;
+      font-size: 1.1rem;
+    }
+
+    .speaker-btn {
+      background: #f0f0f0;
+      border: none;
+      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      margin-left: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .speaker-btn:hover {
+      background: #e0e0e0;
+    }
+
+    .word-list {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .word-list h3 {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .word-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .word-tag {
+      background: #f0f8ff;
+      color: #007aff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 122, 255, 0.2);
+      position: relative;
+    }
+
+    .word-tag:hover {
+      background: #007aff;
+      color: white;
+    }
+
+    .word-tag.favorited::after {
+      content: '❤️';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      font-size: 0.7rem;
+    }
+
+    .favorites-list {
+      margin-top: 20px;
+    }
+
+    .no-favorites {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    .online-search {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f8f8ff;
+      border: 1px dashed #007aff;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .online-search button {
+      margin-top: 8px;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(0, 122, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #007aff;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -109,7 +387,7 @@
       </div>
     </div>
 
-    <div id="favoritesTab" style="display:none;">
+    <div id="favoritesTab" style="display: none;">
       <div class="favorites-list">
         <h3>Your Favorite Words</h3>
         <div id="favoritesList"></div>
@@ -118,38 +396,63 @@
   </div>
 
   <script>
-    /* ------------------------------  Variables  ----------------------------- */
     let dict = {};
     let currentWord = '';
     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 
-    /* -------------------------  Dictionary Loading  ------------------------- */
+    // Load dictionary from JSON file
     async function loadDictionary() {
       try {
         const response = await fetch('dict.json');
-        if (!response.ok) throw new Error('Failed to load dictionary');
+        if (!response.ok) {
+          throw new Error('Failed to load dictionary');
+        }
         dict = await response.json();
-      } catch (err) {
-        console.error('Error loading dictionary:', err);
-        // fallback minimal dictionary
-        dict = {
-          "hello": { hanzi: "你好", pinyin: "nǐ hǎo", defs: ["hello","hi"] },
-          "thank": { hanzi: "谢谢", pinyin: "xiè xie", defs: ["thank you","thanks"] },
-          "love": { hanzi: "爱", pinyin: "ài", defs: ["love"] }
-        };
-      } finally {
         updateWordTags();
-        const q = document.getElementById('query');
-        q.disabled = false;
-        q.placeholder = 'Enter English word (fuzzy search supported)';
+        document.getElementById("query").disabled = false;
+        document.getElementById("query").placeholder = "Enter English word (fuzzy search supported)";
+      } catch (error) {
+        console.error('Error loading dictionary:', error);
+        // Fallback to basic dictionary if JSON loading fails
+        dict = {
+          "hello": {
+            hanzi: "你好",
+            pinyin: "nǐ hǎo",
+            defs: ["hello", "hi"]
+          },
+          "thank": {
+            hanzi: "谢谢",
+            pinyin: "xiè xie",
+            defs: ["thank you", "thanks"]
+          },
+          "goodbye": {
+            hanzi: "再见",
+            pinyin: "zài jiàn",
+            defs: ["goodbye", "see you"]
+          },
+          "love": {
+            hanzi: "爱",
+            pinyin: "ài",
+            defs: ["love"]
+          },
+          "peace": {
+            hanzi: "和平",
+            pinyin: "hé píng",
+            defs: ["peace", "harmony"]
+          }
+        };
+        updateWordTags();
+        document.getElementById("query").disabled = false;
+        document.getElementById("query").placeholder = "Enter English word (JSON load failed, using fallback)";
       }
     }
 
-    /* ------------------------------  UI Helpers ----------------------------- */
     function switchTab(tab) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(t => t.classList.remove('active'));
+
       if (tab === 'search') {
-        document.querySelectorAll('.tab')[0].classList.add('active');
+        document.querySelector('.tab').classList.add('active');
         document.getElementById('searchTab').style.display = 'block';
         document.getElementById('favoritesTab').style.display = 'none';
       } else {
@@ -160,77 +463,309 @@
       }
     }
 
-    /* ---------------------------  Fuzzy Search  ----------------------------- */
-    function fuzzySearch(q) {
-      if (!q) return [];
-      q = q.toLowerCase();
-      const out = [];
-      for (const [w,data] of Object.entries(dict)) {
-        let s = 0;
-        if (w===q) s=100; else if (w.startsWith(q)) s=80; else if (w.includes(q)) s=60; else if (data.defs.some(d=>d.toLowerCase().includes(q))) s=40; else {
-          let mc=0, last=-1; for (const c of q){const idx=w.indexOf(c,last+1); if(idx!=-1){mc++; last=idx;}} if(mc>0) s=(mc/q.length)*30;
+    function fuzzySearch(query) {
+      if (!query) return [];
+
+      query = query.toLowerCase();
+      const results = [];
+
+      for (const [word, data] of Object.entries(dict)) {
+        let score = 0;
+
+        // Exact match gets highest score
+        if (word === query) {
+          score = 100;
         }
-        if (s>0) out.push({word:w,data,score:s});
+        // Starts with query gets high score
+        else if (word.startsWith(query)) {
+          score = 80;
+        }
+        // Contains query gets medium score
+        else if (word.includes(query)) {
+          score = 60;
+        }
+        // Check if any definition contains the query
+        else if (data.defs.some(def => def.toLowerCase().includes(query))) {
+          score = 40;
+        }
+        // Fuzzy match (character by character)
+        else {
+          let matchCount = 0;
+          let lastIndex = -1;
+          for (const char of query) {
+            const index = word.indexOf(char, lastIndex + 1);
+            if (index !== -1) {
+              matchCount++;
+              lastIndex = index;
+            }
+          }
+          if (matchCount > 0) {
+            score = (matchCount / query.length) * 30;
+          }
+        }
+
+        if (score > 0) {
+          results.push({ word, data, score });
+        }
       }
-      return out.sort((a,b)=>b.score-a.score).slice(0,5);
+
+      return results.sort((a, b) => b.score - a.score).slice(0, 5);
     }
 
     function showSuggestions() {
-      const q=document.getElementById('query').value.trim();
-      const sBox=document.getElementById('suggestions');
-      if (q.length<1){sBox.style.display='none'; return;}
-      const res=fuzzySearch(q);
-      if(res.length>0){
-        sBox.innerHTML=res.map(r=>`<div class="suggestion-item" onclick="selectSuggestion('${r.word}')"><div class="suggestion-word">${r.word}</div><div class="suggestion-translation">${r.data.hanzi} (${r.data.pinyin})</div></div>`).join('');
-        sBox.style.display='block';
-      } else sBox.style.display='none';
-    }
+      const query = document.getElementById("query").value.trim();
+      const suggestions = document.getElementById("suggestions");
 
-    function selectSuggestion(word){document.getElementById('query').value=word; document.getElementById('suggestions').style.display='none'; displayResult(word);}    
-    function search(){const w=document.getElementById('query').value.trim().toLowerCase(); if(w){displayResult(w); document.getElementById('suggestions').style.display='none';}}
-    function searchWord(w){document.getElementById('query').value=w; displayResult(w);}
+      if (query.length < 1) {
+        suggestions.style.display = 'none';
+        return;
+      }
 
-    /* -------------------  Online Translation: LibreTranslate  ------------------ */
-    async function translateOnline(word){
-      const result=document.getElementById('result');
-      result.innerHTML=`<div style="text-align:center;padding:20px;"><div class="loading"></div><p>Translating "${word}" using LibreTranslate...</p></div>`;
-      try{
-        const res=await fetch('https://libretranslate.com/translate',{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({q:word, source:'en', target:'zh', format:'text'})
-        });
-        if(!res.ok) throw new Error('LibreTranslate unavailable');
-        const data=await res.json();
-        const translation=data.translatedText;
-        if(!translation) throw new Error('No translation returned');
+      const results = fuzzySearch(query);
 
-        // Convert to pinyin using TinyPinyin
-        let pinyinText='auto';
-        if (window.Pinyin && Pinyin.isSupported()) {
-          pinyinText=Pinyin.convertToPinyin(translation,' ',true);
-        }
-
-        const newEntry={hanzi:translation,pinyin:pinyinText,defs:[word]};
-        dict[word]=newEntry;
-        // persist custom dict
-        try{
-          const cDict=JSON.parse(localStorage.getItem('customDict')||'{}');
-          cDict[word]=newEntry; localStorage.setItem('customDict',JSON.stringify(cDict));
-        }catch(e){console.error('Save custom dict failed',e);}
-        updateWordTags();
-        displayResult(word);
-      }catch(err){
-        console.error('Translate error',err);
-        result.innerHTML=`<p class="error">Online translation failed: ${err.message}</p><p style="text-align:center;margin-top:12px;">Please try again later.</p>`;
+      if (results.length > 0) {
+        suggestions.innerHTML = results.map(result => `
+          <div class="suggestion-item" onclick="selectSuggestion('${result.word}')">
+            <div class="suggestion-word">${result.word}</div>
+            <div class="suggestion-translation">${result.data.hanzi} (${result.data.pinyin})</div>
+          </div>
+        `).join('');
+        suggestions.style.display = 'block';
+      } else {
+        suggestions.style.display = 'none';
       }
     }
 
-    /* ----------------------------  Display Logic ---------------------------- */
-    function displayResult(word){
-      const entry=dict[word];
-      const box=document.getElementById('result');
-      currentWord=word;
-      if(entry){
-        const fav=favorites.includes(word);
-        box.innerHTML=`<div class="result-header"><h2 style="margin:0;color:#1d1d1f;">${word}</h2><button class="favorite-btn" onclick="toggleFavorite()" title="${fav?'Remove':'Add'} from favorites">${fav?'❤️':'🤍'}</button></div><div class="result-item"><span class="label">汉字:</span><span class="hanzi">${entry.hanzi}</span><button class="speaker-btn" onclick="speak('${entry.hanzi}...
+    function selectSuggestion(word) {
+      document.getElementById("query").value = word;
+      document.getElementById("suggestions").style.display = 'none';
+      displayResult(word);
+    }
+
+    function search() {
+      const word = document.getElementById("query").value.trim().toLowerCase();
+      if (word) {
+        displayResult(word);
+        document.getElementById("suggestions").style.display = 'none';
+      }
+    }
+
+    function searchWord(word) {
+      document.getElementById("query").value = word;
+      displayResult(word);
+    }
+
+    // Use Alibaba Cloud Translation API for online translation
+    async function translateOnline(word) {
+      const result = document.getElementById("result");
+      
+      // Show loading indicator
+      result.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+          <div class="loading"></div>
+          <p>Translating "${word}" using online service...</p>
+        </div>
+      `;
+      
+      try {
+        // This is a public API endpoint for demonstration purposes
+        // In a real application, you would use a proper backend service to handle API keys securely
+        const response = await fetch(`https://api-free.deepl.com/v2/translate?auth_key=free&text=${encodeURIComponent(word)}&target_lang=ZH`);
+        
+        if (!response.ok) {
+          throw new Error('Translation service unavailable');
+        }
+        
+        const data = await response.json();
+        
+        if (data && data.translations && data.translations.length > 0) {
+          const translation = data.translations[0];
+          
+          // Create a new dictionary entry from the translation
+          const newEntry = {
+            hanzi: translation.text,
+            pinyin: "auto", // We don't have pinyin from the API
+            defs: [word]
+          };
+          
+          // Add to dictionary
+          dict[word] = newEntry;
+          
+          // Update word tags
+          updateWordTags();
+          
+          // Display the result
+          displayResult(word);
+          
+          // Save to localStorage to persist the new word
+          try {
+            const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+            customDict[word] = newEntry;
+            localStorage.setItem('customDict', JSON.stringify(customDict));
+          } catch (e) {
+            console.error('Failed to save custom dictionary:', e);
+          }
+        } else {
+          throw new Error('No translation found');
+        }
+      } catch (error) {
+        console.error('Translation error:', error);
+        result.innerHTML = `
+          <p class="error">Online translation failed: ${error.message}</p>
+          <p style="text-align: center; margin-top: 12px;">Please try again later.</p>
+        `;
+      }
+    }
+
+    function displayResult(word) {
+      const entry = dict[word];
+      const result = document.getElementById("result");
+      currentWord = word;
+
+      if (entry) {
+        const isFavorited = favorites.includes(word);
+        result.innerHTML = `
+          <div class="result-header">
+            <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
+            <button class="favorite-btn" onclick="toggleFavorite()" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
+              ${isFavorited ? '❤️' : '🤍'}
+            </button>
+          </div>
+          <div class="result-item">
+            <span class="label">汉字:</span>
+            <span class="hanzi">${entry.hanzi}</span>
+            <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="Listen">🔊</button>
+          </div>
+          <div class="result-item">
+            <span class="label">拼音:</span>
+            <span class="pinyin">${entry.pinyin}</span>
+          </div>
+          <div class="result-item">
+            <span class="label">释义:</span>
+            <span class="defs">${entry.defs.join(", ")}</span>
+          </div>
+        `;
+        speak(entry.hanzi);
+      } else {
+        const suggestions = fuzzySearch(word);
+        if (suggestions.length > 0) {
+          result.innerHTML = `
+            <p class="error">Exact match not found. Did you mean:</p>
+            <div style="margin-top: 16px;">
+              ${suggestions.map(s => `
+                <div class="word-tag" onclick="searchWord('${s.word}')" style="margin: 4px;">
+                  ${s.word} (${s.data.hanzi})
+                </div>
+              `).join('')}
+            </div>
+            <div class="online-search">
+              <p>Can't find what you're looking for?</p>
+              <button onclick="translateOnline('${word}')">Try Online Translation</button>
+            </div>
+          `;
+        } else {
+          result.innerHTML = `
+            <p class="error">No matches found in local dictionary.</p>
+            <div class="online-search">
+              <p>Would you like to try online translation?</p>
+              <button onclick="translateOnline('${word}')">Translate "${word}" Online</button>
+            </div>
+          `;
+        }
+      }
+
+      result.classList.add('show');
+    }
+
+    function toggleFavorite() {
+      if (!currentWord) return;
+
+      const index = favorites.indexOf(currentWord);
+      if (index === -1) {
+        favorites.push(currentWord);
+      } else {
+        favorites.splice(index, 1);
+      }
+
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      displayResult(currentWord); // Refresh to update heart icon
+      updateWordTags();
+    }
+
+    function loadFavorites() {
+      const favoritesList = document.getElementById('favoritesList');
+
+      if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p class="no-favorites">No favorite words yet. Search and add some!</p>';
+        return;
+      }
+
+      favoritesList.innerHTML = favorites.map(word => {
+        const entry = dict[word];
+        if (!entry) return '';
+        return `
+          <div class="word-tag" onclick="switchTab('search'); searchWord('${word}')" style="margin: 4px; display: inline-block;">
+            ${word} (${entry.hanzi})
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateWordTags() {
+      const wordTags = document.getElementById('wordTags');
+      wordTags.innerHTML = Object.keys(dict).map(word => {
+        const isFavorited = favorites.includes(word);
+        return `<span class="word-tag ${isFavorited ? 'favorited' : ''}" onclick="searchWord('${word}')">${word}</span>`;
+      }).join('');
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-CN';
+        utterance.rate = 0.8;
+        speechSynthesis.speak(utterance);
+      }
+    }
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(event) {
+      const suggestions = document.getElementById('suggestions');
+      const searchContainer = document.querySelector('.search-container');
+      if (!searchContainer.contains(event.target)) {
+        suggestions.style.display = 'none';
+      }
+    });
+
+    // Allow Enter key to search
+    document.getElementById("query").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        search();
+      }
+    });
+
+    // Initialize
+    window.onload = async function() {
+      // Disable input while loading dictionary
+      document.getElementById("query").disabled = true;
+      document.getElementById("query").placeholder = "Loading dictionary...";
+
+      // Load dictionary from JSON file
+      await loadDictionary();
+      
+      // Load any custom dictionary entries from localStorage
+      try {
+        const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+        Object.assign(dict, customDict);
+        updateWordTags();
+      } catch (e) {
+        console.error('Failed to load custom dictionary:', e);
+      }
+
+      // Focus on input after loading
+      document.getElementById("query").focus();
+    };
+  </script>
+</body>
+</html>
