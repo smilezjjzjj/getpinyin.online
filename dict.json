@@ -1,245 +1,245 @@
 {
   "take": {
     "hanzi": "拿",
-    "pinyin": "na",
+    "pinyin": "ná",
     "defs": [
       "take"
     ]
   },
   "afternoon": {
     "hanzi": "下午",
-    "pinyin": "xia wu",
+    "pinyin": "xià wǔ",
     "defs": [
       "afternoon"
     ]
   },
   "no": {
     "hanzi": "不",
-    "pinyin": "bu",
+    "pinyin": "bù",
     "defs": [
       "no"
     ]
   },
   "ugly": {
     "hanzi": "丑",
-    "pinyin": "Chou",
+    "pinyin": "chǒu",
     "defs": [
       "ugly"
     ]
   },
   "night": {
-    "hanzi": "夜",
-    "pinyin": "ye",
+    "hanzi": "夜晚",
+    "pinyin": "yè wǎn",
     "defs": [
       "night"
     ]
   },
   "today": {
     "hanzi": "今天",
-    "pinyin": "jin tian",
+    "pinyin": "jīn tiān",
     "defs": [
       "today"
     ]
   },
   "hello": {
     "hanzi": "你好",
-    "pinyin": "ni hao",
+    "pinyin": "nǐ hǎo",
     "defs": [
       "hello"
     ]
   },
   "come": {
     "hanzi": "来",
-    "pinyin": "lai",
+    "pinyin": "lái",
     "defs": [
       "come"
     ]
   },
   "make": {
     "hanzi": "做",
-    "pinyin": "zuo",
+    "pinyin": "zuò",
     "defs": [
       "make"
     ]
   },
   "goodbye": {
     "hanzi": "再见",
-    "pinyin": "zai jian",
+    "pinyin": "zài jiàn",
     "defs": [
       "goodbye"
     ]
   },
   "winter": {
     "hanzi": "冬天",
-    "pinyin": "dong tian",
+    "pinyin": "dōng tiān",
     "defs": [
       "winter"
     ]
   },
   "cold": {
     "hanzi": "冷",
-    "pinyin": "Leng",
+    "pinyin": "lěng",
     "defs": [
       "cold"
     ]
   },
   "animal": {
     "hanzi": "动物",
-    "pinyin": "dong wu",
+    "pinyin": "dòng wù",
     "defs": [
       "animal"
     ]
   },
   "go": {
     "hanzi": "去",
-    "pinyin": "qu",
+    "pinyin": "qù",
     "defs": [
       "go"
     ]
   },
   "eat": {
     "hanzi": "吃",
-    "pinyin": "chi",
+    "pinyin": "chī",
     "defs": [
       "eat"
     ]
   },
   "listen": {
     "hanzi": "听",
-    "pinyin": "yin",
+    "pinyin": "tīng",
     "defs": [
       "listen"
     ]
   },
   "week": {
-    "hanzi": "周",
-    "pinyin": "Zhou",
+    "hanzi": "星期",
+    "pinyin": "xīng qī",
     "defs": [
       "week"
     ]
   },
   "like": {
     "hanzi": "喜欢",
-    "pinyin": "xi huan",
+    "pinyin": "xǐ huān",
     "defs": [
       "like"
     ]
   },
   "drink": {
     "hanzi": "喝",
-    "pinyin": "he",
+    "pinyin": "hē",
     "defs": [
       "drink"
     ]
   },
   "bad": {
     "hanzi": "坏",
-    "pinyin": "huai",
+    "pinyin": "huài",
     "defs": [
       "bad"
     ]
   },
   "summer": {
     "hanzi": "夏天",
-    "pinyin": "xia tian",
+    "pinyin": "xià tiān",
     "defs": [
       "summer"
     ]
   },
   "big": {
     "hanzi": "大",
-    "pinyin": "da",
+    "pinyin": "dà",
     "defs": [
       "big"
     ]
   },
   "day": {
     "hanzi": "天",
-    "pinyin": "tian",
+    "pinyin": "tiān",
     "defs": [
       "day"
     ]
   },
   "sun": {
     "hanzi": "太阳",
-    "pinyin": "tai yang",
+    "pinyin": "tài yáng",
     "defs": [
       "sun"
     ]
   },
   "woman": {
     "hanzi": "女人",
-    "pinyin": "nu: ren",
+    "pinyin": "nǚ rén",
     "defs": [
       "woman"
     ]
   },
   "girl": {
     "hanzi": "女孩",
-    "pinyin": "nu: hai",
+    "pinyin": "nǚ hái",
     "defs": [
       "girl"
     ]
   },
   "good": {
     "hanzi": "好",
-    "pinyin": "hao",
+    "pinyin": "hǎo",
     "defs": [
       "good"
     ]
   },
   "mother": {
     "hanzi": "妈妈",
-    "pinyin": "ma ma",
+    "pinyin": "mā ma",
     "defs": [
       "mother"
     ]
   },
   "child": {
     "hanzi": "孩子",
-    "pinyin": "hai zi",
+    "pinyin": "hái zi",
     "defs": [
       "child"
     ]
   },
   "learn": {
     "hanzi": "学",
-    "pinyin": "xue",
+    "pinyin": "xué",
     "defs": [
       "learn"
     ]
   },
   "school": {
     "hanzi": "学校",
-    "pinyin": "xue xiao",
+    "pinyin": "xué xiào",
     "defs": [
       "school"
     ]
   },
   "family": {
     "hanzi": "家庭",
-    "pinyin": "jia ting",
+    "pinyin": "jiā tíng",
     "defs": [
       "family"
     ]
   },
   "write": {
     "hanzi": "写",
-    "pinyin": "xie",
+    "pinyin": "xiě",
     "defs": [
       "write"
     ]
   },
   "sorry": {
     "hanzi": "对不起",
-    "pinyin": "dui bu qi",
+    "pinyin": "duì bù qǐ",
     "defs": [
       "sorry"
     ]
   },
   "small": {
     "hanzi": "小",
-    "pinyin": "xiao",
+    "pinyin": "xiǎo",
     "defs": [
       "small"
     ]
@@ -253,35 +253,35 @@
   },
   "work": {
     "hanzi": "工作",
-    "pinyin": "gong zuo",
+    "pinyin": "gōng zuò",
     "defs": [
       "work"
     ]
   },
   "help": {
     "hanzi": "帮助",
-    "pinyin": "bang zhu",
+    "pinyin": "bāng zhù",
     "defs": [
       "help"
     ]
   },
   "year": {
     "hanzi": "年",
-    "pinyin": "Nian",
+    "pinyin": "nián",
     "defs": [
       "year"
     ]
   },
   "fast": {
     "hanzi": "快",
-    "pinyin": "kuai",
+    "pinyin": "kuài",
     "defs": [
       "fast"
     ]
   },
   "happy": {
     "hanzi": "快乐",
-    "pinyin": "kuai le",
+    "pinyin": "kuài lè",
     "defs": [
       "happy"
     ]
@@ -295,63 +295,63 @@
   },
   "sad": {
     "hanzi": "悲伤",
-    "pinyin": "bei shang",
+    "pinyin": "bēi shāng",
     "defs": [
       "sad"
     ]
   },
   "think": {
     "hanzi": "想",
-    "pinyin": "xiang",
+    "pinyin": "xiǎng",
     "defs": [
       "think"
     ]
   },
   "love": {
     "hanzi": "爱",
-    "pinyin": "ai",
+    "pinyin": "ài",
     "defs": [
       "love"
     ]
   },
   "slow": {
     "hanzi": "慢",
-    "pinyin": "man",
+    "pinyin": "màn",
     "defs": [
       "slow"
     ]
   },
   "house": {
     "hanzi": "房子",
-    "pinyin": "fang zi",
+    "pinyin": "fáng zi",
     "defs": [
       "house"
     ]
   },
   "teach": {
     "hanzi": "教",
-    "pinyin": "Jiao",
+    "pinyin": "jiāo",
     "defs": [
       "teach"
     ]
   },
   "new": {
-    "hanzi": "新",
-    "pinyin": "Xin",
+    "hanzi": "新的",
+    "pinyin": "xīn de",
     "defs": [
       "new"
     ]
   },
   "morning": {
     "hanzi": "早上",
-    "pinyin": "zao shang",
+    "pinyin": "zǎo shàng",
     "defs": [
       "morning"
     ]
   },
   "tomorrow": {
     "hanzi": "明天",
-    "pinyin": "ming tian",
+    "pinyin": "míng tiān",
     "defs": [
       "tomorrow"
     ]
@@ -372,28 +372,28 @@
   },
   "yesterday": {
     "hanzi": "昨天",
-    "pinyin": "zuo tian",
+    "pinyin": "zuó tiān",
     "defs": [
       "yesterday"
     ]
   },
   "yes": {
     "hanzi": "是",
-    "pinyin": "shi",
+    "pinyin": "shì",
     "defs": [
       "yes"
     ]
   },
   "time": {
     "hanzi": "时间",
-    "pinyin": "shi jian",
+    "pinyin": "shí jiān",
     "defs": [
       "time"
     ]
   },
   "evening": {
     "hanzi": "晚上",
-    "pinyin": "wan shang",
+    "pinyin": "wǎn shàng",
     "defs": [
       "evening"
     ]
@@ -407,7 +407,7 @@
   },
   "month": {
     "hanzi": "月",
-    "pinyin": "yue",
+    "pinyin": "yuè",
     "defs": [
       "month"
     ]
@@ -421,7 +421,7 @@
   },
   "friend": {
     "hanzi": "朋友",
-    "pinyin": "peng you",
+    "pinyin": "péng yǒu",
     "defs": [
       "friend"
     ]
@@ -435,14 +435,14 @@
   },
   "water": {
     "hanzi": "水",
-    "pinyin": "Shui",
+    "pinyin": "shuǐ",
     "defs": [
       "water"
     ]
   },
   "car": {
     "hanzi": "汽车",
-    "pinyin": "qi che",
+    "pinyin": "qì chē",
     "defs": [
       "car"
     ]
@@ -463,14 +463,14 @@
   },
   "hot": {
     "hanzi": "热",
-    "pinyin": "re",
+    "pinyin": "rè",
     "defs": [
       "hot"
     ]
   },
   "father": {
     "hanzi": "父亲",
-    "pinyin": "fu qin",
+    "pinyin": "fù qīn",
     "defs": [
       "father"
     ]
@@ -512,21 +512,21 @@
   },
   "see": {
     "hanzi": "看",
-    "pinyin": "kan",
+    "pinyin": "kàn",
     "defs": [
       "see"
     ]
   },
   "sleep": {
     "hanzi": "睡觉",
-    "pinyin": "shui jiao",
+    "pinyin": "shuì jiào",
     "defs": [
       "sleep"
     ]
   },
   "know": {
     "hanzi": "知道",
-    "pinyin": "zhi dao",
+    "pinyin": "zhī dào",
     "defs": [
       "know"
     ]
@@ -554,7 +554,7 @@
   },
   "give": {
     "hanzi": "给",
-    "pinyin": "gei",
+    "pinyin": "gěi",
     "defs": [
       "give"
     ]
@@ -568,14 +568,14 @@
   },
   "beautiful": {
     "hanzi": "美丽",
-    "pinyin": "mei li",
+    "pinyin": "měi lì",
     "defs": [
       "beautiful"
     ]
   },
   "meat": {
     "hanzi": "肉",
-    "pinyin": "rou",
+    "pinyin": "ròu",
     "defs": [
       "meat"
     ]
@@ -624,7 +624,7 @@
   },
   "please": {
     "hanzi": "请",
-    "pinyin": "qing",
+    "pinyin": "qǐng",
     "defs": [
       "please"
     ]
@@ -740,5 +740,735 @@
     "defs": [
       "black"
     ]
+  },
+  "the": {
+    "hanzi": "这个",
+    "pinyin": "zhè ge",
+    "defs": [
+      "definite article"
+    ]
+  },
+  "of": {
+    "hanzi": "的",
+    "pinyin": "de",
+    "defs": [
+      "preposition indicating possession"
+    ]
+  },
+  "and": {
+    "hanzi": "和",
+    "pinyin": "hé",
+    "defs": [
+      "conjunction"
+    ]
+  },
+  "to": {
+    "hanzi": "到",
+    "pinyin": "dào",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "in": {
+    "hanzi": "在",
+    "pinyin": "zài",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "for": {
+    "hanzi": "为了",
+    "pinyin": "wèi le",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "is": {
+    "hanzi": "是",
+    "pinyin": "shì",
+    "defs": [
+      "verb to be"
+    ]
+  },
+  "on": {
+    "hanzi": "在...上",
+    "pinyin": "zài...shàng",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "that": {
+    "hanzi": "那个",
+    "pinyin": "nà ge",
+    "defs": [
+      "demonstrative"
+    ]
+  },
+  "by": {
+    "hanzi": "被",
+    "pinyin": "bèi",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "this": {
+    "hanzi": "这个",
+    "pinyin": "zhè ge",
+    "defs": [
+      "demonstrative"
+    ]
+  },
+  "with": {
+    "hanzi": "与",
+    "pinyin": "yǔ",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "you": {
+    "hanzi": "你",
+    "pinyin": "nǐ",
+    "defs": [
+      "pronoun"
+    ]
+  },
+  "it": {
+    "hanzi": "它",
+    "pinyin": "tā",
+    "defs": [
+      "pronoun"
+    ]
+  },
+  "not": {
+    "hanzi": "不",
+    "pinyin": "bù",
+    "defs": [
+      "negation"
+    ]
+  },
+  "or": {
+    "hanzi": "或者",
+    "pinyin": "huò zhě",
+    "defs": [
+      "conjunction"
+    ]
+  },
+  "be": {
+    "hanzi": "是",
+    "pinyin": "shì",
+    "defs": [
+      "verb"
+    ]
+  },
+  "are": {
+    "hanzi": "是",
+    "pinyin": "shì",
+    "defs": [
+      "verb plural"
+    ]
+  },
+  "from": {
+    "hanzi": "从",
+    "pinyin": "cóng",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "at": {
+    "hanzi": "在",
+    "pinyin": "zài",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "as": {
+    "hanzi": "作为",
+    "pinyin": "zuò wéi",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "your": {
+    "hanzi": "你的",
+    "pinyin": "nǐ de",
+    "defs": [
+      "possessive"
+    ]
+  },
+  "all": {
+    "hanzi": "所有",
+    "pinyin": "suǒ yǒu",
+    "defs": [
+      "determiner"
+    ]
+  },
+  "have": {
+    "hanzi": "有",
+    "pinyin": "yǒu",
+    "defs": [
+      "verb"
+    ]
+  },
+  "more": {
+    "hanzi": "更多",
+    "pinyin": "gèng duō",
+    "defs": [
+      "quantifier"
+    ]
+  },
+  "an": {
+    "hanzi": "一个",
+    "pinyin": "yí ge",
+    "defs": [
+      "indefinite article"
+    ]
+  },
+  "was": {
+    "hanzi": "是",
+    "pinyin": "shì",
+    "defs": [
+      "past tense of be"
+    ]
+  },
+  "we": {
+    "hanzi": "我们",
+    "pinyin": "wǒ men",
+    "defs": [
+      "pronoun"
+    ]
+  },
+  "will": {
+    "hanzi": "将",
+    "pinyin": "jiāng",
+    "defs": [
+      "modal verb"
+    ]
+  },
+  "home": {
+    "hanzi": "家",
+    "pinyin": "jiā",
+    "defs": [
+      "noun"
+    ]
+  },
+  "can": {
+    "hanzi": "可以",
+    "pinyin": "kě yǐ",
+    "defs": [
+      "modal verb"
+    ]
+  },
+  "us": {
+    "hanzi": "我们",
+    "pinyin": "wǒ men",
+    "defs": [
+      "pronoun object"
+    ]
+  },
+  "about": {
+    "hanzi": "关于",
+    "pinyin": "guān yú",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "if": {
+    "hanzi": "如果",
+    "pinyin": "rú guǒ",
+    "defs": [
+      "conditional"
+    ]
+  },
+  "page": {
+    "hanzi": "页面",
+    "pinyin": "yè miàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "my": {
+    "hanzi": "我的",
+    "pinyin": "wǒ de",
+    "defs": [
+      "possessive"
+    ]
+  },
+  "has": {
+    "hanzi": "有",
+    "pinyin": "yǒu",
+    "defs": [
+      "verb"
+    ]
+  },
+  "search": {
+    "hanzi": "搜索",
+    "pinyin": "sōu suō",
+    "defs": [
+      "verb/noun"
+    ]
+  },
+  "free": {
+    "hanzi": "免费",
+    "pinyin": "miǎn fèi",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "but": {
+    "hanzi": "但是",
+    "pinyin": "dàn shì",
+    "defs": [
+      "conjunction"
+    ]
+  },
+  "our": {
+    "hanzi": "我们的",
+    "pinyin": "wǒ men de",
+    "defs": [
+      "possessive"
+    ]
+  },
+  "one": {
+    "hanzi": "一",
+    "pinyin": "yī",
+    "defs": [
+      "number"
+    ]
+  },
+  "other": {
+    "hanzi": "其他",
+    "pinyin": "qí tā",
+    "defs": [
+      "determiner"
+    ]
+  },
+  "do": {
+    "hanzi": "做",
+    "pinyin": "zuò",
+    "defs": [
+      "verb"
+    ]
+  },
+  "information": {
+    "hanzi": "信息",
+    "pinyin": "xìn xī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "time": {
+    "hanzi": "时间",
+    "pinyin": "shí jiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "brother": {
+    "hanzi": "兄弟",
+    "pinyin": "xiōng dì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "sister": {
+    "hanzi": "姐妹",
+    "pinyin": "jiě mèi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "teacher": {
+    "hanzi": "老师",
+    "pinyin": "lǎo shī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "student": {
+    "hanzi": "学生",
+    "pinyin": "xué shēng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "doctor": {
+    "hanzi": "医生",
+    "pinyin": "yī shēng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "food": {
+    "hanzi": "食物",
+    "pinyin": "shí wù",
+    "defs": [
+      "noun"
+    ]
+  },
+  "rice": {
+    "hanzi": "米饭",
+    "pinyin": "mǐ fàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "bread": {
+    "hanzi": "面包",
+    "pinyin": "miàn bāo",
+    "defs": [
+      "noun"
+    ]
+  },
+  "meat": {
+    "hanzi": "肉",
+    "pinyin": "ròu",
+    "defs": [
+      "noun"
+    ]
+  },
+  "fish": {
+    "hanzi": "鱼",
+    "pinyin": "yú",
+    "defs": [
+      "noun"
+    ]
+  },
+  "chicken": {
+    "hanzi": "鸡肉",
+    "pinyin": "jī ròu",
+    "defs": [
+      "noun"
+    ]
+  },
+  "egg": {
+    "hanzi": "鸡蛋",
+    "pinyin": "jī dàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "milk": {
+    "hanzi": "牛奶",
+    "pinyin": "niú nǎi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "water": {
+    "hanzi": "水",
+    "pinyin": "shuǐ",
+    "defs": [
+      "noun"
+    ]
+  },
+  "tea": {
+    "hanzi": "茶",
+    "pinyin": "chá",
+    "defs": [
+      "noun"
+    ]
+  },
+  "coffee": {
+    "hanzi": "咖啡",
+    "pinyin": "kā fēi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "fruit": {
+    "hanzi": "水果",
+    "pinyin": "shuǐ guǒ",
+    "defs": [
+      "noun"
+    ]
+  },
+  "apple": {
+    "hanzi": "苹果",
+    "pinyin": "píng guǒ",
+    "defs": [
+      "noun"
+    ]
+  },
+  "banana": {
+    "hanzi": "香蕉",
+    "pinyin": "xiāng jiāo",
+    "defs": [
+      "noun"
+    ]
+  },
+  "red": {
+    "hanzi": "红色",
+    "pinyin": "hóng sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "blue": {
+    "hanzi": "蓝色",
+    "pinyin": "lán sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "green": {
+    "hanzi": "绿色",
+    "pinyin": "lǜ sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "yellow": {
+    "hanzi": "黄色",
+    "pinyin": "huáng sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "black": {
+    "hanzi": "黑色",
+    "pinyin": "hēi sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "white": {
+    "hanzi": "白色",
+    "pinyin": "bái sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "zero": {
+    "hanzi": "零",
+    "pinyin": "líng",
+    "defs": [
+      "number"
+    ]
+  },
+  "two": {
+    "hanzi": "二",
+    "pinyin": "èr",
+    "defs": [
+      "number"
+    ]
+  },
+  "three": {
+    "hanzi": "三",
+    "pinyin": "sān",
+    "defs": [
+      "number"
+    ]
+  },
+  "four": {
+    "hanzi": "四",
+    "pinyin": "sì",
+    "defs": [
+      "number"
+    ]
+  },
+  "five": {
+    "hanzi": "五",
+    "pinyin": "wǔ",
+    "defs": [
+      "number"
+    ]
+  },
+  "six": {
+    "hanzi": "六",
+    "pinyin": "liù",
+    "defs": [
+      "number"
+    ]
+  },
+  "seven": {
+    "hanzi": "七",
+    "pinyin": "qī",
+    "defs": [
+      "number"
+    ]
+  },
+  "eight": {
+    "hanzi": "八",
+    "pinyin": "bā",
+    "defs": [
+      "number"
+    ]
+  },
+  "nine": {
+    "hanzi": "九",
+    "pinyin": "jiǔ",
+    "defs": [
+      "number"
+    ]
+  },
+  "ten": {
+    "hanzi": "十",
+    "pinyin": "shí",
+    "defs": [
+      "number"
+    ]
+  },
+  "tomorrow": {
+    "hanzi": "明天",
+    "pinyin": "míng tiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "yesterday": {
+    "hanzi": "昨天",
+    "pinyin": "zuó tiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "morning": {
+    "hanzi": "早上",
+    "pinyin": "zǎo shàng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "evening": {
+    "hanzi": "晚上",
+    "pinyin": "wǎn shàng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "month": {
+    "hanzi": "月",
+    "pinyin": "yuè",
+    "defs": [
+      "noun"
+    ]
+  },
+  "year": {
+    "hanzi": "年",
+    "pinyin": "nián",
+    "defs": [
+      "noun"
+    ]
+  },
+  "house": {
+    "hanzi": "房子",
+    "pinyin": "fáng zi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "school": {
+    "hanzi": "学校",
+    "pinyin": "xué xiào",
+    "defs": [
+      "noun"
+    ]
+  },
+  "hospital": {
+    "hanzi": "医院",
+    "pinyin": "yī yuàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "store": {
+    "hanzi": "商店",
+    "pinyin": "shāng diàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "restaurant": {
+    "hanzi": "餐厅",
+    "pinyin": "cān tīng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "hotel": {
+    "hanzi": "酒店",
+    "pinyin": "jiǔ diàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "bank": {
+    "hanzi": "银行",
+    "pinyin": "yín háng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "park": {
+    "hanzi": "公园",
+    "pinyin": "gōng yuán",
+    "defs": [
+      "noun"
+    ]
+  },
+  "city": {
+    "hanzi": "城市",
+    "pinyin": "chéng shì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "country": {
+    "hanzi": "国家",
+    "pinyin": "guó jiā",
+    "defs": [
+      "noun"
+    ]
+  },
+  "car": {
+    "hanzi": "汽车",
+    "pinyin": "qì chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "bus": {
+    "hanzi": "公交车",
+    "pinyin": "gōng jiāo chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "train": {
+    "hanzi": "火车",
+    "pinyin": "huǒ chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "plane": {
+    "hanzi": "飞机",
+    "pinyin": "fēi jī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "bike": {
+    "hanzi": "自行车",
+    "pinyin": "zì xíng chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "weather": {
+    "hanzi": "天气",
+    "pinyin": "tiān qì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "warm": {
+    "hanzi": "温暖",
+    "pinyin": "wēn nuǎn",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "cool": {
   }
 }
