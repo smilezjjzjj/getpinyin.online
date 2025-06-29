@@ -696,6 +696,8 @@
 
     function search() {
       const word = document.getElementById("query").value.trim().toLowerCase();
+      console.log('Search called with word:', word);
+      console.log('Dictionary loaded:', Object.keys(dict).length, 'entries');
       if (word) {
         displayResult(word);
         document.getElementById("suggestions").style.display = 'none';
@@ -865,11 +867,15 @@
     }
 
     function displayResult(word) {
+      console.log('DisplayResult called with word:', word);
+      console.log('Word exists in dict:', !!dict[word]);
+      
       const entry = dict[word];
       const result = document.getElementById("result");
       currentWord = word;
 
       if (entry) {
+        console.log('Found entry:', entry);
         const isFavorited = favorites.includes(word);
         result.innerHTML = `
           <div class="result-header">
@@ -897,7 +903,10 @@
           </div>
         `;
       } else {
+        console.log('Word not found, checking fuzzy search');
         const suggestions = fuzzySearch(word);
+        console.log('Fuzzy search results:', suggestions.length, 'suggestions');
+        
         if (suggestions.length > 0) {
           result.innerHTML = `
             <p class="error">Exact match not found. Did you mean:</p>
