@@ -1,44 +1,3446 @@
 {
-  "name": "getpinyin-online",
-  "version": "2.0.0",
-  "description": "智能英中翻译工具 - 支持实时在线翻译、拼音标注和语音播放",
-  "main": "server.js",
-  "keywords": [
-    "english-chinese",
-    "translator",
-    "pinyin", 
-    "chinese-learning",
-    "youdao-api",
-    "dictionary",
-    "语言学习",
-    "中文拼音"
-  ],
-  "author": "GetPinyin.Online",
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+  "abandon": {
+    "hanzi": "放弃",
+    "pinyin": "fàng qì",
+    "defs": [
+      "abandon"
+    ]
   },
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "abandonedly": {
+    "hanzi": "放纵地",
+    "pinyin": "fàng zòng de",
+    "defs": [
+      "abandonedly"
+    ]
   },
-  "dependencies": {
-    "axios": "^1.6.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+  "abandoning": {
+    "hanzi": "放弃",
+    "pinyin": "fàng qì",
+    "defs": [
+      "abandoning"
+    ]
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+  "abandonment": {
+    "hanzi": "遗弃",
+    "pinyin": "yí qì",
+    "defs": [
+      "abandonment"
+    ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yourusername/getpinyin.online.git"
+  "abbreviate": {
+    "hanzi": "缩写",
+    "pinyin": "suō xiě",
+    "defs": [
+      "abbreviate"
+    ]
   },
-  "bugs": {
-    "url": "https://github.com/yourusername/getpinyin.online/issues"
+  "abbreviatedly": {
+    "hanzi": "简略地",
+    "pinyin": "jiǎn lüè de",
+    "defs": [
+      "abbreviatedly"
+    ]
   },
-  "homepage": "https://github.com/yourusername/getpinyin.online#readme"
-} 
+  "abbreviating": {
+    "hanzi": "缩写",
+    "pinyin": "suō xiě",
+    "defs": [
+      "abbreviating"
+    ]
+  },
+  "abbreviation": {
+    "hanzi": "缩写",
+    "pinyin": "suō xiě",
+    "defs": [
+      "abbreviation"
+    ]
+  },
+  "abdomen": {
+    "hanzi": "腹部",
+    "pinyin": "fù bù",
+    "defs": [
+      "abdomen"
+    ]
+  },
+  "ability": {
+    "hanzi": "能力",
+    "pinyin": "néng lì",
+    "defs": [
+      "ability"
+    ]
+  },
+  "able": {
+    "hanzi": "能够",
+    "pinyin": "néng gòu",
+    "defs": [
+      "able"
+    ]
+  },
+  "abnormally": {
+    "hanzi": "异常地",
+    "pinyin": "yì cháng de",
+    "defs": [
+      "abnormally"
+    ]
+  },
+  "abolish": {
+    "hanzi": "废除",
+    "pinyin": "fèi chú",
+    "defs": [
+      "abolish"
+    ]
+  },
+  "abolishing": {
+    "hanzi": "废除",
+    "pinyin": "fèi chú",
+    "defs": [
+      "abolishing"
+    ]
+  },
+  "abolition": {
+    "hanzi": "废除",
+    "pinyin": "fèi chú",
+    "defs": [
+      "abolition"
+    ]
+  },
+  "about": {
+    "hanzi": "关于",
+    "pinyin": "guān yú",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "above": {
+    "hanzi": "在...上面",
+    "pinyin": "zài... shàng miàn",
+    "defs": [
+      "above"
+    ]
+  },
+  "absorb": {
+    "hanzi": "吸收",
+    "pinyin": "xī shōu",
+    "defs": [
+      "absorb"
+    ]
+  },
+  "absorption": {
+    "hanzi": "吸收",
+    "pinyin": "xī shōu",
+    "defs": [
+      "absorption"
+    ]
+  },
+  "abstracting": {
+    "hanzi": "抽象化",
+    "pinyin": "chōu xiàng huà",
+    "defs": [
+      "abstracting"
+    ]
+  },
+  "abstraction": {
+    "hanzi": "抽象",
+    "pinyin": "chōu xiàng",
+    "defs": [
+      "abstraction"
+    ]
+  },
+  "abundance": {
+    "hanzi": "丰富",
+    "pinyin": "fēng fù",
+    "defs": [
+      "abundance"
+    ]
+  },
+  "abuse": {
+    "hanzi": "滥用",
+    "pinyin": "làn yòng",
+    "defs": [
+      "abuse"
+    ]
+  },
+  "abusing": {
+    "hanzi": "滥用",
+    "pinyin": "làn yòng",
+    "defs": [
+      "abusing"
+    ]
+  },
+  "academically": {
+    "hanzi": "学术上",
+    "pinyin": "xué shù shàng",
+    "defs": [
+      "academically"
+    ]
+  },
+  "academy": {
+    "hanzi": "学院",
+    "pinyin": "xué yuàn",
+    "defs": [
+      "academy"
+    ]
+  },
+  "accelerate": {
+    "hanzi": "加速",
+    "pinyin": "jiā sù",
+    "defs": [
+      "accelerate"
+    ]
+  },
+  "accelerating": {
+    "hanzi": "加速",
+    "pinyin": "jiā sù",
+    "defs": [
+      "accelerating"
+    ]
+  },
+  "acceleration": {
+    "hanzi": "加速",
+    "pinyin": "jiā sù",
+    "defs": [
+      "acceleration"
+    ]
+  },
+  "accent": {
+    "hanzi": "口音",
+    "pinyin": "kǒu yīn",
+    "defs": [
+      "accent"
+    ]
+  },
+  "accept": {
+    "hanzi": "接受",
+    "pinyin": "jiē shòu",
+    "defs": [
+      "accept"
+    ]
+  },
+  "acceptance": {
+    "hanzi": "接受",
+    "pinyin": "jiē shòu",
+    "defs": [
+      "acceptance"
+    ]
+  },
+  "accepting": {
+    "hanzi": "接受",
+    "pinyin": "jiē shòu",
+    "defs": [
+      "accepting"
+    ]
+  },
+  "access": {
+    "hanzi": "访问",
+    "pinyin": "fǎng wèn",
+    "defs": [
+      "access"
+    ]
+  },
+  "accessibility": {
+    "hanzi": "可访问性",
+    "pinyin": "kě fǎng wèn xìng",
+    "defs": [
+      "accessibility"
+    ]
+  },
+  "accident": {
+    "hanzi": "事故",
+    "pinyin": "shì gù",
+    "defs": [
+      "accident"
+    ]
+  },
+  "accidentally": {
+    "hanzi": "意外地",
+    "pinyin": "yì wài de",
+    "defs": [
+      "accidentally"
+    ]
+  },
+  "accommodating": {
+    "hanzi": "容纳",
+    "pinyin": "róng nà",
+    "defs": [
+      "accommodating"
+    ]
+  },
+  "accommodation": {
+    "hanzi": "住宿",
+    "pinyin": "zhù sù",
+    "defs": [
+      "accommodation"
+    ]
+  },
+  "accomplish": {
+    "hanzi": "完成",
+    "pinyin": "wán chéng",
+    "defs": [
+      "accomplish"
+    ]
+  },
+  "accomplishing": {
+    "hanzi": "完成",
+    "pinyin": "wán chéng",
+    "defs": [
+      "accomplishing"
+    ]
+  },
+  "accomplishment": {
+    "hanzi": "成就",
+    "pinyin": "chéng jiù",
+    "defs": [
+      "accomplishment"
+    ]
+  },
+  "accordance": {
+    "hanzi": "一致",
+    "pinyin": "yī zhì",
+    "defs": [
+      "accordance"
+    ]
+  },
+  "accordingly": {
+    "hanzi": "因此",
+    "pinyin": "yīn cǐ",
+    "defs": [
+      "accordingly"
+    ]
+  },
+  "accordion": {
+    "hanzi": "手风琴",
+    "pinyin": "shǒu fēng qín",
+    "defs": [
+      "accordion"
+    ]
+  },
+  "account": {
+    "hanzi": "账户",
+    "pinyin": "zhàng hù",
+    "defs": [
+      "account"
+    ]
+  },
+  "accountability": {
+    "hanzi": "责任制",
+    "pinyin": "zé rèn zhì",
+    "defs": [
+      "accountability"
+    ]
+  },
+  "accountant": {
+    "hanzi": "会计师",
+    "pinyin": "kuài jì shī",
+    "defs": [
+      "accountant"
+    ]
+  },
+  "accounting": {
+    "hanzi": "会计",
+    "pinyin": "kuài jì",
+    "defs": [
+      "accounting"
+    ]
+  },
+  "accumulate": {
+    "hanzi": "积累",
+    "pinyin": "jī lěi",
+    "defs": [
+      "accumulate"
+    ]
+  },
+  "accuracy": {
+    "hanzi": "准确性",
+    "pinyin": "zhǔn què xìng",
+    "defs": [
+      "accuracy"
+    ]
+  },
+  "accurately": {
+    "hanzi": "准确地",
+    "pinyin": "zhǔn què de",
+    "defs": [
+      "accurately"
+    ]
+  },
+  "accuse": {
+    "hanzi": "指控",
+    "pinyin": "zhǐ kòng",
+    "defs": [
+      "accuse"
+    ]
+  },
+  "accusing": {
+    "hanzi": "指控",
+    "pinyin": "zhǐ kòng",
+    "defs": [
+      "accusing"
+    ]
+  },
+  "achieve": {
+    "hanzi": "实现",
+    "pinyin": "shí xiàn",
+    "defs": [
+      "achieve"
+    ]
+  },
+  "achievement": {
+    "hanzi": "成就",
+    "pinyin": "chéng jiù",
+    "defs": [
+      "achievement"
+    ]
+  },
+  "achieving": {
+    "hanzi": "实现",
+    "pinyin": "shí xiàn",
+    "defs": [
+      "achieving"
+    ]
+  },
+  "acknowledge": {
+    "hanzi": "承认",
+    "pinyin": "chéng rèn",
+    "defs": [
+      "acknowledge"
+    ]
+  },
+  "acknowledging": {
+    "hanzi": "承认",
+    "pinyin": "chéng rèn",
+    "defs": [
+      "acknowledging"
+    ]
+  },
+  "acknowledgment": {
+    "hanzi": "承认",
+    "pinyin": "chéng rèn",
+    "defs": [
+      "acknowledgment"
+    ]
+  },
+  "acquire": {
+    "hanzi": "获得",
+    "pinyin": "huò dé",
+    "defs": [
+      "acquire"
+    ]
+  },
+  "acquiring": {
+    "hanzi": "获得",
+    "pinyin": "huò dé",
+    "defs": [
+      "acquiring"
+    ]
+  },
+  "acquisition": {
+    "hanzi": "获得",
+    "pinyin": "huò dé",
+    "defs": [
+      "acquisition"
+    ]
+  },
+  "action": {
+    "hanzi": "行动",
+    "pinyin": "xíng dòng",
+    "defs": [
+      "action"
+    ]
+  },
+  "activate": {
+    "hanzi": "激活",
+    "pinyin": "jī huó",
+    "defs": [
+      "activate"
+    ]
+  },
+  "activating": {
+    "hanzi": "激活",
+    "pinyin": "jī huó",
+    "defs": [
+      "activating"
+    ]
+  },
+  "activation": {
+    "hanzi": "激活",
+    "pinyin": "jī huó",
+    "defs": [
+      "activation"
+    ]
+  },
+  "actively": {
+    "hanzi": "积极地",
+    "pinyin": "jī jí de",
+    "defs": [
+      "actively"
+    ]
+  },
+  "activities": {
+    "hanzi": "活动",
+    "pinyin": "huó dòng",
+    "defs": [
+      "activities"
+    ]
+  },
+  "activity": {
+    "hanzi": "活动",
+    "pinyin": "huó dòng",
+    "defs": [
+      "activity"
+    ]
+  },
+  "actor": {
+    "hanzi": "演员",
+    "pinyin": "yǎn yuán",
+    "defs": [
+      "actor"
+    ]
+  },
+  "actress": {
+    "hanzi": "女演员",
+    "pinyin": "nǚ yǎn yuán",
+    "defs": [
+      "actress"
+    ]
+  },
+  "actually": {
+    "hanzi": "实际上",
+    "pinyin": "shí jì shàng",
+    "defs": [
+      "actually"
+    ]
+  },
+  "adapt": {
+    "hanzi": "适应",
+    "pinyin": "shì yìng",
+    "defs": [
+      "adapt"
+    ]
+  },
+  "adaptation": {
+    "hanzi": "适应",
+    "pinyin": "shì yìng",
+    "defs": [
+      "adaptation"
+    ]
+  },
+  "adapting": {
+    "hanzi": "适应",
+    "pinyin": "shì yìng",
+    "defs": [
+      "adapting"
+    ]
+  },
+  "add": {
+    "hanzi": "添加",
+    "pinyin": "tiān jiā",
+    "defs": [
+      "add"
+    ]
+  },
+  "adding": {
+    "hanzi": "添加",
+    "pinyin": "tiān jiā",
+    "defs": [
+      "adding"
+    ]
+  },
+  "addition": {
+    "hanzi": "加法",
+    "pinyin": "jiā fǎ",
+    "defs": [
+      "addition"
+    ]
+  },
+  "additionally": {
+    "hanzi": "另外",
+    "pinyin": "lìng wài",
+    "defs": [
+      "additionally"
+    ]
+  },
+  "address": {
+    "hanzi": "地址",
+    "pinyin": "dì zhǐ",
+    "defs": [
+      "address"
+    ]
+  },
+  "adequately": {
+    "hanzi": "足够地",
+    "pinyin": "zú gòu de",
+    "defs": [
+      "adequately"
+    ]
+  },
+  "adjust": {
+    "hanzi": "调整",
+    "pinyin": "tiáo zhěng",
+    "defs": [
+      "adjust"
+    ]
+  },
+  "adjusting": {
+    "hanzi": "调整",
+    "pinyin": "tiáo zhěng",
+    "defs": [
+      "adjusting"
+    ]
+  },
+  "adjustment": {
+    "hanzi": "调整",
+    "pinyin": "tiáo zhěng",
+    "defs": [
+      "adjustment"
+    ]
+  },
+  "administer": {
+    "hanzi": "管理",
+    "pinyin": "guǎn lǐ",
+    "defs": [
+      "administer"
+    ]
+  },
+  "administering": {
+    "hanzi": "管理",
+    "pinyin": "guǎn lǐ",
+    "defs": [
+      "administering"
+    ]
+  },
+  "admire": {
+    "hanzi": "钦佩",
+    "pinyin": "qīn pèi",
+    "defs": [
+      "admire"
+    ]
+  },
+  "admiring": {
+    "hanzi": "钦佩",
+    "pinyin": "qīn pèi",
+    "defs": [
+      "admiring"
+    ]
+  },
+  "admission": {
+    "hanzi": "入学",
+    "pinyin": "rù xué",
+    "defs": [
+      "admission"
+    ]
+  },
+  "admit": {
+    "hanzi": "承认",
+    "pinyin": "chéng rèn",
+    "defs": [
+      "admit"
+    ]
+  },
+  "admitting": {
+    "hanzi": "承认",
+    "pinyin": "chéng rèn",
+    "defs": [
+      "admitting"
+    ]
+  },
+  "adopt": {
+    "hanzi": "采用",
+    "pinyin": "cǎi yòng",
+    "defs": [
+      "adopt"
+    ]
+  },
+  "adopting": {
+    "hanzi": "采用",
+    "pinyin": "cǎi yòng",
+    "defs": [
+      "adopting"
+    ]
+  },
+  "adoption": {
+    "hanzi": "采用",
+    "pinyin": "cǎi yòng",
+    "defs": [
+      "adoption"
+    ]
+  },
+  "adult": {
+    "hanzi": "成人",
+    "pinyin": "chéng rén",
+    "defs": [
+      "adult"
+    ]
+  },
+  "advance": {
+    "hanzi": "前进",
+    "pinyin": "qián jìn",
+    "defs": [
+      "advance"
+    ]
+  },
+  "advancement": {
+    "hanzi": "进步",
+    "pinyin": "jìn bù",
+    "defs": [
+      "advancement"
+    ]
+  },
+  "advancing": {
+    "hanzi": "前进",
+    "pinyin": "qián jìn",
+    "defs": [
+      "advancing"
+    ]
+  },
+  "advantage": {
+    "hanzi": "优势",
+    "pinyin": "yōu shì",
+    "defs": [
+      "advantage"
+    ]
+  },
+  "advantages": {
+    "hanzi": "优势",
+    "pinyin": "yōu shì",
+    "defs": [
+      "advantages"
+    ]
+  },
+  "adventure": {
+    "hanzi": "冒险",
+    "pinyin": "mào xiǎn",
+    "defs": [
+      "adventure"
+    ]
+  },
+  "adventures": {
+    "hanzi": "冒险",
+    "pinyin": "mào xiǎn",
+    "defs": [
+      "adventures"
+    ]
+  },
+  "advertising": {
+    "hanzi": "广告",
+    "pinyin": "guǎng gào",
+    "defs": [
+      "advertising"
+    ]
+  },
+  "advice": {
+    "hanzi": "建议",
+    "pinyin": "jiàn yì",
+    "defs": [
+      "advice"
+    ]
+  },
+  "advocate": {
+    "hanzi": "倡导",
+    "pinyin": "chàng dǎo",
+    "defs": [
+      "advocate"
+    ]
+  },
+  "advocating": {
+    "hanzi": "倡导",
+    "pinyin": "chàng dǎo",
+    "defs": [
+      "advocating"
+    ]
+  },
+  "affair": {
+    "hanzi": "事务",
+    "pinyin": "shì wù",
+    "defs": [
+      "affair"
+    ]
+  },
+  "affection": {
+    "hanzi": "感情",
+    "pinyin": "gǎn qíng",
+    "defs": [
+      "affection"
+    ]
+  },
+  "affiliate": {
+    "hanzi": "附属",
+    "pinyin": "fù shǔ",
+    "defs": [
+      "affiliate"
+    ]
+  },
+  "affiliation": {
+    "hanzi": "隶属",
+    "pinyin": "lì shǔ",
+    "defs": [
+      "affiliation"
+    ]
+  },
+  "afford": {
+    "hanzi": "负担得起",
+    "pinyin": "fù dān de qǐ",
+    "defs": [
+      "afford"
+    ]
+  },
+  "affording": {
+    "hanzi": "负担得起",
+    "pinyin": "fù dān de qǐ",
+    "defs": [
+      "affording"
+    ]
+  },
+  "after": {
+    "hanzi": "在...之后",
+    "pinyin": "zài... zhī hòu",
+    "defs": [
+      "after"
+    ]
+  },
+  "afternoon": {
+    "hanzi": "下午",
+    "pinyin": "xià wǔ",
+    "defs": [
+      "afternoon"
+    ]
+  },
+  "again": {
+    "hanzi": "再次",
+    "pinyin": "zài cì",
+    "defs": [
+      "again"
+    ]
+  },
+  "age": {
+    "hanzi": "年龄",
+    "pinyin": "nián líng",
+    "defs": [
+      "age"
+    ]
+  },
+  "agency": {
+    "hanzi": "机构",
+    "pinyin": "jī gòu",
+    "defs": [
+      "agency"
+    ]
+  },
+  "agent": {
+    "hanzi": "代理人",
+    "pinyin": "dài lǐ rén",
+    "defs": [
+      "agent"
+    ]
+  },
+  "agree": {
+    "hanzi": "同意",
+    "pinyin": "tóng yì",
+    "defs": [
+      "agree"
+    ]
+  },
+  "agreement": {
+    "hanzi": "协议",
+    "pinyin": "xié yì",
+    "defs": [
+      "agreement"
+    ]
+  },
+  "air": {
+    "hanzi": "空气",
+    "pinyin": "kōng qì",
+    "defs": [
+      "air"
+    ]
+  },
+  "airplane": {
+    "hanzi": "飞机",
+    "pinyin": "fēi jī",
+    "defs": [
+      "airplane"
+    ]
+  },
+  "airport": {
+    "hanzi": "机场",
+    "pinyin": "jī chǎng",
+    "defs": [
+      "airport"
+    ]
+  },
+  "all": {
+    "hanzi": "所有",
+    "pinyin": "suǒ yǒu",
+    "defs": [
+      "determiner"
+    ]
+  },
+  "allow": {
+    "hanzi": "允许",
+    "pinyin": "yǔn xǔ",
+    "defs": [
+      "allow"
+    ]
+  },
+  "almost": {
+    "hanzi": "几乎",
+    "pinyin": "jī hū",
+    "defs": [
+      "almost"
+    ]
+  },
+  "alone": {
+    "hanzi": "独自",
+    "pinyin": "dú zì",
+    "defs": [
+      "alone"
+    ]
+  },
+  "already": {
+    "hanzi": "已经",
+    "pinyin": "yǐ jīng",
+    "defs": [
+      "already"
+    ]
+  },
+  "although": {
+    "hanzi": "虽然",
+    "pinyin": "suī rán",
+    "defs": [
+      "although"
+    ]
+  },
+  "always": {
+    "hanzi": "总是",
+    "pinyin": "zǒng shì",
+    "defs": [
+      "always"
+    ]
+  },
+  "among": {
+    "hanzi": "在...中间",
+    "pinyin": "zài... zhōng jiān",
+    "defs": [
+      "among"
+    ]
+  },
+  "amount": {
+    "hanzi": "数量",
+    "pinyin": "shù liàng",
+    "defs": [
+      "amount"
+    ]
+  },
+  "amphibian": {
+    "hanzi": "两栖动物",
+    "pinyin": "liǎng qī dòng wù",
+    "defs": [
+      "amphibian"
+    ]
+  },
+  "an": {
+    "hanzi": "一个",
+    "pinyin": "yí ge",
+    "defs": [
+      "indefinite article"
+    ]
+  },
+  "analysis": {
+    "hanzi": "分析",
+    "pinyin": "fēn xī",
+    "defs": [
+      "analysis"
+    ]
+  },
+  "analyze": {
+    "hanzi": "分析",
+    "pinyin": "fēn xī",
+    "defs": [
+      "analyze"
+    ]
+  },
+  "anger": {
+    "hanzi": "愤怒",
+    "pinyin": "fèn nù",
+    "defs": [
+      "anger"
+    ]
+  },
+  "angry": {
+    "hanzi": "生气",
+    "pinyin": "shēng qì",
+    "defs": [
+      "angry"
+    ]
+  },
+  "animal": {
+    "hanzi": "动物",
+    "pinyin": "dòng wù",
+    "defs": [
+      "animal"
+    ]
+  },
+  "ankle": {
+    "hanzi": "脚踝",
+    "pinyin": "jiǎo huái",
+    "defs": [
+      "ankle"
+    ]
+  },
+  "announce": {
+    "hanzi": "宣布",
+    "pinyin": "xuān bù",
+    "defs": [
+      "announce"
+    ]
+  },
+  "answer": {
+    "hanzi": "答案",
+    "pinyin": "dá àn",
+    "defs": [
+      "answer"
+    ]
+  },
+  "any": {
+    "hanzi": "任何",
+    "pinyin": "rèn hé",
+    "defs": [
+      "any"
+    ]
+  },
+  "apartment": {
+    "hanzi": "公寓",
+    "pinyin": "gōng yù",
+    "defs": [
+      "apartment"
+    ]
+  },
+  "app": {
+    "hanzi": "应用程序",
+    "pinyin": "yìng yòng chéng xù",
+    "defs": [
+      "app"
+    ]
+  },
+  "appear": {
+    "hanzi": "出现",
+    "pinyin": "chū xiàn",
+    "defs": [
+      "appear"
+    ]
+  },
+  "apple": {
+    "hanzi": "苹果",
+    "pinyin": "píng guǒ",
+    "defs": [
+      "noun"
+    ]
+  },
+  "application": {
+    "hanzi": "申请",
+    "pinyin": "shēn qǐng",
+    "defs": [
+      "application"
+    ]
+  },
+  "apply": {
+    "hanzi": "申请",
+    "pinyin": "shēn qǐng",
+    "defs": [
+      "apply"
+    ]
+  },
+  "approach": {
+    "hanzi": "方法",
+    "pinyin": "fāng fǎ",
+    "defs": [
+      "approach"
+    ]
+  },
+  "architect": {
+    "hanzi": "建筑师",
+    "pinyin": "jiàn zhù shī",
+    "defs": [
+      "architect"
+    ]
+  },
+  "argue": {
+    "hanzi": "争论",
+    "pinyin": "zhēng lùn",
+    "defs": [
+      "argue"
+    ]
+  },
+  "arm": {
+    "hanzi": "胳膊",
+    "pinyin": "gē bo",
+    "defs": [
+      "arm"
+    ]
+  },
+  "arms": {
+    "hanzi": "手臂",
+    "pinyin": "shǒu bì",
+    "defs": [
+      "arms"
+    ]
+  },
+  "around": {
+    "hanzi": "周围",
+    "pinyin": "zhōu wéi",
+    "defs": [
+      "around"
+    ]
+  },
+  "arrange": {
+    "hanzi": "安排",
+    "pinyin": "ān pái",
+    "defs": [
+      "arrange"
+    ]
+  },
+  "arrangement": {
+    "hanzi": "安排",
+    "pinyin": "ān pái",
+    "defs": [
+      "arrangement"
+    ]
+  },
+  "arrive": {
+    "hanzi": "到达",
+    "pinyin": "dào dá",
+    "defs": [
+      "arrive"
+    ]
+  },
+  "art": {
+    "hanzi": "艺术",
+    "pinyin": "yì shù",
+    "defs": [
+      "art"
+    ]
+  },
+  "artist": {
+    "hanzi": "艺术家",
+    "pinyin": "yì shù jiā",
+    "defs": [
+      "artist"
+    ]
+  },
+  "as": {
+    "hanzi": "作为",
+    "pinyin": "zuò wéi",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "asked": {
+    "hanzi": "问了",
+    "pinyin": "wèn le",
+    "defs": [
+      "asked"
+    ]
+  },
+  "asking": {
+    "hanzi": "正在问",
+    "pinyin": "zhèng zài wèn",
+    "defs": [
+      "asking"
+    ]
+  },
+  "assessment": {
+    "hanzi": "评估",
+    "pinyin": "píng gū",
+    "defs": [
+      "assessment"
+    ]
+  },
+  "assignment": {
+    "hanzi": "作业",
+    "pinyin": "zuò yè",
+    "defs": [
+      "assignment"
+    ]
+  },
+  "assist": {
+    "hanzi": "协助",
+    "pinyin": "xié zhù",
+    "defs": [
+      "assist"
+    ]
+  },
+  "assistance": {
+    "hanzi": "帮助",
+    "pinyin": "bāng zhù",
+    "defs": [
+      "assistance"
+    ]
+  },
+  "association": {
+    "hanzi": "协会",
+    "pinyin": "xié huì",
+    "defs": [
+      "association"
+    ]
+  },
+  "assume": {
+    "hanzi": "假设",
+    "pinyin": "jiǎ shè",
+    "defs": [
+      "assume"
+    ]
+  },
+  "ate": {
+    "hanzi": "吃了",
+    "pinyin": "chī le",
+    "defs": [
+      "ate"
+    ]
+  },
+  "atmosphere": {
+    "hanzi": "大气",
+    "pinyin": "dà qì",
+    "defs": [
+      "atmosphere"
+    ]
+  },
+  "attach": {
+    "hanzi": "附加",
+    "pinyin": "fù jiā",
+    "defs": [
+      "attach"
+    ]
+  },
+  "attack": {
+    "hanzi": "攻击",
+    "pinyin": "gōng jī",
+    "defs": [
+      "attack"
+    ]
+  },
+  "attempt": {
+    "hanzi": "尝试",
+    "pinyin": "cháng shì",
+    "defs": [
+      "attempt"
+    ]
+  },
+  "attend": {
+    "hanzi": "参加",
+    "pinyin": "cān jiā",
+    "defs": [
+      "attend"
+    ]
+  },
+  "attention": {
+    "hanzi": "注意",
+    "pinyin": "zhù yì",
+    "defs": [
+      "attention"
+    ]
+  },
+  "attic": {
+    "hanzi": "阁楼",
+    "pinyin": "gé lóu",
+    "defs": [
+      "attic"
+    ]
+  },
+  "audience": {
+    "hanzi": "观众",
+    "pinyin": "guān zhòng",
+    "defs": [
+      "audience"
+    ]
+  },
+  "aunt": {
+    "hanzi": "姑姑",
+    "pinyin": "gū gū",
+    "defs": [
+      "aunt"
+    ]
+  },
+  "automobile": {
+    "hanzi": "汽车",
+    "pinyin": "qì chē",
+    "defs": [
+      "automobile"
+    ]
+  },
+  "average": {
+    "hanzi": "平均",
+    "pinyin": "píng jūn",
+    "defs": [
+      "average"
+    ]
+  },
+  "aware": {
+    "hanzi": "意识到",
+    "pinyin": "yì shí dào",
+    "defs": [
+      "aware"
+    ]
+  },
+  "away": {
+    "hanzi": "离开",
+    "pinyin": "lí kāi",
+    "defs": [
+      "away"
+    ]
+  },
+  "baby": {
+    "hanzi": "婴儿",
+    "pinyin": "yīng ér",
+    "defs": [
+      "baby"
+    ]
+  },
+  "backache": {
+    "hanzi": "背痛",
+    "pinyin": "bèi tòng",
+    "defs": [
+      "backache"
+    ]
+  },
+  "background": {
+    "hanzi": "背景",
+    "pinyin": "bèi jǐng",
+    "defs": [
+      "background"
+    ]
+  },
+  "balance": {
+    "hanzi": "平衡",
+    "pinyin": "píng héng",
+    "defs": [
+      "balance"
+    ]
+  },
+  "banana": {
+    "hanzi": "香蕉",
+    "pinyin": "xiāng jiāo",
+    "defs": [
+      "noun"
+    ]
+  },
+  "bank": {
+    "hanzi": "银行",
+    "pinyin": "yín háng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "basketball": {
+    "hanzi": "篮球",
+    "pinyin": "lán qiú",
+    "defs": [
+      "basketball"
+    ]
+  },
+  "beautiful": {
+    "hanzi": "美丽",
+    "pinyin": "měi lì",
+    "defs": [
+      "beautiful"
+    ]
+  },
+  "benefit": {
+    "hanzi": "好处",
+    "pinyin": "hǎo chù",
+    "defs": [
+      "benefit"
+    ]
+  },
+  "bike": {
+    "hanzi": "自行车",
+    "pinyin": "zì xíng chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "biology": {
+    "hanzi": "生物",
+    "pinyin": "shēng wù",
+    "defs": [
+      "biology"
+    ]
+  },
+  "black": {
+    "hanzi": "黑色",
+    "pinyin": "hēi sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "blue": {
+    "hanzi": "蓝色",
+    "pinyin": "lán sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "body": {
+    "hanzi": "身体",
+    "pinyin": "shēn tǐ",
+    "defs": [
+      "body"
+    ]
+  },
+  "brain": {
+    "hanzi": "大脑",
+    "pinyin": "dà nǎo",
+    "defs": [
+      "brain"
+    ]
+  },
+  "brand": {
+    "hanzi": "品牌",
+    "pinyin": "pǐn pái",
+    "defs": [
+      "brand"
+    ]
+  },
+  "bread": {
+    "hanzi": "面包",
+    "pinyin": "miàn bāo",
+    "defs": [
+      "noun"
+    ]
+  },
+  "breakfast": {
+    "hanzi": "早餐",
+    "pinyin": "zǎo cān",
+    "defs": [
+      "breakfast"
+    ]
+  },
+  "brother": {
+    "hanzi": "兄弟",
+    "pinyin": "xiōng dì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "brown": {
+    "hanzi": "棕色",
+    "pinyin": "zōng sè",
+    "defs": [
+      "brown"
+    ]
+  },
+  "budget": {
+    "hanzi": "预算",
+    "pinyin": "yù suàn",
+    "defs": [
+      "budget"
+    ]
+  },
+  "bus": {
+    "hanzi": "公交车",
+    "pinyin": "gōng jiāo chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "business": {
+    "hanzi": "商业",
+    "pinyin": "shāng yè",
+    "defs": [
+      "business"
+    ]
+  },
+  "but": {
+    "hanzi": "但是",
+    "pinyin": "dàn shì",
+    "defs": [
+      "conjunction"
+    ]
+  },
+  "button": {
+    "hanzi": "按钮",
+    "pinyin": "àn niǔ",
+    "defs": [
+      "button"
+    ]
+  },
+  "cake": {
+    "hanzi": "蛋糕",
+    "pinyin": "dàn gāo",
+    "defs": [
+      "cake"
+    ]
+  },
+  "calculate": {
+    "hanzi": "计算",
+    "pinyin": "jì suàn",
+    "defs": [
+      "calculate"
+    ]
+  },
+  "calm": {
+    "hanzi": "平静",
+    "pinyin": "píng jìng",
+    "defs": [
+      "calm"
+    ]
+  },
+  "camp": {
+    "hanzi": "营地",
+    "pinyin": "yíng dì",
+    "defs": [
+      "camp"
+    ]
+  },
+  "campaign": {
+    "hanzi": "活动",
+    "pinyin": "huó dòng",
+    "defs": [
+      "campaign"
+    ]
+  },
+  "can": {
+    "hanzi": "可以",
+    "pinyin": "kě yǐ",
+    "defs": [
+      "modal verb"
+    ]
+  },
+  "cancer": {
+    "hanzi": "癌症",
+    "pinyin": "ái zhèng",
+    "defs": [
+      "cancer"
+    ]
+  },
+  "candidate": {
+    "hanzi": "候选人",
+    "pinyin": "hòu xuǎn rén",
+    "defs": [
+      "candidate"
+    ]
+  },
+  "capital": {
+    "hanzi": "首都",
+    "pinyin": "shǒu dū",
+    "defs": [
+      "capital"
+    ]
+  },
+  "car": {
+    "hanzi": "汽车",
+    "pinyin": "qì chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "card": {
+    "hanzi": "卡片",
+    "pinyin": "kǎ piàn",
+    "defs": [
+      "card"
+    ]
+  },
+  "care": {
+    "hanzi": "关心",
+    "pinyin": "guān xīn",
+    "defs": [
+      "care"
+    ]
+  },
+  "case": {
+    "hanzi": "情况",
+    "pinyin": "qíng kuàng",
+    "defs": [
+      "case"
+    ]
+  },
+  "category": {
+    "hanzi": "类别",
+    "pinyin": "lèi bié",
+    "defs": [
+      "category"
+    ]
+  },
+  "cause": {
+    "hanzi": "原因",
+    "pinyin": "yuán yīn",
+    "defs": [
+      "cause"
+    ]
+  },
+  "cell": {
+    "hanzi": "细胞",
+    "pinyin": "xì bāo",
+    "defs": [
+      "cell"
+    ]
+  },
+  "century": {
+    "hanzi": "世纪",
+    "pinyin": "shì jì",
+    "defs": [
+      "century"
+    ]
+  },
+  "certain": {
+    "hanzi": "某些",
+    "pinyin": "mǒu xiē",
+    "defs": [
+      "certain"
+    ]
+  },
+  "challenge": {
+    "hanzi": "挑战",
+    "pinyin": "tiǎo zhàn",
+    "defs": [
+      "challenge"
+    ]
+  },
+  "chance": {
+    "hanzi": "机会",
+    "pinyin": "jī huì",
+    "defs": [
+      "chance"
+    ]
+  },
+  "channel": {
+    "hanzi": "频道",
+    "pinyin": "pín dào",
+    "defs": [
+      "channel"
+    ]
+  },
+  "chapter": {
+    "hanzi": "章节",
+    "pinyin": "zhāng jié",
+    "defs": [
+      "chapter"
+    ]
+  },
+  "character": {
+    "hanzi": "性格",
+    "pinyin": "xìng gé",
+    "defs": [
+      "character"
+    ]
+  },
+  "charge": {
+    "hanzi": "收费",
+    "pinyin": "shōu fèi",
+    "defs": [
+      "charge"
+    ]
+  },
+  "charity": {
+    "hanzi": "慈善",
+    "pinyin": "cí shàn",
+    "defs": [
+      "charity"
+    ]
+  },
+  "chart": {
+    "hanzi": "图表",
+    "pinyin": "tú biǎo",
+    "defs": [
+      "chart"
+    ]
+  },
+  "cheap": {
+    "hanzi": "便宜",
+    "pinyin": "pián yi",
+    "defs": [
+      "cheap"
+    ]
+  },
+  "check": {
+    "hanzi": "检查",
+    "pinyin": "jiǎn chá",
+    "defs": [
+      "check"
+    ]
+  },
+  "chemistry": {
+    "hanzi": "化学",
+    "pinyin": "huà xué",
+    "defs": [
+      "chemistry"
+    ]
+  },
+  "chicken": {
+    "hanzi": "鸡肉",
+    "pinyin": "jī ròu",
+    "defs": [
+      "noun"
+    ]
+  },
+  "chief": {
+    "hanzi": "首席",
+    "pinyin": "shǒu xí",
+    "defs": [
+      "chief"
+    ]
+  },
+  "child": {
+    "hanzi": "孩子",
+    "pinyin": "hái zi",
+    "defs": [
+      "child"
+    ]
+  },
+  "chinese": {
+    "hanzi": "中文",
+    "pinyin": "zhōng wén",
+    "defs": [
+      "Chinese"
+    ]
+  },
+  "choice": {
+    "hanzi": "选择",
+    "pinyin": "xuǎn zé",
+    "defs": [
+      "choice"
+    ]
+  },
+  "choose": {
+    "hanzi": "选择",
+    "pinyin": "xuǎn zé",
+    "defs": [
+      "choose"
+    ]
+  },
+  "church": {
+    "hanzi": "教堂",
+    "pinyin": "jiào táng",
+    "defs": [
+      "church"
+    ]
+  },
+  "citizen": {
+    "hanzi": "公民",
+    "pinyin": "gōng mín",
+    "defs": [
+      "citizen"
+    ]
+  },
+  "city": {
+    "hanzi": "城市",
+    "pinyin": "chéng shì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "claim": {
+    "hanzi": "声称",
+    "pinyin": "shēng chēng",
+    "defs": [
+      "claim"
+    ]
+  },
+  "classroom": {
+    "hanzi": "教室",
+    "pinyin": "jiào shì",
+    "defs": [
+      "classroom"
+    ]
+  },
+  "clearly": {
+    "hanzi": "清楚地",
+    "pinyin": "qīng de",
+    "defs": [
+      "clearly"
+    ]
+  },
+  "clock": {
+    "hanzi": "时钟",
+    "pinyin": "shí zhōng",
+    "defs": [
+      "clock"
+    ]
+  },
+  "closely": {
+    "hanzi": "密切地",
+    "pinyin": "mì qiè de",
+    "defs": [
+      "closely"
+    ]
+  },
+  "cloudy": {
+    "hanzi": "多云",
+    "pinyin": "duō yún",
+    "defs": [
+      "cloudy"
+    ]
+  },
+  "club": {
+    "hanzi": "俱乐部",
+    "pinyin": "jù lè bù",
+    "defs": [
+      "club"
+    ]
+  },
+  "coast": {
+    "hanzi": "海岸",
+    "pinyin": "hǎi àn",
+    "defs": [
+      "coast"
+    ]
+  },
+  "code": {
+    "hanzi": "代码",
+    "pinyin": "dài mǎ",
+    "defs": [
+      "code"
+    ]
+  },
+  "coffee": {
+    "hanzi": "咖啡",
+    "pinyin": "kā fēi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "collect": {
+    "hanzi": "收集",
+    "pinyin": "shōu jí",
+    "defs": [
+      "collect"
+    ]
+  },
+  "collection": {
+    "hanzi": "收藏",
+    "pinyin": "shōu cáng",
+    "defs": [
+      "collection"
+    ]
+  },
+  "college": {
+    "hanzi": "学院",
+    "pinyin": "xué yuàn",
+    "defs": [
+      "college"
+    ]
+  },
+  "combination": {
+    "hanzi": "组合",
+    "pinyin": "zǔ hé",
+    "defs": [
+      "combination"
+    ]
+  },
+  "combine": {
+    "hanzi": "结合",
+    "pinyin": "jié hé",
+    "defs": [
+      "combine"
+    ]
+  },
+  "comedy": {
+    "hanzi": "喜剧",
+    "pinyin": "xǐ jù",
+    "defs": [
+      "comedy"
+    ]
+  },
+  "comfort": {
+    "hanzi": "舒适",
+    "pinyin": "shū shì",
+    "defs": [
+      "comfort"
+    ]
+  },
+  "command": {
+    "hanzi": "命令",
+    "pinyin": "mìng lìng",
+    "defs": [
+      "command"
+    ]
+  },
+  "comment": {
+    "hanzi": "评论",
+    "pinyin": "píng lùn",
+    "defs": [
+      "comment"
+    ]
+  },
+  "commission": {
+    "hanzi": "委员会",
+    "pinyin": "wěi yuán huì",
+    "defs": [
+      "commission"
+    ]
+  },
+  "commit": {
+    "hanzi": "承诺",
+    "pinyin": "chéng nuò",
+    "defs": [
+      "commit"
+    ]
+  },
+  "commitment": {
+    "hanzi": "承诺",
+    "pinyin": "chéng nuò",
+    "defs": [
+      "commitment"
+    ]
+  },
+  "community": {
+    "hanzi": "社区",
+    "pinyin": "shè qū",
+    "defs": [
+      "community"
+    ]
+  },
+  "company": {
+    "hanzi": "公司",
+    "pinyin": "gōng sī",
+    "defs": [
+      "company"
+    ]
+  },
+  "compare": {
+    "hanzi": "比较",
+    "pinyin": "bǐ jiào",
+    "defs": [
+      "compare"
+    ]
+  },
+  "comparison": {
+    "hanzi": "比较",
+    "pinyin": "bǐ jiào",
+    "defs": [
+      "comparison"
+    ]
+  },
+  "compete": {
+    "hanzi": "竞争",
+    "pinyin": "jìng zhēng",
+    "defs": [
+      "compete"
+    ]
+  },
+  "complete": {
+    "hanzi": "完成",
+    "pinyin": "wán chéng",
+    "defs": [
+      "complete"
+    ]
+  },
+  "computer": {
+    "hanzi": "电脑",
+    "pinyin": "diàn nǎo",
+    "defs": [
+      "computer"
+    ]
+  },
+  "concept": {
+    "hanzi": "概念",
+    "pinyin": "gài niàn",
+    "defs": [
+      "concept"
+    ]
+  },
+  "concern": {
+    "hanzi": "关心",
+    "pinyin": "guān xīn",
+    "defs": [
+      "concern"
+    ]
+  },
+  "condition": {
+    "hanzi": "条件",
+    "pinyin": "tiáo jiàn",
+    "defs": [
+      "condition"
+    ]
+  },
+  "conference": {
+    "hanzi": "会议",
+    "pinyin": "huì yì",
+    "defs": [
+      "conference"
+    ]
+  },
+  "confidence": {
+    "hanzi": "信心",
+    "pinyin": "xìn xīn",
+    "defs": [
+      "confidence"
+    ]
+  },
+  "confirm": {
+    "hanzi": "确认",
+    "pinyin": "què rèn",
+    "defs": [
+      "confirm"
+    ]
+  },
+  "conflict": {
+    "hanzi": "冲突",
+    "pinyin": "chōng tū",
+    "defs": [
+      "conflict"
+    ]
+  },
+  "connect": {
+    "hanzi": "连接",
+    "pinyin": "lián jiē",
+    "defs": [
+      "connect"
+    ]
+  },
+  "connection": {
+    "hanzi": "连接",
+    "pinyin": "lián jiē",
+    "defs": [
+      "connection"
+    ]
+  },
+  "consider": {
+    "hanzi": "考虑",
+    "pinyin": "kǎo lǜ",
+    "defs": [
+      "consider"
+    ]
+  },
+  "consideration": {
+    "hanzi": "考虑",
+    "pinyin": "kǎo lǜ",
+    "defs": [
+      "consideration"
+    ]
+  },
+  "consist": {
+    "hanzi": "组成",
+    "pinyin": "zǔ chéng",
+    "defs": [
+      "consist"
+    ]
+  },
+  "constantly": {
+    "hanzi": "不断地",
+    "pinyin": "bù duàn de",
+    "defs": [
+      "constantly"
+    ]
+  },
+  "construction": {
+    "hanzi": "建设",
+    "pinyin": "jiàn shè",
+    "defs": [
+      "construction"
+    ]
+  },
+  "contact": {
+    "hanzi": "联系",
+    "pinyin": "lián xì",
+    "defs": [
+      "contact"
+    ]
+  },
+  "contain": {
+    "hanzi": "包含",
+    "pinyin": "bāo hán",
+    "defs": [
+      "contain"
+    ]
+  },
+  "content": {
+    "hanzi": "内容",
+    "pinyin": "nèi róng",
+    "defs": [
+      "content"
+    ]
+  },
+  "contest": {
+    "hanzi": "比赛",
+    "pinyin": "bǐ sài",
+    "defs": [
+      "contest"
+    ]
+  },
+  "context": {
+    "hanzi": "背景",
+    "pinyin": "bèi jǐng",
+    "defs": [
+      "context"
+    ]
+  },
+  "control": {
+    "hanzi": "控制",
+    "pinyin": "kòng zhì",
+    "defs": [
+      "control"
+    ]
+  },
+  "cool": {
+    "hanzi": "凉爽",
+    "pinyin": "liáng ǎng",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "copy": {
+    "hanzi": "复制",
+    "pinyin": "fù zhì",
+    "defs": [
+      "copy"
+    ]
+  },
+  "count": {
+    "hanzi": "计数",
+    "pinyin": "jì shù",
+    "defs": [
+      "count"
+    ]
+  },
+  "country": {
+    "hanzi": "国家",
+    "pinyin": "guó jiā",
+    "defs": [
+      "noun"
+    ]
+  },
+  "couple": {
+    "hanzi": "夫妇",
+    "pinyin": "fū fù",
+    "defs": [
+      "couple"
+    ]
+  },
+  "course": {
+    "hanzi": "课程",
+    "pinyin": "kè chéng",
+    "defs": [
+      "course"
+    ]
+  },
+  "court": {
+    "hanzi": "法院",
+    "pinyin": "fǎ yuàn",
+    "defs": [
+      "court"
+    ]
+  },
+  "cover": {
+    "hanzi": "覆盖",
+    "pinyin": "fù gài",
+    "defs": [
+      "cover"
+    ]
+  },
+  "creation": {
+    "hanzi": "创造",
+    "pinyin": "àng zào",
+    "defs": [
+      "creation"
+    ]
+  },
+  "crime": {
+    "hanzi": "犯罪",
+    "pinyin": "fàn zuì",
+    "defs": [
+      "crime"
+    ]
+  },
+  "crisis": {
+    "hanzi": "危机",
+    "pinyin": "wēi jī",
+    "defs": [
+      "crisis"
+    ]
+  },
+  "criteria": {
+    "hanzi": "标准",
+    "pinyin": "biāo zhǔn",
+    "defs": [
+      "criteria"
+    ]
+  },
+  "cross": {
+    "hanzi": "穿过",
+    "pinyin": "ān guò",
+    "defs": [
+      "cross"
+    ]
+  },
+  "crowd": {
+    "hanzi": "人群",
+    "pinyin": "rén qún",
+    "defs": [
+      "crowd"
+    ]
+  },
+  "culture": {
+    "hanzi": "文化",
+    "pinyin": "wén huà",
+    "defs": [
+      "culture"
+    ]
+  },
+  "currently": {
+    "hanzi": "目前",
+    "pinyin": "mù qián",
+    "defs": [
+      "currently"
+    ]
+  },
+  "customer": {
+    "hanzi": "客户",
+    "pinyin": "kè hù",
+    "defs": [
+      "customer"
+    ]
+  },
+  "cycle": {
+    "hanzi": "循环",
+    "pinyin": "xún huán",
+    "defs": [
+      "cycle"
+    ]
+  },
+  "dance": {
+    "hanzi": "舞蹈",
+    "pinyin": "wǔ dǎo",
+    "defs": [
+      "dance"
+    ]
+  },
+  "daughter": {
+    "hanzi": "女儿",
+    "pinyin": "nǚ ér",
+    "defs": [
+      "daughter"
+    ]
+  },
+  "degree": {
+    "hanzi": "学位",
+    "pinyin": "xué wèi",
+    "defs": [
+      "degree"
+    ]
+  },
+  "difficult": {
+    "hanzi": "困难",
+    "pinyin": "kùn nán",
+    "defs": [
+      "difficult"
+    ]
+  },
+  "digital": {
+    "hanzi": "数字",
+    "pinyin": "shù zì",
+    "defs": [
+      "digital"
+    ]
+  },
+  "dinner": {
+    "hanzi": "晚餐",
+    "pinyin": "wǎn cān",
+    "defs": [
+      "dinner"
+    ]
+  },
+  "disappointment": {
+    "hanzi": "失望",
+    "pinyin": "shī wàng",
+    "defs": [
+      "disappointment"
+    ]
+  },
+  "disease": {
+    "hanzi": "疾病",
+    "pinyin": "jí bìng",
+    "defs": [
+      "disease"
+    ]
+  },
+  "division": {
+    "hanzi": "除法",
+    "pinyin": "chú fǎ",
+    "defs": [
+      "division"
+    ]
+  },
+  "doctor": {
+    "hanzi": "医生",
+    "pinyin": "yī shēng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "dry": {
+    "hanzi": "干燥",
+    "pinyin": "gān zào",
+    "defs": [
+      "dry"
+    ]
+  },
+  "ear": {
+    "hanzi": "耳朵",
+    "pinyin": "ěr duǒ",
+    "defs": [
+      "ear"
+    ]
+  },
+  "easy": {
+    "hanzi": "容易",
+    "pinyin": "róng yì",
+    "defs": [
+      "easy"
+    ]
+  },
+  "egg": {
+    "hanzi": "鸡蛋",
+    "pinyin": "jī dàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "email": {
+    "hanzi": "邮件",
+    "pinyin": "yóu jiàn",
+    "defs": [
+      "email"
+    ]
+  },
+  "employee": {
+    "hanzi": "员工",
+    "pinyin": "yuán gōng",
+    "defs": [
+      "employee"
+    ]
+  },
+  "english": {
+    "hanzi": "英语",
+    "pinyin": "yīng yǔ",
+    "defs": [
+      "English"
+    ]
+  },
+  "evening": {
+    "hanzi": "晚上",
+    "pinyin": "wǎn shàng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "exam": {
+    "hanzi": "考试",
+    "pinyin": "kǎo shì",
+    "defs": [
+      "exam"
+    ]
+  },
+  "excitement": {
+    "hanzi": "兴奋",
+    "pinyin": "xìng fèn",
+    "defs": [
+      "excitement"
+    ]
+  },
+  "eye": {
+    "hanzi": "眼睛",
+    "pinyin": "yǎn jīng",
+    "defs": [
+      "eye"
+    ]
+  },
+  "family": {
+    "hanzi": "家庭",
+    "pinyin": "jiā tíng",
+    "defs": [
+      "family"
+    ]
+  },
+  "father": {
+    "hanzi": "父亲",
+    "pinyin": "fù qīn",
+    "defs": [
+      "father"
+    ]
+  },
+  "fear": {
+    "hanzi": "恐惧",
+    "pinyin": "kǒng jù",
+    "defs": [
+      "fear"
+    ]
+  },
+  "find": {
+    "hanzi": "找到",
+    "pinyin": "zhǎo dào",
+    "defs": [
+      "find"
+    ]
+  },
+  "foggy": {
+    "hanzi": "有雾",
+    "pinyin": "yǒu wù",
+    "defs": [
+      "foggy"
+    ]
+  },
+  "food": {
+    "hanzi": "食物",
+    "pinyin": "shí wù",
+    "defs": [
+      "noun"
+    ]
+  },
+  "football": {
+    "hanzi": "足球",
+    "pinyin": "zú qiú",
+    "defs": [
+      "football"
+    ]
+  },
+  "for": {
+    "hanzi": "为了",
+    "pinyin": "wèi le",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "forest": {
+    "hanzi": "森林",
+    "pinyin": "sēn lín",
+    "defs": [
+      "forest"
+    ]
+  },
+  "free": {
+    "hanzi": "有空",
+    "pinyin": "yǒu kòng",
+    "defs": [
+      "free time"
+    ]
+  },
+  "friend": {
+    "hanzi": "朋友",
+    "pinyin": "péng yǒu",
+    "defs": [
+      "friend"
+    ]
+  },
+  "fruit": {
+    "hanzi": "水果",
+    "pinyin": "ǐ guǒ",
+    "defs": [
+      "noun"
+    ]
+  },
+  "future": {
+    "hanzi": "未来",
+    "pinyin": "wèi lái",
+    "defs": [
+      "future"
+    ]
+  },
+  "game": {
+    "hanzi": "游戏",
+    "pinyin": "yóu xì",
+    "defs": [
+      "game"
+    ]
+  },
+  "girl": {
+    "hanzi": "女孩",
+    "pinyin": "nǚ hái",
+    "defs": [
+      "girl"
+    ]
+  },
+  "goodbye": {
+    "hanzi": "再见",
+    "pinyin": "zài jiàn",
+    "defs": [
+      "goodbye"
+    ]
+  },
+  "gray": {
+    "hanzi": "灰色",
+    "pinyin": "huī sè",
+    "defs": [
+      "gray"
+    ]
+  },
+  "green": {
+    "hanzi": "绿色",
+    "pinyin": "lǜ sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "happy": {
+    "hanzi": "快乐",
+    "pinyin": "kuài lè",
+    "defs": [
+      "happy"
+    ]
+  },
+  "hard": {
+    "hanzi": "困难",
+    "pinyin": "kùn nán",
+    "defs": [
+      "hard"
+    ]
+  },
+  "health": {
+    "hanzi": "健康",
+    "pinyin": "jiàn kāng",
+    "defs": [
+      "health"
+    ]
+  },
+  "heart": {
+    "hanzi": "心脏",
+    "pinyin": "xīn zàng",
+    "defs": [
+      "heart"
+    ]
+  },
+  "hello": {
+    "hanzi": "你好",
+    "pinyin": "nǐ hǎo",
+    "defs": [
+      "hello"
+    ]
+  },
+  "help": {
+    "hanzi": "帮助",
+    "pinyin": "bāng zhù",
+    "defs": [
+      "help"
+    ]
+  },
+  "highway": {
+    "hanzi": "高速公路",
+    "pinyin": "gāo sù gōng lù",
+    "defs": [
+      "highway"
+    ]
+  },
+  "history": {
+    "hanzi": "历史",
+    "pinyin": "lì shǐ",
+    "defs": [
+      "history"
+    ]
+  },
+  "homework": {
+    "hanzi": "作业",
+    "pinyin": "zuò yè",
+    "defs": [
+      "homework"
+    ]
+  },
+  "hope": {
+    "hanzi": "希望",
+    "pinyin": "xī wàng",
+    "defs": [
+      "hope"
+    ]
+  },
+  "hospital": {
+    "hanzi": "医院",
+    "pinyin": "yī yuàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "hotel": {
+    "hanzi": "酒店",
+    "pinyin": "jiǔ diàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "hour": {
+    "hanzi": "小时",
+    "pinyin": "xiǎo shí",
+    "defs": [
+      "hour"
+    ]
+  },
+  "house": {
+    "hanzi": "房子",
+    "pinyin": "fáng zi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "humid": {
+    "hanzi": "潮湿",
+    "pinyin": "cháo shī",
+    "defs": [
+      "humid"
+    ]
+  },
+  "if": {
+    "hanzi": "如果",
+    "pinyin": "rú guǒ",
+    "defs": [
+      "conditional"
+    ]
+  },
+  "important": {
+    "hanzi": "重要",
+    "pinyin": "zhòng yào",
+    "defs": [
+      "important"
+    ]
+  },
+  "information": {
+    "hanzi": "信息",
+    "pinyin": "xìn xī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "internet": {
+    "hanzi": "互联网",
+    "pinyin": "hù lián wǎng",
+    "defs": [
+      "internet"
+    ]
+  },
+  "job": {
+    "hanzi": "工作",
+    "pinyin": "gōng zuò",
+    "defs": [
+      "job"
+    ]
+  },
+  "joy": {
+    "hanzi": "快乐",
+    "pinyin": "kuài yuè",
+    "defs": [
+      "joy"
+    ]
+  },
+  "know": {
+    "hanzi": "知道",
+    "pinyin": "zhī dào",
+    "defs": [
+      "know"
+    ]
+  },
+  "knowledge": {
+    "hanzi": "知识",
+    "pinyin": "zhī shí",
+    "defs": [
+      "knowledge"
+    ]
+  },
+  "language": {
+    "hanzi": "语言",
+    "pinyin": "yǔ yán",
+    "defs": [
+      "language"
+    ]
+  },
+  "library": {
+    "hanzi": "图书馆",
+    "pinyin": "tú shū guǎn",
+    "defs": [
+      "library"
+    ]
+  },
+  "like": {
+    "hanzi": "喜欢",
+    "pinyin": "xǐ huān",
+    "defs": [
+      "like"
+    ]
+  },
+  "lunch": {
+    "hanzi": "午餐",
+    "pinyin": "wǔ cān",
+    "defs": [
+      "lunch"
+    ]
+  },
+  "market": {
+    "hanzi": "市场",
+    "pinyin": "shì chǎng",
+    "defs": [
+      "market"
+    ]
+  },
+  "mathematics": {
+    "hanzi": "数学",
+    "pinyin": "shù xué",
+    "defs": [
+      "mathematics"
+    ]
+  },
+  "meeting": {
+    "hanzi": "会议",
+    "pinyin": "huì yì",
+    "defs": [
+      "meeting"
+    ]
+  },
+  "milk": {
+    "hanzi": "牛奶",
+    "pinyin": "niú nǎi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "minute": {
+    "hanzi": "分钟",
+    "pinyin": "fēn zhōng",
+    "defs": [
+      "minute"
+    ]
+  },
+  "mobile": {
+    "hanzi": "手机",
+    "pinyin": "shǒu jī",
+    "defs": [
+      "mobile phone"
+    ]
+  },
+  "modern": {
+    "hanzi": "现代",
+    "pinyin": "xiàn dài",
+    "defs": [
+      "modern"
+    ]
+  },
+  "more": {
+    "hanzi": "更多",
+    "pinyin": "gèng duō",
+    "defs": [
+      "quantifier"
+    ]
+  },
+  "morning": {
+    "hanzi": "早上",
+    "pinyin": "zǎo shàng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "mother": {
+    "hanzi": "妈妈",
+    "pinyin": "mā ma",
+    "defs": [
+      "mother"
+    ]
+  },
+  "movie": {
+    "hanzi": "电影",
+    "pinyin": "diàn yǐng",
+    "defs": [
+      "movie"
+    ]
+  },
+  "multiplication": {
+    "hanzi": "乘法",
+    "pinyin": "chéng fǎ",
+    "defs": [
+      "multiplication"
+    ]
+  },
+  "music": {
+    "hanzi": "音乐",
+    "pinyin": "yīn yuè",
+    "defs": [
+      "music"
+    ]
+  },
+  "night": {
+    "hanzi": "夜晚",
+    "pinyin": "yè wǎn",
+    "defs": [
+      "night"
+    ]
+  },
+  "nine": {
+    "hanzi": "九",
+    "pinyin": "jiǔ",
+    "defs": [
+      "number"
+    ]
+  },
+  "nose": {
+    "hanzi": "鼻子",
+    "pinyin": "bí zi",
+    "defs": [
+      "nose"
+    ]
+  },
+  "number": {
+    "hanzi": "数字",
+    "pinyin": "shù zì",
+    "defs": [
+      "number"
+    ]
+  },
+  "ocean": {
+    "hanzi": "海洋",
+    "pinyin": "hǎi yáng",
+    "defs": [
+      "ocean"
+    ]
+  },
+  "office": {
+    "hanzi": "办公室",
+    "pinyin": "bàn gōng shì",
+    "defs": [
+      "office"
+    ]
+  },
+  "on": {
+    "hanzi": "在...上",
+    "pinyin": "zài...shàng",
+    "defs": [
+      "preposition"
+    ]
+  },
+  "orange": {
+    "hanzi": "橙色",
+    "pinyin": "chéng sè",
+    "defs": [
+      "orange"
+    ]
+  },
+  "other": {
+    "hanzi": "其他",
+    "pinyin": "qí tā",
+    "defs": [
+      "determiner"
+    ]
+  },
+  "page": {
+    "hanzi": "页面",
+    "pinyin": "yè miàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "painting": {
+    "hanzi": "绘画",
+    "pinyin": "huì huà",
+    "defs": [
+      "painting"
+    ]
+  },
+  "park": {
+    "hanzi": "公园",
+    "pinyin": "gōng yuán",
+    "defs": [
+      "noun"
+    ]
+  },
+  "password": {
+    "hanzi": "密码",
+    "pinyin": "mì mǎ",
+    "defs": [
+      "password"
+    ]
+  },
+  "past": {
+    "hanzi": "过去",
+    "pinyin": "guò qù",
+    "defs": [
+      "past"
+    ]
+  },
+  "patient": {
+    "hanzi": "病人",
+    "pinyin": "bìng rén",
+    "defs": [
+      "patient"
+    ]
+  },
+  "percent": {
+    "hanzi": "百分比",
+    "pinyin": "bǎi fēn bǐ",
+    "defs": [
+      "percent"
+    ]
+  },
+  "phone": {
+    "hanzi": "电话",
+    "pinyin": "diàn huà",
+    "defs": [
+      "phone"
+    ]
+  },
+  "photography": {
+    "hanzi": "摄影",
+    "pinyin": "shè yǐng",
+    "defs": [
+      "photography"
+    ]
+  },
+  "physics": {
+    "hanzi": "物理",
+    "pinyin": "wù lǐ",
+    "defs": [
+      "physics"
+    ]
+  },
+  "pink": {
+    "hanzi": "粉色",
+    "pinyin": "fěn sè",
+    "defs": [
+      "pink"
+    ]
+  },
+  "plane": {
+    "hanzi": "飞机",
+    "pinyin": "fēi jī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "present": {
+    "hanzi": "现在",
+    "pinyin": "xiàn zài",
+    "defs": [
+      "present"
+    ]
+  },
+  "price": {
+    "hanzi": "价格",
+    "pinyin": "jià gé",
+    "defs": [
+      "price"
+    ]
+  },
+  "product": {
+    "hanzi": "产品",
+    "pinyin": "chǎn pǐn",
+    "defs": [
+      "product"
+    ]
+  },
+  "project": {
+    "hanzi": "项目",
+    "pinyin": "xiàng mù",
+    "defs": [
+      "project"
+    ]
+  },
+  "purple": {
+    "hanzi": "紫色",
+    "pinyin": "zǐ sè",
+    "defs": [
+      "purple"
+    ]
+  },
+  "question": {
+    "hanzi": "问题",
+    "pinyin": "wèn tí",
+    "defs": [
+      "question"
+    ]
+  },
+  "rainy": {
+    "hanzi": "下雨",
+    "pinyin": "xià yǔ",
+    "defs": [
+      "rainy"
+    ]
+  },
+  "red": {
+    "hanzi": "红色",
+    "pinyin": "hóng sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "restaurant": {
+    "hanzi": "餐厅",
+    "pinyin": "cān tīng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "rice": {
+    "hanzi": "米饭",
+    "pinyin": "mǐ fàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "room": {
+    "hanzi": "房间",
+    "pinyin": "fáng jiān",
+    "defs": [
+      "room"
+    ]
+  },
+  "sad": {
+    "hanzi": "悲伤",
+    "pinyin": "bēi shāng",
+    "defs": [
+      "sad"
+    ]
+  },
+  "sadness": {
+    "hanzi": "悲伤",
+    "pinyin": "bēi shāng",
+    "defs": [
+      "sadness"
+    ]
+  },
+  "salary": {
+    "hanzi": "工资",
+    "pinyin": "gōng zī",
+    "defs": [
+      "salary"
+    ]
+  },
+  "school": {
+    "hanzi": "学校",
+    "pinyin": "xué xiào",
+    "defs": [
+      "noun"
+    ]
+  },
+  "search": {
+    "hanzi": "搜索",
+    "pinyin": "sōu suō",
+    "defs": [
+      "verb/noun"
+    ]
+  },
+  "service": {
+    "hanzi": "服务",
+    "pinyin": "fú wù",
+    "defs": [
+      "service"
+    ]
+  },
+  "silver": {
+    "hanzi": "银色",
+    "pinyin": "yín sè",
+    "defs": [
+      "silver"
+    ]
+  },
+  "simple": {
+    "hanzi": "简单",
+    "pinyin": "jiǎn dān",
+    "defs": [
+      "simple"
+    ]
+  },
+  "sister": {
+    "hanzi": "姐妹",
+    "pinyin": "jiě mèi",
+    "defs": [
+      "noun"
+    ]
+  },
+  "six": {
+    "hanzi": "六",
+    "pinyin": "liù",
+    "defs": [
+      "number"
+    ]
+  },
+  "skill": {
+    "hanzi": "技能",
+    "pinyin": "jì néng",
+    "defs": [
+      "skill"
+    ]
+  },
+  "sleep": {
+    "hanzi": "睡觉",
+    "pinyin": "ì jiào",
+    "defs": [
+      "sleep"
+    ]
+  },
+  "snowy": {
+    "hanzi": "下雪",
+    "pinyin": "xià xuě",
+    "defs": [
+      "snowy"
+    ]
+  },
+  "son": {
+    "hanzi": "儿子",
+    "pinyin": "ér zi",
+    "defs": [
+      "son"
+    ]
+  },
+  "song": {
+    "hanzi": "歌曲",
+    "pinyin": "gē qǔ",
+    "defs": [
+      "song"
+    ]
+  },
+  "sorry": {
+    "hanzi": "对不起",
+    "pinyin": "duì bù qǐ",
+    "defs": [
+      "sorry"
+    ]
+  },
+  "speak": {
+    "hanzi": "说话",
+    "pinyin": "ō huà",
+    "defs": [
+      "speak"
+    ]
+  },
+  "sport": {
+    "hanzi": "运动",
+    "pinyin": "yùn dòng",
+    "defs": [
+      "sport"
+    ]
+  },
+  "station": {
+    "hanzi": "车站",
+    "pinyin": "chē zhàn",
+    "defs": [
+      "station"
+    ]
+  },
+  "statistics": {
+    "hanzi": "统计",
+    "pinyin": "tǒng jì",
+    "defs": [
+      "statistics"
+    ]
+  },
+  "stone": {
+    "hanzi": "石头",
+    "pinyin": "shí tóu",
+    "defs": [
+      "stone"
+    ]
+  },
+  "store": {
+    "hanzi": "商店",
+    "pinyin": "shāng diàn",
+    "defs": [
+      "noun"
+    ]
+  },
+  "student": {
+    "hanzi": "学生",
+    "pinyin": "xué shēng",
+    "defs": [
+      "noun"
+    ]
+  },
+  "study": {
+    "hanzi": "学习",
+    "pinyin": "xué xí",
+    "defs": [
+      "study"
+    ]
+  },
+  "subtraction": {
+    "hanzi": "减法",
+    "pinyin": "jiǎn fǎ",
+    "defs": [
+      "subtraction"
+    ]
+  },
+  "subway": {
+    "hanzi": "地铁",
+    "pinyin": "dì tiě",
+    "defs": [
+      "subway"
+    ]
+  },
+  "summer": {
+    "hanzi": "夏天",
+    "pinyin": "xià tiān",
+    "defs": [
+      "summer"
+    ]
+  },
+  "sun": {
+    "hanzi": "太阳",
+    "pinyin": "tài yáng",
+    "defs": [
+      "sun"
+    ]
+  },
+  "sunny": {
+    "hanzi": "晴天",
+    "pinyin": "qíng tiān",
+    "defs": [
+      "sunny"
+    ]
+  },
+  "surgery": {
+    "hanzi": "手术",
+    "pinyin": "shǒu shù",
+    "defs": [
+      "surgery"
+    ]
+  },
+  "surprise": {
+    "hanzi": "惊讶",
+    "pinyin": "jīng yà",
+    "defs": [
+      "surprise"
+    ]
+  },
+  "swimming": {
+    "hanzi": "游泳",
+    "pinyin": "yóu yǒng",
+    "defs": [
+      "swimming"
+    ]
+  },
+  "talk": {
+    "hanzi": "谈话",
+    "pinyin": "tán huà",
+    "defs": [
+      "talk"
+    ]
+  },
+  "taxi": {
+    "hanzi": "出租车",
+    "pinyin": "chū zū chē",
+    "defs": [
+      "taxi"
+    ]
+  },
+  "teacher": {
+    "hanzi": "老师",
+    "pinyin": "lǎo shī",
+    "defs": [
+      "noun"
+    ]
+  },
+  "ten": {
+    "hanzi": "十",
+    "pinyin": "shí",
+    "defs": [
+      "number"
+    ]
+  },
+  "thank": {
+    "hanzi": "谢谢",
+    "pinyin": "xiè xiè",
+    "defs": [
+      "thank"
+    ]
+  },
+  "thanks": {
+    "hanzi": "谢谢",
+    "pinyin": "xiè xiè",
+    "defs": [
+      "thanks"
+    ]
+  },
+  "that": {
+    "hanzi": "那个",
+    "pinyin": "nà ge",
+    "defs": [
+      "demonstrative"
+    ]
+  },
+  "the": {
+    "hanzi": "这个",
+    "pinyin": "zhè ge",
+    "defs": [
+      "definite article"
+    ]
+  },
+  "this": {
+    "hanzi": "这个",
+    "pinyin": "zhè ge",
+    "defs": [
+      "demonstrative"
+    ]
+  },
+  "three": {
+    "hanzi": "三",
+    "pinyin": "sān",
+    "defs": [
+      "number"
+    ]
+  },
+  "time": {
+    "hanzi": "时间",
+    "pinyin": "shí jiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "today": {
+    "hanzi": "今天",
+    "pinyin": "jīn tiān",
+    "defs": [
+      "today"
+    ]
+  },
+  "tomorrow": {
+    "hanzi": "明天",
+    "pinyin": "míng tiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "total": {
+    "hanzi": "总计",
+    "pinyin": "zǒng jì",
+    "defs": [
+      "total"
+    ]
+  },
+  "traffic": {
+    "hanzi": "交通",
+    "pinyin": "jiāo tōng",
+    "defs": [
+      "traffic"
+    ]
+  },
+  "train": {
+    "hanzi": "火车",
+    "pinyin": "huǒ chē",
+    "defs": [
+      "noun"
+    ]
+  },
+  "treatment": {
+    "hanzi": "治疗",
+    "pinyin": "zhì liáo",
+    "defs": [
+      "treatment"
+    ]
+  },
+  "understand": {
+    "hanzi": "理解",
+    "pinyin": "lǐ jiě",
+    "defs": [
+      "understand"
+    ]
+  },
+  "university": {
+    "hanzi": "大学",
+    "pinyin": "dà xué",
+    "defs": [
+      "university"
+    ]
+  },
+  "vegetable": {
+    "hanzi": "蔬菜",
+    "pinyin": "shū cài",
+    "defs": [
+      "vegetable"
+    ]
+  },
+  "warm": {
+    "hanzi": "温暖",
+    "pinyin": "wēn nuǎn",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "weather": {
+    "hanzi": "天气",
+    "pinyin": "tiān qì",
+    "defs": [
+      "noun"
+    ]
+  },
+  "website": {
+    "hanzi": "网站",
+    "pinyin": "wǎng zhàn",
+    "defs": [
+      "website"
+    ]
+  },
+  "week": {
+    "hanzi": "星期",
+    "pinyin": "xīng qī",
+    "defs": [
+      "week"
+    ]
+  },
+  "white": {
+    "hanzi": "白色",
+    "pinyin": "bái sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "windy": {
+    "hanzi": "有风",
+    "pinyin": "yǒu fēng",
+    "defs": [
+      "windy"
+    ]
+  },
+  "winter": {
+    "hanzi": "冬天",
+    "pinyin": "dōng tiān",
+    "defs": [
+      "winter"
+    ]
+  },
+  "woman": {
+    "hanzi": "女人",
+    "pinyin": "nǚ rén",
+    "defs": [
+      "woman"
+    ]
+  },
+  "work": {
+    "hanzi": "工作",
+    "pinyin": "gōng zuò",
+    "defs": [
+      "work"
+    ]
+  },
+  "world": {
+    "hanzi": "世界",
+    "pinyin": "shì jiè",
+    "defs": [
+      "world"
+    ]
+  },
+  "worry": {
+    "hanzi": "担心",
+    "pinyin": "dān xīn",
+    "defs": [
+      "worry"
+    ]
+  },
+  "writing": {
+    "hanzi": "写作",
+    "pinyin": "xiě zuò",
+    "defs": [
+      "writing"
+    ]
+  },
+  "yellow": {
+    "hanzi": "黄色",
+    "pinyin": "huáng sè",
+    "defs": [
+      "adjective"
+    ]
+  },
+  "yesterday": {
+    "hanzi": "昨天",
+    "pinyin": "zuó tiān",
+    "defs": [
+      "noun"
+    ]
+  },
+  "young": {
+    "hanzi": "年轻",
+    "pinyin": "nián qīng",
+    "defs": [
+      "young"
+    ]
+  }
+}

@@ -1,20 +1,9 @@
 User-agent: *
 Allow: /
 
-# SEO优化 - 允许搜索引擎索引
-Disallow: /api/
-Disallow: /node_modules/
-Disallow: /.env
-
-# 网站地图
+# Sitemap
 Sitemap: https://getpinyin.online/sitemap.xml
 
-# 针对特定搜索引擎的优化
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot  
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
+# Disallow access to JSON data files for crawlers
+Disallow: /dict.json
+Disallow: /simplified.json 

@@ -15,8 +15,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO Meta Tags -->
-  <title>English-Chinese Dictionary - Learn Chinese with Pinyin | 3000+ Words</title>
-  <meta name="description" content="Comprehensive English-Chinese dictionary with pinyin pronunciation. Learn Chinese characters, pinyin, and meanings for 3000+ common English words. Perfect for foreigners learning Chinese." />
+  <title>English to Chinese Translator - Learn Chinese with Pinyin Pronunciation</title>
+  <meta name="description" content="Free English to Chinese translator with pinyin pronunciation. Learn Chinese characters, pinyin, and meanings for over 100 common English words. Perfect for Chinese language learners." />
   <meta name="keywords" content="English to Chinese translator, pinyin dictionary, learn Chinese, Chinese pronunciation, English Chinese dictionary, pinyin translator, Chinese language learning" />
   <meta name="author" content="GetPinyin.Online" />
   <meta name="robots" content="index, follow" />
@@ -504,49 +504,6 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
     }
-    
-    /* 添加有道云翻译API相关样式 */
-    .online-result {
-      background: #f0f8ff;
-      border: 1px solid #007aff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 16px;
-      position: relative;
-    }
-
-    .online-result-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .api-badge {
-      background: #007aff;
-      color: white;
-      font-size: 0.8rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .loading-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .api-error {
-      background: #fff0f0;
-      border: 1px solid #ff3b30;
-      color: #ff3b30;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 12px;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -555,6 +512,7 @@
     <div class="nav-container">
       <a href="#" class="logo">GetPinyin</a>
       <nav class="nav-menu">
+        <a href="about.html" class="nav-item">About</a>
         <a href="#" onclick="showHelp()" class="nav-item">Help</a>
         <a href="mailto:smilezjjzjj@126.com" class="nav-item">Contact</a>
       </nav>
@@ -572,7 +530,7 @@
 
     <div id="searchTab">
       <div class="search-container">
-        <input id="query" type="text" placeholder="Enter English word to translate" />
+        <input id="query" type="text" placeholder="Enter English word (fuzzy search supported)" oninput="showSuggestions()" />
         <div id="suggestions" class="search-suggestions"></div>
         <button onclick="search()">Search</button>
       </div>
@@ -611,385 +569,25 @@
 
   <script>
     // Global variables
+    let dict = {};
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let currentWord = '';
-    
-    // 获取缓存的翻译结果
-    function getCachedTranslation(word) {
+
+    // Load dictionary from JSON file
+    async function loadDictionary() {
       try {
-        const cache = JSON.parse(localStorage.getItem('translationCache') || '{}');
-        const cached = cache[word];
+        const response = await fetch('dict.json');
+        dict = await response.json();
         
-        // 检查缓存是否过期 (7天)
-        if (cached && (Date.now() - cached.timestamp < 7 * 24 * 60 * 60 * 1000)) {
-          return cached.data;
-        }
-        
-        // 清理过期缓存
-        if (cached && Date.now() - cached.timestamp >= 7 * 24 * 60 * 60 * 1000) {
-          delete cache[word];
-          localStorage.setItem('translationCache', JSON.stringify(cache));
-        }
-        
-        return null;
+        console.log('Dictionary loaded:', Object.keys(dict).length, 'entries');
+        document.getElementById("query").disabled = false;
+        document.getElementById("query").placeholder = "Enter English word (fuzzy search supported)";
       } catch (error) {
-        console.error('读取缓存失败:', error);
-        return null;
+        console.error('Failed to load dictionary:', error);
+        dict = {}; // 使用空对象作为备用
+        document.getElementById("query").disabled = false;
+        document.getElementById("query").placeholder = "Dictionary loading failed - limited functionality";
       }
-    }
-    
-    // 保存翻译到缓存
-    function cacheTranslation(word, translation) {
-      try {
-        const cache = JSON.parse(localStorage.getItem('translationCache') || '{}');
-        cache[word] = {
-          data: translation,
-          timestamp: Date.now()
-        };
-        localStorage.setItem('translationCache', JSON.stringify(cache));
-      } catch (error) {
-        console.error('保存缓存失败:', error);
-      }
-    }
-    
-    // 作为首选方案的API翻译
-    async function translateWithAPIAsFirstChoice(word) {
-      const resultDiv = document.getElementById("result");
-      
-      // 显示加载状态
-      resultDiv.innerHTML = `
-        <div class="loading-container">
-          <div class="loading-spinner"></div>
-          <p style="margin-left: 16px; color: #666;">正在查询"${word}"...</p>
-        </div>
-      `;
-      
-      try {
-        // 调用后端API
-        const response = await fetch('/api/translate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ word })
-        });
-        
-        const data = await response.json();
-        
-        if (!response.ok) {
-          throw new Error(data.error || '翻译请求失败');
-        }
-        
-        if (data.errorCode === '0' && data.translation && data.translation.length > 0) {
-          // 处理成功响应
-          const translation = data.translation[0];
-          let pinyin = '';
-          
-          if (data.basic && data.basic.phonetic) {
-            pinyin = data.basic.phonetic;
-          } else {
-            pinyin = await getPinyin(translation);
-          }
-          
-          // 创建翻译条目
-          const translationEntry = {
-            hanzi: translation,
-            pinyin: pinyin,
-            defs: [word],
-            source: 'api',
-            apiSource: data.apiSource || 'unknown'
-          };
-          
-          // 保存到缓存和本地词典
-          cacheTranslation(word, translationEntry);
-          dict[word] = translationEntry;
-          
-          // 显示结果
-          displayTranslationResult(word, translationEntry);
-        } else {
-          throw new Error('翻译失败，错误码: ' + data.errorCode);
-        }
-      } catch (error) {
-        console.error('API翻译错误:', error);
-        // API失败时显示模糊搜索建议
-        showFallbackSuggestions(word, error.message);
-      }
-    }
-    
-    // 显示翻译结果
-    function displayTranslationResult(word, entry) {
-      const result = document.getElementById("result");
-      const isFavorited = favorites.includes(word);
-      
-      result.innerHTML = `
-        <div class="result-header">
-          <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
-          <button class="favorite-btn" onclick="toggleFavorite()" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
-            ${isFavorited ? '❤️' : '🤍'}
-          </button>
-        </div>
-        
-        <div class="result-item">
-          <span class="label">汉字:</span>
-          <span class="hanzi">${entry.hanzi}</span>
-          <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="点击播放发音">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-            </svg>
-          </button>
-        </div>
-        
-        <div class="result-item">
-          <span class="label">拼音:</span>
-          <span class="pinyin">${entry.pinyin}</span>
-        </div>
-        
-        <div class="result-item">
-          <span class="label">释义:</span>
-          <span class="defs">${(entry.defs && Array.isArray(entry.defs)) ? entry.defs.join(", ") : "No definition available"}</span>
-        </div>
-        
-        ${entry.source === 'api' ? `
-          <div style="font-size: 0.85rem; color: #666; margin-top: 12px; text-align: center; padding: 8px; background: #e8f5e8; border-radius: 8px;">
-            <p>✅ 在线翻译成功，结果已缓存到本地</p>
-            ${entry.apiSource ? `<p style="font-size: 0.8rem; margin-top: 4px; color: #888;">翻译来源: ${getApiSourceName(entry.apiSource)}</p>` : ''}
-          </div>
-        ` : ''}
-      `;
-    }
-    
-    // 获取API来源的友好名称
-    function getApiSourceName(source) {
-      const sourceNames = {
-        'youdao': '有道云翻译',
-        'unknown': '在线翻译'
-      };
-      return sourceNames[source] || '在线翻译';
-    }
-    
-    // 显示备用建议（API失败时）
-    function showFallbackSuggestions(word, errorMessage) {
-      const result = document.getElementById("result");
-      
-      result.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-          <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" 翻译失败</p>
-          <p style="color: #666; margin-bottom: 20px;">无法在线翻译此词汇，请检查网络连接或稍后重试。</p>
-          
-          <div style="background: #f8d7da; padding: 16px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
-            <p style="color: #721c24; font-weight: 600; margin-bottom: 8px;">错误信息：</p>
-            <p style="color: #721c24; font-size: 0.9rem; margin: 0;">${errorMessage}</p>
-          </div>
-          
-          <div style="background: #fff3cd; padding: 16px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 20px;">
-            <p style="color: #856404; font-weight: 600; margin-bottom: 8px;">💡 建议：</p>
-            <ul style="color: #856404; text-align: left; margin: 0; padding-left: 20px;">
-              <li>检查单词拼写是否正确</li>
-              <li>尝试搜索单词的基本形式（如：running → run）</li>
-              <li>检查网络连接</li>
-              <li>稍后重试在线翻译</li>
-            </ul>
-          </div>
-          
-          <div style="margin-top: 16px;">
-            <button onclick="translateWithAPIAsFirstChoice('${word}')" style="background: #007aff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-right: 8px;">
-              重试翻译
-            </button>
-            <button onclick="showPopularWords()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-              浏览常用词汇
-            </button>
-          </div>
-        </div>
-      `;
-    }
-    
-    // 显示常用词汇
-    function showPopularWords() {
-      const result = document.getElementById("result");
-      result.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-          <h3 style="color: #007aff; margin-bottom: 20px;">📚 常用英语词汇</h3>
-          <div style="margin-bottom: 16px;">
-            ${getPopularWords(12).map(word => `
-              <span class="word-tag" onclick="searchWord('${word}')" style="display: inline-block; margin: 4px; padding: 8px 12px; background: #e7f3ff; border: 1px solid #007aff; border-radius: 6px; cursor: pointer; color: #007aff; font-weight: 500; transition: all 0.2s;">
-                ${word}
-              </span>
-            `).join('')}
-          </div>
-          <p style="color: #666; font-size: 0.9rem;">
-            点击任意词汇即可查看中文翻译和拼音
-          </p>
-        </div>
-      `;
-    }
-    
-    // 有道云翻译API函数
-    async function translateWithAPI(word) {
-      const resultDiv = document.getElementById("result");
-      
-      // 显示加载状态
-      resultDiv.innerHTML = `
-        <div class="loading-container">
-          <div class="loading-spinner"></div>
-          <p style="margin-left: 16px; color: #666;">正在在线翻译"${word}"...</p>
-        </div>
-      `;
-      
-      try {
-        // 使用后端代理API
-        const response = await fetch('/api/translate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ word })
-        });
-        
-        const data = await response.json();
-        
-        if (!response.ok) {
-          throw new Error(data.error || '翻译请求失败');
-        }
-        
-        if (data.errorCode === '0' && data.translation && data.translation.length > 0) {
-          // 处理成功响应
-          const translation = data.translation[0];
-          
-          // 获取拼音 - 有道API可能返回拼音
-          let pinyin = '';
-          if (data.basic && data.basic.phonetic) {
-            pinyin = data.basic.phonetic;
-          } else {
-            // 如果API没有返回拼音，尝试从本地获取
-            pinyin = await getPinyin(translation);
-          }
-          
-          // 显示结果
-          displayOnlineTranslationResult(word, translation, pinyin);
-          
-          // 保存到本地词典
-          saveToLocalDictionary(word, translation, pinyin);
-        } else {
-          throw new Error('翻译失败，错误码: ' + data.errorCode);
-        }
-      } catch (error) {
-        console.error('API翻译错误:', error);
-        
-        // 显示错误信息
-        resultDiv.innerHTML = `
-          <div style="text-align: center; padding: 20px;">
-            <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ 词典中未找到"${word}"</p>
-            <div class="api-error">
-              <p><strong>在线翻译失败</strong></p>
-              <p style="font-size: 0.9rem; margin-top: 8px;">请稍后再试或搜索其他单词。</p>
-            </div>
-            
-            <div style="margin-top: 20px;">
-              <button onclick="retryTranslation('${word}')" style="background: #007aff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
-                重试
-              </button>
-            </div>
-          </div>
-        `;
-      }
-    }
-    
-    // 获取中文拼音
-    async function getPinyin(chinese) {
-      try {
-        // 使用后端API获取拼音
-        const response = await fetch(`/api/pinyin?text=${encodeURIComponent(chinese)}`);
-        const data = await response.json();
-        
-        if (data.pinyin) {
-          return data.pinyin;
-        } else {
-          throw new Error('获取拼音失败');
-        }
-      } catch (error) {
-        console.error('获取拼音失败:', error);
-        return '获取拼音失败';
-      }
-    }
-    
-    // 显示在线翻译结果
-    function displayOnlineTranslationResult(word, translation, pinyin) {
-      const resultDiv = document.getElementById("result");
-      
-      resultDiv.innerHTML = `
-        <div class="result-header">
-          <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
-          <button class="favorite-btn" onclick="toggleFavorite()" title="添加到收藏">
-            🤍
-          </button>
-        </div>
-        
-        <div class="online-result">
-          <div class="online-result-header">
-            <span class="api-badge">有道云翻译</span>
-          </div>
-          
-          <div class="result-item">
-            <span class="label">汉字:</span>
-            <span class="hanzi">${translation}</span>
-            <button class="speaker-btn" onclick="speak('${translation}')" title="点击播放发音">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-              </svg>
-            </button>
-          </div>
-          
-          <div class="result-item">
-            <span class="label">拼音:</span>
-            <span class="pinyin">${pinyin}</span>
-          </div>
-          
-          <div style="font-size: 0.85rem; color: #666; margin-top: 12px; text-align: center;">
-            <p>在线翻译由有道云提供。</p>
-          </div>
-        </div>
-      `;
-      
-      // 设置当前单词用于收藏功能
-      currentWord = word;
-      
-      // 创建临时词典条目
-      const tempEntry = {
-        hanzi: translation,
-        pinyin: pinyin,
-        defs: [word],
-        source: 'api'
-      };
-      
-      // 存储到临时词典
-      const tempDict = JSON.parse(localStorage.getItem('tempDict') || '{}');
-      tempDict[word] = tempEntry;
-      localStorage.setItem('tempDict', JSON.stringify(tempDict));
-    }
-    
-    // 保存到本地词典
-    function saveToLocalDictionary(word, translation, pinyin) {
-      // 获取自定义词典
-      const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
-      
-      // 添加新条目
-      customDict[word] = {
-        hanzi: translation,
-        pinyin: pinyin,
-        defs: [word],
-        source: 'api'
-      };
-      
-      // 保存回localStorage
-      localStorage.setItem('customDict', JSON.stringify(customDict));
-      
-      // 更新内存中的词典
-      dict[word] = customDict[word];
-    }
-    
-    // 重试翻译
-    function retryTranslation(word) {
-      translateWithAPI(word);
     }
 
     function switchTab(tab) {
@@ -1008,11 +606,92 @@
       }
     }
 
+    function fuzzySearch(query) {
+      if (!query) return [];
+
+      query = query.toLowerCase();
+      const results = [];
+
+      for (const [word, data] of Object.entries(dict)) {
+        let score = 0;
+
+        // Exact match gets highest score
+        if (word === query) {
+          score = 100;
+        }
+        // Starts with query gets high score
+        else if (word.startsWith(query)) {
+          score = 80;
+        }
+        // Contains query gets medium score
+        else if (word.includes(query)) {
+          score = 60;
+        }
+        // Check if any definition contains the query (safely check if defs exists)
+        else if (data.defs && Array.isArray(data.defs) && data.defs.some(def => def.toLowerCase().includes(query))) {
+          score = 40;
+        }
+        // Fuzzy match (character by character)
+        else {
+          let matchCount = 0;
+          let lastIndex = -1;
+          for (const char of query) {
+            const index = word.indexOf(char, lastIndex + 1);
+            if (index !== -1) {
+              matchCount++;
+              lastIndex = index;
+            }
+          }
+          if (matchCount > 0) {
+            score = (matchCount / query.length) * 30;
+          }
+        }
+
+        if (score > 0) {
+          results.push({ word, data, score });
+        }
+      }
+
+      return results.sort((a, b) => b.score - a.score).slice(0, 5);
+    }
+
+    function showSuggestions() {
+      const query = document.getElementById("query").value.trim();
+      const suggestions = document.getElementById("suggestions");
+
+      if (query.length < 1) {
+        suggestions.style.display = 'none';
+        return;
+      }
+
+      const results = fuzzySearch(query);
+
+      if (results.length > 0) {
+        suggestions.innerHTML = results.map(result => `
+          <div class="suggestion-item" onclick="selectSuggestion('${result.word}')">
+            <div class="suggestion-word">${result.word}</div>
+            <div class="suggestion-translation">${result.data.hanzi} (${result.data.pinyin})</div>
+          </div>
+        `).join('');
+        suggestions.style.display = 'block';
+      } else {
+        suggestions.style.display = 'none';
+      }
+    }
+
+    function selectSuggestion(word) {
+      document.getElementById("query").value = word;
+      document.getElementById("suggestions").style.display = 'none';
+      displayResult(word);
+    }
+
     function search() {
       const word = document.getElementById("query").value.trim().toLowerCase();
       console.log('Search called with word:', word);
+      console.log('Dictionary loaded:', Object.keys(dict).length, 'entries');
       if (word) {
         displayResult(word);
+        document.getElementById("suggestions").style.display = 'none';
       }
     }
 
@@ -1021,31 +700,113 @@
       displayResult(word);
     }
 
-    async function displayResult(word) {
+    function displayResult(word) {
       console.log('DisplayResult called with word:', word);
+      console.log('Word exists in dict:', !!dict[word]);
       
+      const entry = dict[word];
       const result = document.getElementById("result");
       currentWord = word;
 
-      // 先检查缓存
-      let entry = getCachedTranslation(word);
-      
       if (entry) {
-        console.log('Found cached entry:', entry);
-        displayTranslationResult(word, entry);
+        console.log('Found entry:', entry);
+        const isFavorited = favorites.includes(word);
+        result.innerHTML = `
+          <div class="result-header">
+            <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
+            <button class="favorite-btn" onclick="toggleFavorite()" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
+              ${isFavorited ? '❤️' : '🤍'}
+            </button>
+          </div>
+          <div class="result-item">
+            <span class="label">汉字:</span>
+            <span class="hanzi">${entry.hanzi}</span>
+            <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="点击播放发音">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="result-item">
+            <span class="label">拼音:</span>
+            <span class="pinyin">${entry.pinyin}</span>
+          </div>
+          <div class="result-item">
+            <span class="label">释义:</span>
+            <span class="defs">${(entry.defs && Array.isArray(entry.defs)) ? entry.defs.join(", ") : "No definition available"}</span>
+          </div>
+        `;
       } else {
-        // 没有找到缓存，立即尝试在线翻译
-        console.log('Word not found in cache, trying online translation');
-        await translateWithAPIAsFirstChoice(word);
+        console.log('Word not found, checking fuzzy search');
+        const suggestions = fuzzySearch(word);
+        console.log('Fuzzy search results:', suggestions.length, 'suggestions');
+        
+        if (suggestions.length > 0) {
+          result.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+              <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" not found in dictionary</p>
+              <p style="color: #666; margin-bottom: 20px;">Did you mean one of these words?</p>
+              <div style="margin-bottom: 20px;">
+                ${suggestions.map(s => `
+                  <div class="word-tag" onclick="searchWord('${s.word}')" style="display: inline-block; margin: 4px; padding: 8px 12px; background: #f0f8ff; border: 1px solid #007aff; border-radius: 6px; cursor: pointer; color: #007aff; font-weight: 500; transition: all 0.2s;">
+                    ${s.word} → ${s.data.hanzi}
+                  </div>
+                `).join('')}
+              </div>
+              <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; border-left: 4px solid #28a745;">
+                <p style="color: #155724; font-weight: 600; margin-bottom: 8px;">💡 Search Tips:</p>
+                <ul style="color: #155724; text-align: left; margin: 0; padding-left: 20px;">
+                  <li>Try typing just the first few letters</li>
+                  <li>Check your spelling</li>
+                  <li>Our dictionary contains <strong>${Object.keys(dict).length}+ common English words</strong></li>
+                </ul>
+              </div>
+            </div>
+          `;
+        } else {
+          result.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+              <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" not found</p>
+              <p style="color: #666; margin-bottom: 20px;">No similar words found in our dictionary.</p>
+              
+              <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; border-left: 4px solid #17a2b8;">
+                <p style="color: #0c5460; font-weight: 600; margin-bottom: 12px;">📚 Try searching for these popular words:</p>
+                <div style="margin-bottom: 16px;">
+                  ${getPopularWords(8).map(word => `
+                    <span class="word-tag" onclick="searchWord('${word}')" style="display: inline-block; margin: 4px; padding: 6px 10px; background: #e7f3ff; border: 1px solid #17a2b8; border-radius: 4px; cursor: pointer; color: #17a2b8; font-size: 0.9rem; transition: all 0.2s;">
+                      ${word}
+                    </span>
+                  `).join('')}
+                </div>
+                <p style="color: #0c5460; font-size: 0.9rem; margin: 0;">
+                  Our dictionary contains <strong>${Object.keys(dict).length}+ English words</strong> with Chinese translations and pinyin pronunciation.
+                </p>
+              </div>
+            </div>
+          `;
+        }
       }
 
       result.classList.add('show');
     }
 
-    // Helper function to get popular/common words for display
+    // Helper function to get popular/common words from dictionary
     function getPopularWords(count) {
       const popularWords = ['hello', 'world', 'good', 'love', 'happy', 'computer', 'phone', 'work', 'study', 'money', 'food', 'water', 'time', 'family', 'friend', 'help', 'thank', 'please'];
-      return popularWords.slice(0, count);
+      const availableWords = popularWords.filter(word => dict[word]);
+      
+      // If we don't have enough popular words, add some random ones
+      if (availableWords.length < count) {
+        const allWords = Object.keys(dict);
+        while (availableWords.length < count && availableWords.length < allWords.length) {
+          const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
+          if (!availableWords.includes(randomWord)) {
+            availableWords.push(randomWord);
+          }
+        }
+      }
+      
+      return availableWords.slice(0, count);
     }
 
     function toggleFavorite() {
@@ -1070,11 +831,15 @@
         return;
       }
 
-      favoritesList.innerHTML = favorites.map(word => `
-        <div class="word-tag" onclick="switchTab('search'); searchWord('${word}')" style="margin: 4px; display: inline-block;">
-          ${word} (点击查看)
-        </div>
-      `).join('');
+      favoritesList.innerHTML = favorites.map(word => {
+        const entry = dict[word];
+        if (!entry) return '';
+        return `
+          <div class="word-tag" onclick="switchTab('search'); searchWord('${word}')" style="margin: 4px; display: inline-block;">
+            ${word} (${entry.hanzi})
+          </div>
+        `;
+      }).join('');
     }
 
     function speak(text) {
@@ -1104,12 +869,23 @@
     });
 
     // Initialize
-    window.onload = function() {
-      console.log('App initialized - Online translation mode');
-      document.getElementById("query").placeholder = "Enter English word to translate";
-      document.getElementById("query").disabled = false;
+    window.onload = async function() {
+      // Disable input while loading dictionary
+      document.getElementById("query").disabled = true;
+      document.getElementById("query").placeholder = "Loading dictionary...";
+
+      // Load dictionary from JSON file
+      await loadDictionary();
       
-      // Focus on input after initialization
+      // Load any custom dictionary entries from localStorage
+      try {
+        const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+        Object.assign(dict, customDict);
+      } catch (e) {
+        console.error('Failed to load custom dictionary:', e);
+      }
+
+      // Focus on input after loading
       document.getElementById("query").focus();
     };
 
