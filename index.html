@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-83Y1QY4M3K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-83Y1QY4M3K');
+  </script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>English-Chinese Dictionary - Learn Chinese with Pinyin | 3000+ Words</title>
+  <meta name="description" content="Comprehensive English-Chinese dictionary with pinyin pronunciation. Learn Chinese characters, pinyin, and meanings for 3000+ common English words. Perfect for foreigners learning Chinese." />
+  <meta name="keywords" content="English to Chinese translator, pinyin dictionary, learn Chinese, Chinese pronunciation, English Chinese dictionary, pinyin translator, Chinese language learning" />
+  <meta name="author" content="GetPinyin.Online" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://getpinyin.online/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://getpinyin.online/" />
+  <meta property="og:title" content="English to Chinese Translator - Learn Chinese with Pinyin" />
+  <meta property="og:description" content="Free English to Chinese translator with pinyin pronunciation. Perfect for learning Chinese characters and pronunciation." />
+  <meta property="og:image" content="https://getpinyin.online/og-image.jpg" />
+  <meta property="og:site_name" content="GetPinyin.Online" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://getpinyin.online/" />
+  <meta property="twitter:title" content="English to Chinese Translator - Learn Chinese with Pinyin" />
+  <meta property="twitter:description" content="Free English to Chinese translator with pinyin pronunciation. Perfect for learning Chinese characters and pronunciation." />
+  <meta property="twitter:image" content="https://getpinyin.online/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Language alternatives -->
+  <link rel="alternate" hreflang="en" href="https://getpinyin.online/" />
+  <link rel="alternate" hreflang="zh" href="https://getpinyin.online/zh/" />
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "English to Chinese Translator",
+    "description": "Free English to Chinese translator with pinyin pronunciation for learning Chinese",
+    "url": "https://getpinyin.online/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "GetPinyin.Online"
+    }
+  }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      padding-top: 40px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6e6e73;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border: 2px solid #f0f0f0;
+      border-radius: 16px;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #007aff;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+    }
+
+    input:disabled {
+      background: #f0f0f0;
+      color: #999;
+      cursor: not-allowed;
+    }
+
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+
+    .suggestion-item {
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.2s ease;
+    }
+
+    .suggestion-item:hover {
+      background: #f8f8f8;
+    }
+
+    .suggestion-item:last-child {
+      border-bottom: none;
+    }
+
+    .suggestion-word {
+      font-weight: 600;
+      color: #007aff;
+    }
+
+    .suggestion-translation {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .tabs {
+      display: flex;
+      background: #f0f0f0;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      padding: 4px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      background: white;
+      color: #007aff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 12px;
+    }
+
+    button:hover {
+      background: #0056cc;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .result {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      margin-top: 24px;
+      border: 1px solid #f0f0f0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .result.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .favorite-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      width: auto;
+      margin: 0;
+    }
+
+    .favorite-btn:hover {
+      background: #f0f0f0;
+      transform: scale(1.1);
+    }
+
+    .result-item {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .result-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #666;
+      min-width: 60px;
+      font-size: 0.9rem;
+    }
+
+    .hanzi {
+      font-size: 1.8rem;
+      color: #1d1d1f;
+      font-weight: 500;
+    }
+
+    .pinyin {
+      font-size: 1.3rem;
+      color: #007aff;
+      font-weight: 500;
+    }
+
+    .defs {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .error {
+      text-align: center;
+      color: #ff3b30;
+      font-size: 1.1rem;
+    }
+
+    .speaker-btn {
+      background: linear-gradient(135deg, #007aff, #0056cc);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      margin-left: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .speaker-btn:hover {
+      background: linear-gradient(135deg, #0056cc, #003d99);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    }
+
+    .speaker-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+    }
+
+    .speaker-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+    }
+
+    .speaker-btn:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+    .favorites-list {
+      margin-top: 20px;
+    }
+
+    .no-favorites {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    .online-search {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f8f8ff;
+      border: 1px dashed #007aff;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .online-search button {
+      margin-top: 8px;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(0, 122, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #007aff;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Header Navigation */
+    .header {
+      background: white;
+      padding: 16px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-item {
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item:hover {
+      color: #007aff;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    .loading-spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #007aff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .source-info {
+      border-left: 3px solid #007aff;
+    }
+
+    .online-search {
+      text-align: center;
+      margin-top: 20px;
+      padding: 16px;
+      background: linear-gradient(135deg, #f8f9ff, #e6f0ff);
+      border-radius: 12px;
+      border: 1px solid #e0e8ff;
+    }
+
+    .online-search button {
+      background: linear-gradient(135deg, #007aff, #0056cc);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+
+    .online-search button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    }
+    
+    /* 添加有道云翻译API相关样式 */
+    .online-result {
+      background: #f0f8ff;
+      border: 1px solid #007aff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+      position: relative;
+    }
+
+    .online-result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .api-badge {
+      background: #007aff;
+      color: white;
+      font-size: 0.8rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .loading-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .api-error {
+      background: #fff0f0;
+      border: 1px solid #ff3b30;
+      color: #ff3b30;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">GetPinyin</a>
+      <nav class="nav-menu">
+        <a href="#" onclick="showHelp()" class="nav-item">Help</a>
+        <a href="mailto:smilezjjzjj@126.com" class="nav-item">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>English to Chinese Translator</h1>
+    <p class="subtitle">Learn Chinese with pinyin pronunciation</p>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('search')">Search</div>
+      <div class="tab" onclick="switchTab('favorites')">Favorites</div>
+    </div>
+
+    <div id="searchTab">
+      <div class="search-container">
+        <input id="query" type="text" placeholder="Enter English word to translate" />
+        <div id="suggestions" class="search-suggestions"></div>
+        <button onclick="search()">Search</button>
+      </div>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <div id="favoritesTab" style="display: none;">
+      <div class="favorites-list">
+        <h3>Your Favorite Words</h3>
+        <div id="favoritesList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Info Outside Container -->
+  <div style="text-align: center; padding: 32px 20px; margin-top: 32px;">
+    <p style="color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 0.9rem;">&copy; 2025 GetPinyin.Online. All rights reserved.</p>
+    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 16px;">Free English to Chinese translator for language learners worldwide.</p>
+    <div>
+      <a href="#" onclick="showTerms()" style="color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 12px; font-size: 0.9rem;">Terms of Service</a>
+      <a href="#" onclick="showPrivacy()" style="color: rgba(255,255,255,0.9); text-decoration: none; margin: 0 12px; font-size: 0.9rem;">Privacy Policy</a>
+    </div>
+  </div>
+
+  <!-- Modal for Terms/Privacy -->
+  <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 16px; padding: 32px; max-width: 700px; width: 90vw; max-height: 80vh; overflow-y: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+        <h2 id="modalTitle" style="margin: 0; color: #1d1d1f; font-size: 1.5rem; line-height: 1.2;"></h2>
+        <button onclick="closeModal()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #999; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s ease; margin-left: 16px; flex-shrink: 0;" onmouseover="this.style.backgroundColor='#f0f0f0'; this.style.color='#666';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#999';">&times;</button>
+      </div>
+      <div id="modalContent" style="color: #666; line-height: 1.6;"></div>
+    </div>
+  </div>
+
+  <script>
+    // Global variables
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let currentWord = '';
+    
+    // 获取缓存的翻译结果
+    function getCachedTranslation(word) {
+      try {
+        const cache = JSON.parse(localStorage.getItem('translationCache') || '{}');
+        const cached = cache[word];
+        
+        // 检查缓存是否过期 (7天)
+        if (cached && (Date.now() - cached.timestamp < 7 * 24 * 60 * 60 * 1000)) {
+          return cached.data;
+        }
+        
+        // 清理过期缓存
+        if (cached && Date.now() - cached.timestamp >= 7 * 24 * 60 * 60 * 1000) {
+          delete cache[word];
+          localStorage.setItem('translationCache', JSON.stringify(cache));
+        }
+        
+        return null;
+      } catch (error) {
+        console.error('读取缓存失败:', error);
+        return null;
+      }
+    }
+    
+    // 保存翻译到缓存
+    function cacheTranslation(word, translation) {
+      try {
+        const cache = JSON.parse(localStorage.getItem('translationCache') || '{}');
+        cache[word] = {
+          data: translation,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('translationCache', JSON.stringify(cache));
+      } catch (error) {
+        console.error('保存缓存失败:', error);
+      }
+    }
+    
+    // 作为首选方案的API翻译
+    async function translateWithAPIAsFirstChoice(word) {
+      const resultDiv = document.getElementById("result");
+      
+      // 显示加载状态
+      resultDiv.innerHTML = `
+        <div class="loading-container">
+          <div class="loading-spinner"></div>
+          <p style="margin-left: 16px; color: #666;">正在查询"${word}"...</p>
+        </div>
+      `;
+      
+      try {
+        // 调用后端API
+        const response = await fetch('/api/translate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ word })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || '翻译请求失败');
+        }
+        
+        if (data.errorCode === '0' && data.translation && data.translation.length > 0) {
+          // 处理成功响应
+          const translation = data.translation[0];
+          let pinyin = '';
+          
+          if (data.basic && data.basic.phonetic) {
+            pinyin = data.basic.phonetic;
+          } else {
+            pinyin = await getPinyin(translation);
+          }
+          
+          // 创建翻译条目
+          const translationEntry = {
+            hanzi: translation,
+            pinyin: pinyin,
+            defs: [word],
+            source: 'api',
+            apiSource: data.apiSource || 'unknown'
+          };
+          
+          // 保存到缓存和本地词典
+          cacheTranslation(word, translationEntry);
+          dict[word] = translationEntry;
+          
+          // 显示结果
+          displayTranslationResult(word, translationEntry);
+        } else {
+          throw new Error('翻译失败，错误码: ' + data.errorCode);
+        }
+      } catch (error) {
+        console.error('API翻译错误:', error);
+        // API失败时显示模糊搜索建议
+        showFallbackSuggestions(word, error.message);
+      }
+    }
+    
+    // 显示翻译结果
+    function displayTranslationResult(word, entry) {
+      const result = document.getElementById("result");
+      const isFavorited = favorites.includes(word);
+      
+      result.innerHTML = `
+        <div class="result-header">
+          <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
+          <button class="favorite-btn" onclick="toggleFavorite()" title="${isFavorited ? 'Remove from favorites' : 'Add to favorites'}">
+            ${isFavorited ? '❤️' : '🤍'}
+          </button>
+        </div>
+        
+        <div class="result-item">
+          <span class="label">汉字:</span>
+          <span class="hanzi">${entry.hanzi}</span>
+          <button class="speaker-btn" onclick="speak('${entry.hanzi}')" title="点击播放发音">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="result-item">
+          <span class="label">拼音:</span>
+          <span class="pinyin">${entry.pinyin}</span>
+        </div>
+        
+        <div class="result-item">
+          <span class="label">释义:</span>
+          <span class="defs">${(entry.defs && Array.isArray(entry.defs)) ? entry.defs.join(", ") : "No definition available"}</span>
+        </div>
+        
+        ${entry.source === 'api' ? `
+          <div style="font-size: 0.85rem; color: #666; margin-top: 12px; text-align: center; padding: 8px; background: #e8f5e8; border-radius: 8px;">
+            <p>✅ 在线翻译成功，结果已缓存到本地</p>
+            ${entry.apiSource ? `<p style="font-size: 0.8rem; margin-top: 4px; color: #888;">翻译来源: ${getApiSourceName(entry.apiSource)}</p>` : ''}
+          </div>
+        ` : ''}
+      `;
+    }
+    
+    // 获取API来源的友好名称
+    function getApiSourceName(source) {
+      const sourceNames = {
+        'youdao': '有道云翻译',
+        'unknown': '在线翻译'
+      };
+      return sourceNames[source] || '在线翻译';
+    }
+    
+    // 显示备用建议（API失败时）
+    function showFallbackSuggestions(word, errorMessage) {
+      const result = document.getElementById("result");
+      
+      result.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+          <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ "${word}" 翻译失败</p>
+          <p style="color: #666; margin-bottom: 20px;">无法在线翻译此词汇，请检查网络连接或稍后重试。</p>
+          
+          <div style="background: #f8d7da; padding: 16px; border-radius: 8px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
+            <p style="color: #721c24; font-weight: 600; margin-bottom: 8px;">错误信息：</p>
+            <p style="color: #721c24; font-size: 0.9rem; margin: 0;">${errorMessage}</p>
+          </div>
+          
+          <div style="background: #fff3cd; padding: 16px; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 20px;">
+            <p style="color: #856404; font-weight: 600; margin-bottom: 8px;">💡 建议：</p>
+            <ul style="color: #856404; text-align: left; margin: 0; padding-left: 20px;">
+              <li>检查单词拼写是否正确</li>
+              <li>尝试搜索单词的基本形式（如：running → run）</li>
+              <li>检查网络连接</li>
+              <li>稍后重试在线翻译</li>
+            </ul>
+          </div>
+          
+          <div style="margin-top: 16px;">
+            <button onclick="translateWithAPIAsFirstChoice('${word}')" style="background: #007aff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-right: 8px;">
+              重试翻译
+            </button>
+            <button onclick="showPopularWords()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+              浏览常用词汇
+            </button>
+          </div>
+        </div>
+      `;
+    }
+    
+    // 显示常用词汇
+    function showPopularWords() {
+      const result = document.getElementById("result");
+      result.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+          <h3 style="color: #007aff; margin-bottom: 20px;">📚 常用英语词汇</h3>
+          <div style="margin-bottom: 16px;">
+            ${getPopularWords(12).map(word => `
+              <span class="word-tag" onclick="searchWord('${word}')" style="display: inline-block; margin: 4px; padding: 8px 12px; background: #e7f3ff; border: 1px solid #007aff; border-radius: 6px; cursor: pointer; color: #007aff; font-weight: 500; transition: all 0.2s;">
+                ${word}
+              </span>
+            `).join('')}
+          </div>
+          <p style="color: #666; font-size: 0.9rem;">
+            点击任意词汇即可查看中文翻译和拼音
+          </p>
+        </div>
+      `;
+    }
+    
+    // 有道云翻译API函数
+    async function translateWithAPI(word) {
+      const resultDiv = document.getElementById("result");
+      
+      // 显示加载状态
+      resultDiv.innerHTML = `
+        <div class="loading-container">
+          <div class="loading-spinner"></div>
+          <p style="margin-left: 16px; color: #666;">正在在线翻译"${word}"...</p>
+        </div>
+      `;
+      
+      try {
+        // 使用后端代理API
+        const response = await fetch('/api/translate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ word })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || '翻译请求失败');
+        }
+        
+        if (data.errorCode === '0' && data.translation && data.translation.length > 0) {
+          // 处理成功响应
+          const translation = data.translation[0];
+          
+          // 获取拼音 - 有道API可能返回拼音
+          let pinyin = '';
+          if (data.basic && data.basic.phonetic) {
+            pinyin = data.basic.phonetic;
+          } else {
+            // 如果API没有返回拼音，尝试从本地获取
+            pinyin = await getPinyin(translation);
+          }
+          
+          // 显示结果
+          displayOnlineTranslationResult(word, translation, pinyin);
+          
+          // 保存到本地词典
+          saveToLocalDictionary(word, translation, pinyin);
+        } else {
+          throw new Error('翻译失败，错误码: ' + data.errorCode);
+        }
+      } catch (error) {
+        console.error('API翻译错误:', error);
+        
+        // 显示错误信息
+        resultDiv.innerHTML = `
+          <div style="text-align: center; padding: 20px;">
+            <p style="color: #ff3b30; font-weight: 600; margin-bottom: 16px;">❌ 词典中未找到"${word}"</p>
+            <div class="api-error">
+              <p><strong>在线翻译失败</strong></p>
+              <p style="font-size: 0.9rem; margin-top: 8px;">请稍后再试或搜索其他单词。</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+              <button onclick="retryTranslation('${word}')" style="background: #007aff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+                重试
+              </button>
+            </div>
+          </div>
+        `;
+      }
+    }
+    
+    // 获取中文拼音
+    async function getPinyin(chinese) {
+      try {
+        // 使用后端API获取拼音
+        const response = await fetch(`/api/pinyin?text=${encodeURIComponent(chinese)}`);
+        const data = await response.json();
+        
+        if (data.pinyin) {
+          return data.pinyin;
+        } else {
+          throw new Error('获取拼音失败');
+        }
+      } catch (error) {
+        console.error('获取拼音失败:', error);
+        return '获取拼音失败';
+      }
+    }
+    
+    // 显示在线翻译结果
+    function displayOnlineTranslationResult(word, translation, pinyin) {
+      const resultDiv = document.getElementById("result");
+      
+      resultDiv.innerHTML = `
+        <div class="result-header">
+          <h2 style="margin: 0; color: #1d1d1f;">${word}</h2>
+          <button class="favorite-btn" onclick="toggleFavorite()" title="添加到收藏">
+            🤍
+          </button>
+        </div>
+        
+        <div class="online-result">
+          <div class="online-result-header">
+            <span class="api-badge">有道云翻译</span>
+          </div>
+          
+          <div class="result-item">
+            <span class="label">汉字:</span>
+            <span class="hanzi">${translation}</span>
+            <button class="speaker-btn" onclick="speak('${translation}')" title="点击播放发音">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="result-item">
+            <span class="label">拼音:</span>
+            <span class="pinyin">${pinyin}</span>
+          </div>
+          
+          <div style="font-size: 0.85rem; color: #666; margin-top: 12px; text-align: center;">
+            <p>在线翻译由有道云提供。</p>
+          </div>
+        </div>
+      `;
+      
+      // 设置当前单词用于收藏功能
+      currentWord = word;
+      
+      // 创建临时词典条目
+      const tempEntry = {
+        hanzi: translation,
+        pinyin: pinyin,
+        defs: [word],
+        source: 'api'
+      };
+      
+      // 存储到临时词典
+      const tempDict = JSON.parse(localStorage.getItem('tempDict') || '{}');
+      tempDict[word] = tempEntry;
+      localStorage.setItem('tempDict', JSON.stringify(tempDict));
+    }
+    
+    // 保存到本地词典
+    function saveToLocalDictionary(word, translation, pinyin) {
+      // 获取自定义词典
+      const customDict = JSON.parse(localStorage.getItem('customDict') || '{}');
+      
+      // 添加新条目
+      customDict[word] = {
+        hanzi: translation,
+        pinyin: pinyin,
+        defs: [word],
+        source: 'api'
+      };
+      
+      // 保存回localStorage
+      localStorage.setItem('customDict', JSON.stringify(customDict));
+      
+      // 更新内存中的词典
+      dict[word] = customDict[word];
+    }
+    
+    // 重试翻译
+    function retryTranslation(word) {
+      translateWithAPI(word);
+    }
+
+    function switchTab(tab) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      if (tab === 'search') {
+        document.querySelector('.tab').classList.add('active');
+        document.getElementById('searchTab').style.display = 'block';
+        document.getElementById('favoritesTab').style.display = 'none';
+      } else {
+        document.querySelectorAll('.tab')[1].classList.add('active');
+        document.getElementById('searchTab').style.display = 'none';
+        document.getElementById('favoritesTab').style.display = 'block';
+        loadFavorites();
+      }
+    }
+
+    function search() {
+      const word = document.getElementById("query").value.trim().toLowerCase();
+      console.log('Search called with word:', word);
+      if (word) {
+        displayResult(word);
+      }
+    }
+
+    function searchWord(word) {
+      document.getElementById("query").value = word;
+      displayResult(word);
+    }
+
+    async function displayResult(word) {
+      console.log('DisplayResult called with word:', word);
+      
+      const result = document.getElementById("result");
+      currentWord = word;
+
+      // 先检查缓存
+      let entry = getCachedTranslation(word);
+      
+      if (entry) {
+        console.log('Found cached entry:', entry);
+        displayTranslationResult(word, entry);
+      } else {
+        // 没有找到缓存，立即尝试在线翻译
+        console.log('Word not found in cache, trying online translation');
+        await translateWithAPIAsFirstChoice(word);
+      }
+
+      result.classList.add('show');
+    }
+
+    // Helper function to get popular/common words for display
+    function getPopularWords(count) {
+      const popularWords = ['hello', 'world', 'good', 'love', 'happy', 'computer', 'phone', 'work', 'study', 'money', 'food', 'water', 'time', 'family', 'friend', 'help', 'thank', 'please'];
+      return popularWords.slice(0, count);
+    }
+
+    function toggleFavorite() {
+      if (!currentWord) return;
+
+      const index = favorites.indexOf(currentWord);
+      if (index === -1) {
+        favorites.push(currentWord);
+      } else {
+        favorites.splice(index, 1);
+      }
+
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      displayResult(currentWord); // Refresh to update heart icon
+    }
+
+    function loadFavorites() {
+      const favoritesList = document.getElementById('favoritesList');
+
+      if (favorites.length === 0) {
+        favoritesList.innerHTML = '<p class="no-favorites">No favorite words yet. Search and add some!</p>';
+        return;
+      }
+
+      favoritesList.innerHTML = favorites.map(word => `
+        <div class="word-tag" onclick="switchTab('search'); searchWord('${word}')" style="margin: 4px; display: inline-block;">
+          ${word} (点击查看)
+        </div>
+      `).join('');
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-CN';
+        utterance.rate = 0.8;
+        speechSynthesis.speak(utterance);
+      }
+    }
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(event) {
+      const suggestions = document.getElementById('suggestions');
+      const searchContainer = document.querySelector('.search-container');
+      if (!searchContainer.contains(event.target)) {
+        suggestions.style.display = 'none';
+      }
+    });
+
+    // Allow Enter key to search
+    document.getElementById("query").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        search();
+      }
+    });
+
+    // Initialize
+    window.onload = function() {
+      console.log('App initialized - Online translation mode');
+      document.getElementById("query").placeholder = "Enter English word to translate";
+      document.getElementById("query").disabled = false;
+      
+      // Focus on input after initialization
+      document.getElementById("query").focus();
+    };
+
+    // Modal functions
+    function showModal(title, content) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function showTerms() {
+      const content = `
+        <div style="max-width: 100%; overflow-x: hidden;">
+          <div style="text-align: right; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">
+            <p style="margin: 0; color: #999; font-size: 0.85rem; font-style: italic;">Last Updated: January 2025</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">🎯 1. Service Description</h4>
+            <p style="margin: 0; color: #333; line-height: 1.6;">GetPinyin.Online is a free English-Chinese translation tool designed to help users learn Chinese pinyin and characters. We provide accurate translations, pinyin notation, and audio playback features.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 16px 0; font-size: 1.1rem;">⚖️ 2. Terms of Use</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">By using this website, you agree to comply with the following terms:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Use this service only for legal learning and translation purposes</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Do not abuse or interfere with the normal operation of the website</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Respect intellectual property and the rights of others</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 12px 0; font-size: 1.1rem;">⚠️ 3. Disclaimer</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">This service is provided "as is" and we do not guarantee complete accuracy of translations. Users should verify the accuracy of important translation content themselves.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 12px 0; font-size: 1.1rem;">🔄 4. Service Changes</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We reserve the right to modify or terminate the service at any time without notice.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f5f0ff, #ede0ff); padding: 20px; border-radius: 12px; border-left: 4px solid #8e44ad;">
+            <h4 style="color: #8e44ad; margin: 0 0 12px 0; font-size: 1.1rem;">📧 5. Contact Us</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">If you have any questions, please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+      showModal('Terms of Service', content);
+    }
+
+    function showPrivacy() {
+      const content = `
+        <div style="max-width: 100%; overflow-x: hidden;">
+          <div style="text-align: right; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">
+            <p style="margin: 0; color: #999; font-size: 0.85rem; font-style: italic;">Last Updated: January 2025</p>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 16px 0; font-size: 1.1rem;">📊 1. Information Collection</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We collect the following types of information:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #007aff;">💾 Usage Data:</strong> Your search queries and preferences are stored locally in your browser</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #007aff;">🔧 Technical Data:</strong> Basic technical information such as IP address, browser type, and access time</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 16px 0; font-size: 1.1rem;">🎯 2. Information Usage</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We use the collected information to:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Provide and improve translation services</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Save your favorites and preference settings</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;">✓ Analyze website usage to optimize user experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 16px 0; font-size: 1.1rem;">🛡️ 3. Information Protection</h4>
+            <p style="margin: 0 0 12px 0; color: #333;">We take reasonable security measures to protect your information:</p>
+            <div style="display: grid; gap: 8px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">💾 Local Storage:</strong> Your favorites and preferences are stored only in your browser</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">🔐 Data Encryption:</strong> All data transmission uses HTTPS encryption</p>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <p style="margin: 0; color: #333;"><strong style="color: #34c759;">🚫 Access Restrictions:</strong> We do not actively collect or store your personal sensitive information</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 12px 0; font-size: 1.1rem;">🍪 4. Cookie Usage</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We use cookies and local storage to save your usage preferences and favorites. You can manage this data through your browser settings.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f5f0ff, #ede0ff); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #8e44ad;">
+            <h4 style="color: #8e44ad; margin: 0 0 12px 0; font-size: 1.1rem;">🔗 5. Third-Party Services</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">This website may contain third-party advertising or analytics services, which have their own privacy policies.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff5f0, #ffe6cc); padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #e67e22;">
+            <h4 style="color: #e67e22; margin: 0 0 12px 0; font-size: 1.1rem;">🔄 6. Policy Updates</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">We may update this privacy policy from time to time. Major changes will be announced on the website.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0f8ff, #e6f3ff); padding: 20px; border-radius: 12px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">📧 7. Contact Us</h4>
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0; color: #333; line-height: 1.6;">If you have questions about the privacy policy, please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+      showModal('Privacy Policy', content);
+    }
+
+    function showHelp() {
+      const content = `
+        <div style="max-width: 100%; overflow-x: hidden;">
+          
+          <div style="background: linear-gradient(135deg, #f8f9ff, #e6f0ff); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #007aff;">
+            <h4 style="color: #007aff; margin: 0 0 12px 0; font-size: 1.1rem;">🚀 How to use the translator?</h4>
+            <div style="display: grid; gap: 8px;">
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>1.</strong> Enter an English word in the search box</p>
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>2.</strong> The system will automatically display search suggestions</p>
+              <p style="margin: 0; padding: 8px 0; border-bottom: 1px solid rgba(0,122,255,0.1);"><strong>3.</strong> Click on suggestions or press Enter to view translations</p>
+              <p style="margin: 0; padding: 8px 0;"><strong>4.</strong> Click the 🔊 button to hear Chinese pronunciation</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff8f0, #ffebcc); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #ff9500;">
+            <h4 style="color: #ff9500; margin: 0 0 12px 0; font-size: 1.1rem;">❤️ How to add favorites?</h4>
+            <p style="margin: 0;">Click the ❤️ button in the translation results to add words to your favorites list for easy review.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #f0fff4, #e6ffed); padding: 20px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #34c759;">
+            <h4 style="color: #34c759; margin: 0 0 16px 0; font-size: 1.1rem;">✨ What features are supported?</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">🔍 Fuzzy Search</strong><br>
+                <small style="color: #666;">Find words with incomplete spelling</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">🔊 Voice Playback</strong><br>
+                <small style="color: #666;">Standard Chinese pronunciation</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">💾 Favorites</strong><br>
+                <small style="color: #666;">Save commonly used words</small>
+              </div>
+              <div style="background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <strong style="color: #34c759;">📱 Offline Use</strong><br>
+                <small style="color: #666;">Works without internet</small>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #fff0f5, #ffe4e1); padding: 20px; border-radius: 12px; border-left: 4px solid #ff3b30;">
+            <h4 style="color: #ff3b30; margin: 0 0 16px 0; font-size: 1.1rem;">❓ Common Questions</h4>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: Why can't I find some words?</strong></p>
+              <p style="margin: 0; color: #666;">A: Our vocabulary contains common words and will be continuously updated and expanded.</p>
+            </div>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: What if pronunciation is inaccurate?</strong></p>
+              <p style="margin: 0; color: #666;">A: We use the browser's built-in speech synthesis, and the effect may vary by device.</p>
+            </div>
+            
+            <div style="background: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <p style="margin: 0 0 8px 0;"><strong style="color: #ff3b30;">Q: How to report problems?</strong></p>
+              <p style="margin: 0; color: #666;">A: Please contact us at: <a href="mailto:smilezjjzjj@126.com" style="color: #007aff; text-decoration: none; font-weight: 600;">smilezjjzjj@126.com</a></p>
+            </div>
+          </div>
+
+        </div>
+      `;
+      showModal('Help Center', content);
+    }
+
+    // Close modal on outside click
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
