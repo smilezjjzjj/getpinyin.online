@@ -34,6 +34,45 @@ function truncate(q) {
   return q.substring(0, 10) + len + q.substring(len - 10, len);
 }
 
+// 生成拼音的函数
+function generatePinyin(text) {
+  if (!text) {
+    return '';
+  }
+  
+  // 简单的拼音映射（常用汉字）
+  const pinyinMap = {
+    '你': 'nǐ', '好': 'hǎo', '世': 'shì', '界': 'jiè', '爱': 'ài',
+    '人': 'rén', '大': 'dà', '小': 'xiǎo', '中': 'zhōng', '国': 'guó',
+    '美': 'měi', '丽': 'lì', '时': 'shí', '间': 'jiān', '工': 'gōng',
+    '作': 'zuò', '学': 'xué', '习': 'xí', '生': 'shēng', '活': 'huó',
+    '朋': 'péng', '友': 'yǒu', '家': 'jiā', '庭': 'tíng', '快': 'kuài',
+    '乐': 'lè', '幸': 'xìng', '福': 'fú', '电': 'diàn', '脑': 'nǎo',
+    '手': 'shǒu', '机': 'jī', '水': 'shuǐ', '食': 'shí', '物': 'wù',
+    '钱': 'qián', '帮': 'bāng', '助': 'zhù', '谢': 'xiè', '请': 'qǐng',
+    '汽': 'qì', '车': 'chē', '书': 'shū', '音': 'yīn', '乐': 'yuè',
+    '电': 'diàn', '影': 'yǐng', '运': 'yùn', '动': 'dòng', '健': 'jiàn',
+    '康': 'kāng', '医': 'yī', '院': 'yuàn', '学': 'xué', '校': 'xiào',
+    '老': 'lǎo', '师': 'shī', '学': 'xué', '生': 'shēng'
+  };
+  
+  // 为每个字符生成拼音
+  let pinyin = '';
+  for (let char of text) {
+    if (pinyinMap[char]) {
+      pinyin += pinyinMap[char] + ' ';
+    } else if (/[\u4e00-\u9fa5]/.test(char)) {
+      // 如果是汉字但不在映射中，使用通用标记
+      pinyin += '[' + char + '] ';
+    } else {
+      // 非汉字字符直接保留
+      pinyin += char + ' ';
+    }
+  }
+  
+  return pinyin.trim();
+}
+
 // 有道云翻译API函数
 async function translateWithYoudao(word) {
   if (!YOUDAO_APP_KEY || !YOUDAO_APP_SECRET) {
@@ -99,15 +138,8 @@ app.post('/api/translate', async (req, res) => {
     // 处理翻译结果 - 有道云返回的是中文翻译
     const chineseTranslation = translationResult.translation;
     
-    // 获取中文翻译的拼音
-    let pinyin = '';
-    try {
-      const pinyinResponse = await axios.get(`http://localhost:${PORT}/api/pinyin?text=${encodeURIComponent(chineseTranslation)}`);
-      pinyin = pinyinResponse.data.pinyin || '';
-    } catch (error) {
-      console.error('获取拼音失败:', error.message);
-      pinyin = '获取拼音失败';
-    }
+    // 获取中文翻译的拼音 - 直接调用拼音函数
+    const pinyin = generatePinyin(chineseTranslation);
     
     // 返回统一格式的响应
     const response = {
@@ -131,7 +163,7 @@ app.post('/api/translate', async (req, res) => {
   }
 });
 
-// 拼音API端点 - 简单实现
+// 拼音API端点 - 使用统一的拼音函数
 app.get('/api/pinyin', (req, res) => {
   const text = req.query.text;
   
@@ -139,37 +171,8 @@ app.get('/api/pinyin', (req, res) => {
     return res.status(400).json({ error: '请提供要获取拼音的文本' });
   }
   
-  // 简单的拼音映射（常用汉字）
-  const pinyinMap = {
-    '你': 'nǐ', '好': 'hǎo', '世': 'shì', '界': 'jiè', '爱': 'ài',
-    '人': 'rén', '大': 'dà', '小': 'xiǎo', '中': 'zhōng', '国': 'guó',
-    '美': 'měi', '丽': 'lì', '时': 'shí', '间': 'jiān', '工': 'gōng',
-    '作': 'zuò', '学': 'xué', '习': 'xí', '生': 'shēng', '活': 'huó',
-    '朋': 'péng', '友': 'yǒu', '家': 'jiā', '庭': 'tíng', '快': 'kuài',
-    '乐': 'lè', '幸': 'xìng', '福': 'fú', '电': 'diàn', '脑': 'nǎo',
-    '手': 'shǒu', '机': 'jī', '水': 'shuǐ', '食': 'shí', '物': 'wù',
-    '钱': 'qián', '帮': 'bāng', '助': 'zhù', '谢': 'xiè', '请': 'qǐng',
-    '汽': 'qì', '车': 'chē', '书': 'shū', '音': 'yīn', '乐': 'yuè',
-    '电': 'diàn', '影': 'yǐng', '运': 'yùn', '动': 'dòng', '健': 'jiàn',
-    '康': 'kāng', '医': 'yī', '院': 'yuàn', '学': 'xué', '校': 'xiào',
-    '老': 'lǎo', '师': 'shī', '学': 'xué', '生': 'shēng'
-  };
-  
-  // 为每个字符生成拼音
-  let pinyin = '';
-  for (let char of text) {
-    if (pinyinMap[char]) {
-      pinyin += pinyinMap[char] + ' ';
-    } else if (/[\u4e00-\u9fa5]/.test(char)) {
-      // 如果是汉字但不在映射中，使用通用标记
-      pinyin += '[' + char + '] ';
-    } else {
-      // 非汉字字符直接保留
-      pinyin += char + ' ';
-    }
-  }
-  
-  res.json({ pinyin: pinyin.trim() });
+  const pinyin = generatePinyin(text);
+  res.json({ pinyin });
 });
 
 // 启动服务器
